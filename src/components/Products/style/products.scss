@@ -1,0 +1,107 @@
+.products{
+    padding: 0px 10px;
+}
+.products__item__img{
+    & img{
+        max-width: 100%;
+        height: 100%;
+    }
+}
+.products__list{
+    display: flex;
+    max-width: 860px;
+    & .products__item{
+        width: 25%;
+        padding: 10px;
+        position: relative;
+        & .products__item__add__btn{
+            bottom: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            position: absolute;
+            border-radius: 4px;
+            color: #fff;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+            background-color: #2cc84d;
+            & .icon__btn__add{
+                font-size: 20px;
+
+                &::before{
+                    content: "󰐕";
+
+                    display: inline-block;
+    font: normal normal normal 24px/1 Material Design Icons;
+    font-size: inherit;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+                }
+            }
+        }
+        & .products__item__miniature{
+            display: flex;
+            justify-content: center;
+
+            & span{
+                font-weight: 700;
+                color: #909090;
+                border: 1px solid #cfcfcf;
+                border-radius: 12px;
+                background-color: #fff;
+                font-size: 10px;
+                padding: 2px 5px;
+            }
+           
+           
+        }
+        & .products__item__configs{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4px 8px;
+
+            background-color: #def8e3;
+            border-radius: 4px;
+            margin-top: 7px;
+            & span{
+                font-size: 13px;
+                font-weight: 700;
+              
+                &:nth-child(2){
+                    margin: 0 3px;
+                  
+                    font-size: 11px;
+                    font-weight: 400;
+                }
+            }
+        }
+        & .products__item__title{
+            display: block;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 25px 0px;
+    text-align: center;
+    
+        }
+        & .products__item__price{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            & span:nth-child(1){
+                font-size: 12px;
+                color: #bcbcbc;
+                text-decoration: line-through;
+            }
+            & span:nth-child(2){
+                font-size: 12px;
+                color: #d8345f;
+                text-decoration: line-through;
+            }
+        }
+    }
+    // min-height: 1200px;
+}
