@@ -1,4 +1,6 @@
 import './style/products.scss'
+import { useSelector, useDispatch } from 'react-redux'
+import { addBasket } from '../../store/basketSlice/basketSlice';
 // import data from '../../db/products.json'
 import AllPhoto from '../../img/fruits.png'
 
@@ -7,11 +9,17 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
 
     const [active,setActive] = useState(null)
 
+    const [activeBtn,setActiveBtn] = useState([])
+
+    const dispatch = useDispatch()
+
+    const {basket} = useSelector(state => state.basket)
+
 
     useEffect(() =>{
         filterByPrice()
     },[selectPrice])
-    
+     
     return(
         <div className="products">
             <div className="prodlist_actionbar">
@@ -111,14 +119,19 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                 </ul>
             </div>
             <ul className="products__list">
-                {products.map(product => (
-                <li className="products__item">
+                {products.map((product,i) => (
+                <li className="products__item" key={i}>
                     <div className="products__item__img">
                         <img src={product.photo} alt="" />
                     </div>
                     <div className="products__item__miniature">
                         <span>{product.country}</span>
-                        <div className="products__item__add__btn">
+                        <div className={`products__item__add__btn ${activeBtn.some(item => item === i) ? "active" : ""}`} onClick={() => {
+                            setActiveBtn([...activeBtn, i])
+                            dispatch(addBasket(product))
+                        }}>
+                            {activeBtn.some(item => item === i) && <i className='icon__btn__add'></i>}
+                            {activeBtn.some(item => item === i) && <div className='product__quantity'>{product.quantity}</div>}
                             <i className='icon__btn__add'></i>
                         </div>
                     </div>

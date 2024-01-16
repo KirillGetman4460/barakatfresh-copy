@@ -1,4 +1,6 @@
 import {useState,useRef} from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { addBasket } from './store/basketSlice/basketSlice';
 import Header from "./components/Header/header";
 import Megamenu from './components/Megamenu/megamenu'
 import Filter from './components/Filter/filter'
@@ -20,7 +22,8 @@ function App() {
         price:48.50,
         new_price:25.00,
         package:"box",
-        type:"bulk"
+        type:"bulk",
+        quantity:1
     },
     {
         name:"Mandarin Kinnow Box",
@@ -30,7 +33,8 @@ function App() {
         price:48.50,
         new_price:29.95,
         package:"box",
-        type:"bulk"
+        type:"bulk",
+        quantity:1
     },
     {
         name:"Mandarin Kinnow Box",
@@ -40,7 +44,8 @@ function App() {
         price:48.50,
         new_price:29.95,
         package:"box",
-        type:"bulk"
+        type:"bulk",
+        quantity:1
     },
     {
         name:"Mandarin Kinnow Box",
@@ -50,7 +55,8 @@ function App() {
         price:48.50,
         new_price:29.00,
         package:"box",
-        type:"bulk"
+        type:"bulk",
+        quantity:1
     },
     {
         name:"Mandarin Kinnow Box",
@@ -60,7 +66,8 @@ function App() {
         price:48.50,
         new_price:29.95,
         package:"box",
-        type:"bulk"
+        type:"bulk",
+        quantity:1
     },
     {
         name:"Mango Puree 1L",
@@ -69,7 +76,8 @@ function App() {
         valut:"AED",
         price:35.00,
         package:"box",
-        type:"puree"
+        type:"puree",
+        quantity:1
     },
 ])
 
@@ -81,6 +89,7 @@ function App() {
   const [selectPrice,setSelectPrice] = useState('')
 
   const [selectedCountries, setSelectedCountries] = useState([]);
+
 
   const filterByPrice = () =>{
     if(selectPrice === 'bestsaving'){
