@@ -1,0 +1,59 @@
+.filter__multi__select{
+    border-radius: 4px;
+    border: 1px solid #e9e9e9;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+.multi__select__title{
+    display: flex;
+    padding: 10px 15px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.multi__select__list{
+    padding: 10px 15px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+.multi__select__list__item{
+    cursor: pointer;
+}
+.multiselect_footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 10px;
+    border-top: 1px solid #e9e9e9;
+    & .multiselect_footer__btn{
+        height: 35px;
+        font-size: 14px;
+        line-height: 33px;
+        width: 50%;
+        border: 1px solid #2cc84d;
+        background-color: #2cc84d;
+        text-align: center;
+        margin: 7px!important;
+        margin: 7px!important;
+        cursor: pointer;
+        &:nth-child(2){
+            background-color: #fff;
+            & span{
+                color: rgb(44, 200, 77);        
+            }
+        }
+        & span{ 
+            color: #fff;
+            
+        }
+    }
+}
+
+.multi__select__icon{
+    font-size: 22px;
+    color: #2cc84d;
+    
+}

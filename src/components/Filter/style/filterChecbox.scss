@@ -1,0 +1,15 @@
+.filterChecbox__content{
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 4px;
+    justify-content: space-between;
+    background-color: #eefbf1;
+    margin-bottom: 20px;
+    & .filterChecbox__title{
+        font-size: 16px;
+        font-weight: 700;
+
+    }
+}

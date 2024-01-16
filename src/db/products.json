@@ -1,0 +1,13 @@
+{
+    "products":[
+        {
+            "name":"Mandarin Kinnow Box",
+            "photo":"./img/mandarin-pakistan-1100.jpg",
+            "country" :"Pakistan",
+            "valut":"AED",
+            "price":"48.50",
+            "new_price":"29.95",
+            "type":"box"
+        }
+    ]
+}
