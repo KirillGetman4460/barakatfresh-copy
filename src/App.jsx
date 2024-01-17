@@ -1,6 +1,5 @@
-import {useState,useRef} from 'react'
+import {useState,useRef, useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { addBasket } from './store/basketSlice/basketSlice';
 import Header from "./components/Header/header";
 import Megamenu from './components/Megamenu/megamenu'
 import Filter from './components/Filter/filter'
@@ -8,6 +7,12 @@ import Products from './components/Products/products'
 import FilterChecbox from './components/Filter/filterChecbox'
 import FilterMultiSelect from './components/Filter/filterMultiSelect'
 import BreadCrumbs from './components/BreadCrumbs/breadCrumbs'
+import Basket from './components/Basket/basket'
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
 import Mandarin from './img/mandarin-pakistan-1100.jpg'
 import PureeMango from './img/PureeImg/gi4a6338.jpg'
@@ -15,8 +20,9 @@ function App() {
 
   const [products,setProducts] = useState([
     {
+        id:1,
         name:"Mandarin Kinnow Box",
-        photo: Mandarin,
+        photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/m/a/mandarin-pakistan-1100.jpg',
         country :"Pakistan",
         valut:"AED",
         price:48.50,
@@ -26,59 +32,108 @@ function App() {
         quantity:1
     },
     {
-        name:"Mandarin Kinnow Box",
-        photo: Mandarin,
+        id:2,
+        name:"Strawberry Egypt Box 2.5kg",
+        photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/s/t/strawberry1.jpg',
         country :"Egypt",
         valut:"AED",
-        price:48.50,
-        new_price:29.95,
+        price:78.00,
+        new_price:65.00,
         package:"box",
         type:"bulk",
         quantity:1
     },
     {
-        name:"Mandarin Kinnow Box",
-        photo: Mandarin,
+        id:3,
+        name:"Mango Egypt",
+        photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/m/a/mango_egypt_4kg_box.jpg',
         country :"Pakistan",
         valut:"AED",
-        price:48.50,
-        new_price:29.95,
+        price:65.00,
+        new_price:50.00,
         package:"box",
         type:"bulk",
         quantity:1
     },
     {
-        name:"Mandarin Kinnow Box",
-        photo: Mandarin,
+        id:4,
+        name:"Strawberry Egypt 250g",
+        photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/s/h/shutterstock_1855009942.jpg',
         country :"South Africa",
         valut:"AED",
-        price:48.50,
-        new_price:29.00,
+        price:14.00,
+        new_price:7.50,
         package:"box",
         type:"bulk",
         quantity:1
     },
     {
-        name:"Mandarin Kinnow Box",
-        photo: Mandarin,
+        id:5,
+        name:"Mandarins 500g",
+        photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/m/a/mandarin.jpg',
         country :"Pakistan",
         valut:"AED",
-        price:48.50,
-        new_price:29.95,
+        price:6.00,
+        new_price: 1.00,
         package:"box",
         type:"bulk",
         quantity:1
     },
     {
+        id:6,
         name:"Mango Puree 1L",
-        photo: PureeMango,
+        photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6338.jpg',
         country :"UAE",
         valut:"AED",
-        price:35.00,
+        price:35.00, 
         package:"box",
         type:"puree",
         quantity:1
     },
+    {
+      id:7,
+      name:"Mango Puree 1L",
+      photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6342.jpg',
+      country :"UAE",
+      valut:"AED",
+      price:35.00, 
+      package:"box",
+      type:"puree",
+      quantity:1
+  },
+  {
+    id:8,
+    name:"Mango Puree 1L",
+    photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6346.jpg',
+    country :"UAE",
+    valut:"AED",
+    price:45.00, 
+    package:"box",
+    type:"puree",
+    quantity:1
+},
+{
+  id:9,
+  name:"Raspberry Puree 1L",
+  photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6336.jpg',
+  country :"UAE",
+  valut:"AED",
+  price:45.00, 
+  package:"box",
+  type:"puree",
+  quantity:1
+},
+{
+  id:11,
+  name:"Blackberry Puree 1L",
+  photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6343.jpg',
+  country :"UAE",
+  valut:"AED",
+  price:54.00, 
+  package:"box",
+  type:"puree",
+  quantity:1
+},
 ])
 
   const [origin,setOrigin] = useState(['UAE','South Africa','India','Colombia','Thailand','Egypt','Kenya','China','Lebanon','Vietnam','Chile','Iran','Italy','Turkey','Brazil','Peru','Sri Lanka','Serbia','USA','Ukraine'])
@@ -89,6 +144,10 @@ function App() {
   const [selectPrice,setSelectPrice] = useState('')
 
   const [selectedCountries, setSelectedCountries] = useState([]);
+
+  const [selected, setSelected] = useState([]);
+
+  const {basket} = useSelector(state => state.basket)
 
 
   const filterByPrice = () =>{
@@ -169,6 +228,19 @@ const filterBySubcats = (sel) => {
     
   };
 
+  const handleSelectChange = (event) => {
+    setSelected((prev) => {  
+      const isSelected = prev.includes(event);
+  
+      if (isSelected) {
+       
+        return prev.filter((item) => item !== event);
+      } else {
+        return [...prev, event];
+      }
+    });
+  };
+
   const sortProductsByCountry = () => {
     let sortedProducts = [...products];
 
@@ -195,22 +267,26 @@ const filterBySubcats = (sel) => {
 
   const resetSelectedCountries = () =>{
     setSelectedCountries([])
+    setSelected([])
     sortProductsByCountry()
     setProducts(originalProducts.current)
   }
 
+
   return (
     <div className="App">
       <Header></Header>
+
       <div className="wrapper">
           <Megamenu></Megamenu>   
           <BreadCrumbs></BreadCrumbs>
         <div className="content">
+          {/* <Basket></Basket> */}
           <div className="filter__categories"> 
             <Filter></Filter>
             <FilterChecbox></FilterChecbox>
             <FilterChecbox></FilterChecbox>
-            <FilterMultiSelect title={'Origin'} origin={origin} sortProductsByCountry={sortProductsByCountry} handleCountrySelectChange={handleCountrySelectChange} resetSelectedCountries={resetSelectedCountries}></FilterMultiSelect>
+            <FilterMultiSelect title={'Origin'} origin={origin} sortProductsByCountry={sortProductsByCountry} handleCountrySelectChange={handleCountrySelectChange} resetSelectedCountries={resetSelectedCountries} selected={selected} handleSelectChange={handleSelectChange}></FilterMultiSelect>
             <FilterMultiSelect title={'Tags'} origin={tags}></FilterMultiSelect>
           </div>
 

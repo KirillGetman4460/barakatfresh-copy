@@ -1,8 +1,9 @@
 import './style/products.scss'
 import { useSelector, useDispatch } from 'react-redux'
-import { addBasket } from '../../store/basketSlice/basketSlice';
+import { addBasket,minusQuantity,deleteItemBasket } from '../../store/basketSlice/basketSlice';
 // import data from '../../db/products.json'
-import AllPhoto from '../../img/fruits.png'
+import AllPhoto from '../../img/FruitsSubcats/fruits.png'
+import OrganicPhoto from '../../img/FruitsSubcats/organic.png'
 
 import { useEffect, useState } from 'react'
 const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setSelectPrice}) =>{
@@ -50,7 +51,7 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                         setActive(2)
                         filterBySubcats('Regular Fruits')}
                     }>
-                        <span className='subcats__item__img'><img src={AllPhoto} alt="" /></span>
+                        <span className='subcats__item__img'><img src={OrganicPhoto} alt="" /></span>
                         <span className='subcats__item__text'>Regular Fruits</span>
                     </li>
                     <li className={`subcats__item ${active === 3 ? "active" : ""}`}  onClick={() => {
@@ -127,12 +128,23 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                     <div className="products__item__miniature">
                         <span>{product.country}</span>
                         <div className={`products__item__add__btn ${activeBtn.some(item => item === i) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, i])
-                            dispatch(addBasket(product))
+                            setActiveBtn([...activeBtn, i])       
                         }}>
-                            {activeBtn.some(item => item === i) && <i className='icon__btn__add'></i>}
+                            {activeBtn.some(item => item === i) && <i className='mdi icon__btn__add' onClick={() =>{
+                                product.quantity--
+                                dispatch(minusQuantity(product))
+                                dispatch(deleteItemBasket(product))
+                            }}></i>}
                             {activeBtn.some(item => item === i) && <div className='product__quantity'>{product.quantity}</div>}
-                            <i className='icon__btn__add'></i>
+                            {activeBtn.some(item => item === i) ?
+                                <i className='mdi icon__btn__add' onClick={() => {
+                                    product.quantity++
+                                    dispatch(addBasket(product))
+                                }}></i> : <i className='mdi icon__btn__add' onClick={() => {
+                                    dispatch(addBasket(product))
+                                }}></i>
+                            }
+                            
                         </div>
                     </div>
                   

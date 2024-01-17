@@ -3,6 +3,7 @@ const filterChecbox = () =>{
     return (
         <div className="filterChecbox">
             <div className="filterChecbox__content">
+            
                 <span className="filterChecbox__title">VIP</span>
                 <input type="checkbox" />
             </div>

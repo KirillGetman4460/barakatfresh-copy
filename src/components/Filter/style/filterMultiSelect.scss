@@ -19,7 +19,10 @@
     overflow-y: auto;
 }
 .multi__select__list__item{
+    display: flex;
+    align-items: center;
     cursor: pointer;
+    padding: 4px 0px;
 }
 .multiselect_footer{
     display: flex;
@@ -56,4 +59,7 @@
     font-size: 22px;
     color: #2cc84d;
     
+}
+.multi__select__text{
+    padding: 0px 7px;
 }
