@@ -1,3 +1,5 @@
+import { mdiChevronDown } from '@mdi/js';
+import Icon from '@mdi/react';
 import './style/filter.scss'
 const Filter = () =>{
     return (
@@ -7,6 +9,7 @@ const Filter = () =>{
                     <span>
                         Categories
                     </span>
+                    <Icon path={mdiChevronDown} size={1} />
                 </div>
                 <ul className="filter__list">
                     <div className="filter__item">

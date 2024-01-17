@@ -11,6 +11,9 @@
     display: flex;
     flex-wrap: wrap;
     max-width: 860px;
+    height: auto;
+    overflow: hidden auto;
+    min-height: 1200px;
     & .products__item{
         width: 25%;
         padding: 10px;

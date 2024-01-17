@@ -1,4 +1,5 @@
 import Logo from '../../img/barakat-logo-en-white.81664276.png'
+import { NavLink } from "react-router-dom";
 import "./style/header.scss"
 const Header = () =>{
     return (
@@ -18,10 +19,10 @@ const Header = () =>{
                     </a>
                 </div>
                 <div className="header__cart">
-                    <a href="/">
+                    <NavLink to={'/basket'}>
                         <span>Cart</span>
                         <img src="" alt="" />
-                    </a>
+                    </NavLink>          
                 </div>
             </div>
         </header>
