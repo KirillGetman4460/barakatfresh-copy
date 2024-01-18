@@ -62,15 +62,7 @@
                 height: 30px;
                 width: 30px;
                 border-radius: 4px;
-                &::before{
-                    content: "󰐕";
-                    display: inline-block;
-                    font: normal normal normal 24px/1 Material Design Icons;
-                    font-size: inherit;
-                    text-rendering: auto;
-                    line-height: 1;
-                    -webkit-font-smoothing: antialiased;
-                }
+                
             }
         }
         & .products__item__miniature{

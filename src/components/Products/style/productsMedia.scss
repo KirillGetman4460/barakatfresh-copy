@@ -1,0 +1,19 @@
+@media(max-width:1200px){
+    .content{
+        max-width: 960px;
+    }
+    .products__list .products__item{
+        width: 33.333%;
+    }
+    .products{
+        max-width: 674px;
+    }
+}
+@media(max-width:990px){
+    .products__list .products__item{
+        width: 50%;
+    }
+}
+@media(max-width:768px){
+    
+}

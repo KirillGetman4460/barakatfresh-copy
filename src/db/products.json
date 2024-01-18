@@ -1,13 +1,119 @@
 {
     "products":[
         {
+            "id":1,
             "name":"Mandarin Kinnow Box",
-            "photo":"./img/mandarin-pakistan-1100.jpg",
+            "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/m/a/mandarin-pakistan-1100.jpg",
             "country" :"Pakistan",
             "valut":"AED",
-            "price":"48.50",
-            "new_price":"29.95",
-            "type":"box"
-        }
+            "price":48.50,
+            "new_price":25.00,
+            "package":"box",
+            "type":"bulk",
+            "quantity":1
+        },
+        {
+            "id":2,
+            "name":"Strawberry Egypt Box 2.5kg",
+            "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/s/t/strawberry1.jpg",
+            "country" :"Egypt",
+            "valut":"AED",
+            "price":78.00,
+            "new_price":65.00,
+            "package":"box",
+            "type":"bulk",
+            "quantity":1
+        },
+        {
+            "id":3,
+            "name":"Mango Egypt",
+            "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/m/a/mango_egypt_4kg_box.jpg",
+            "country" :"Pakistan",
+            "valut":"AED",
+            "price":65.00,
+            "new_price":50.00,
+            "package":"box",
+            "type":"bulk",
+            "quantity":1
+        },
+        {
+            "id":4,
+            "name":"Strawberry Egypt 250g",
+            "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/s/h/shutterstock_1855009942.jpg",
+            "country" :"South Africa",
+            "valut":"AED",
+            "price":14.00,
+            "new_price":7.50,
+            "package":"box",
+            "type":"bulk",
+            "quantity":1
+        },
+        {
+            "id":5,
+            "name":"Mandarins 500g",
+            "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/m/a/mandarin.jpg",
+            "country" :"Pakistan",
+            "valut":"AED",
+            "price":6.00,
+            "new_price": 1.00,
+            "package":"box",
+            "type":"bulk",
+            "quantity":1
+        },
+        {
+            "id":6,
+            "name":"Mango Puree 1L",
+            "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6338.jpg",
+            "country" :"UAE",
+            "valut":"AED",
+            "price":35.00, 
+            "package":"box",
+            "type":"puree",
+            "quantity":1
+        },
+        {
+          "id":7,
+          "name":"Mango Puree 1L",
+          "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6342.jpg",
+          "country" :"UAE",
+          "valut":"AED",
+          "price":35.00, 
+          "package":"box",
+          "type":"puree",
+          "quantity":1
+      },
+      {
+        "id":8,
+        "name":"Mango Puree 1L",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6346.jpg",
+        "country" :"UAE",
+        "valut":"AED",
+        "price":45.00, 
+        "package":"box",
+        "type":"puree",
+        "quantity":1
+    },
+    {
+      "id":9,
+      "name":"Raspberry Puree 1L",
+      "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6336.jpg",
+      "country" :"UAE",
+      "valut":"AED",
+      "price":45.00, 
+      "package":"box",
+      "type":"puree",
+      "quantity":1
+    },
+    {
+      "id":10,
+      "name":"Blackberry Puree 1L",
+      "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6343.jpg",
+      "country" :"UAE",
+      "valut":"AED",
+      "price":54.00, 
+      "package":"box",
+      "type":"puree",
+      "quantity":1
+    }
     ]
 }
