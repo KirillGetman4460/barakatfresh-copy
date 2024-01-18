@@ -406,8 +406,8 @@ const filterBySubcats = (sel) => {
         <div className="content">
           <div className="filter__categories"> 
             <Filter></Filter>
-            <FilterChecbox></FilterChecbox>
-            <FilterChecbox></FilterChecbox>
+            {/* <FilterChecbox></FilterChecbox>
+            <FilterChecbox></FilterChecbox> */}
             <FilterMultiSelect title={'Origin'} origin={origin} sortProductsByCountry={sortProductsByCountry} handleCountrySelectChange={handleCountrySelectChange} resetSelectedCountries={resetSelectedCountries} selected={selected} handleSelectChange={handleSelectChange}></FilterMultiSelect>
             <FilterMultiSelect title={'Tags'} origin={tags}></FilterMultiSelect>
           </div>

@@ -7,7 +7,7 @@ import Icon from '@mdi/react';
 
 import { NavLink } from "react-router-dom";
 
-import { mdiSort,mdiFilterOutline,mdiRadioboxBlank,mdiClose,mdiCheckboxMarked,mdiCheckboxBlankOutline,mdiChevronLeft,mdiChevronRight,mdiHomeOutline,mdiCartOutline    } from '@mdi/js';
+import { mdiSort,mdiFilterOutline,mdiRadioboxBlank,mdiClose,mdiCheckboxMarked,mdiCheckboxBlankOutline,mdiChevronLeft,mdiChevronRight,mdiHomeOutline,mdiCartOutline ,mdiPlus,mdiMinus,mdiDeleteOutline    } from '@mdi/js';
 
 import './style/basket.scss'
 import './style/basketMedia.scss'
@@ -69,19 +69,19 @@ const Basket = () =>{
                                      <div className="itemqty">
                                          <div className="counter">
                                             <span className='decrease'>
-                                                <i className='mdi mdi-minus'></i>
+                                                <Icon path={mdiPlus} size={1} color={'#2cc84d'} />
                                             </span>
                                              
                                              <span className='counter_value'>{product.quantity}</span>
                                              <span className='increase'>
-                                                <i className='mdi mdi-plus'></i>
+                                             <Icon path={mdiMinus} size={1} color={'#2cc84d'} />
                                             </span>
                                             
                                          </div>
                                      </div>
                                      <div className="cartitem_rows">
                                      <span className='itemremove' onClick={() => dispatch(deleteItem(product))}>
-                                        <i className='mdi mdi-delete-outline'></i>
+                                     <Icon path={mdiDeleteOutline} size={1} color={'rgb(96, 96, 96)'} />
                                      </span>
                                  </div>
                                  </div>
