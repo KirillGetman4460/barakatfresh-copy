@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 import Logo from '../../img/barakat-logo-en-white.81664276.png'
 
 import "./style/header.scss"
+import "./style/headerMedia.scss"
 const Header = () =>{
 
     const {basket} = useSelector(state => state.basket)

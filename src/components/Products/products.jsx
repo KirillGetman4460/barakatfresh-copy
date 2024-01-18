@@ -21,10 +21,6 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
         filterByPrice()
     },[selectPrice])
      
-
-    useEffect(() => {
-        console.log(activeBtn);
-    },[activeBtn])
     return(
         <div className="products">
             <div className="prodlist_actionbar">
@@ -123,6 +119,131 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                     </li>
                 </ul>
             </div>
+            <div className="sidebar__mobile">
+                <ul className="sidebar__list">
+                    <li className="sidebar__item">
+                        <div className="sidebar__item__link">
+                        <div className="sidebar__item__img">
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                        </div>
+                        <span className="sidebar__item__text">
+                            All
+                        </span>
+                        </div>
+                        
+                    </li>
+                    <li className="sidebar__item">
+                        <div className="sidebar__item__link">
+                        <div className="sidebar__item__img">
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                        </div>
+                        <span className="sidebar__item__text">
+                        Regular Fruits
+                        </span>
+                        </div>
+                        
+                    </li>
+                    <li className="sidebar__item">
+                        <div className="sidebar__item__link">
+                        <div className="sidebar__item__img">
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                        </div>
+                        <span className="sidebar__item__text">
+                        Fruit Platters
+                        </span>
+                        </div>
+                        
+                    </li>
+                    <li className="sidebar__item">
+                        <div className="sidebar__item__link">
+                        <div className="sidebar__item__img">
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                        </div>
+                        <span className="sidebar__item__text">
+                        Mangoes
+                        </span>
+                        </div>
+                        
+                    </li>
+                    <li className="sidebar__item">
+                        <div className="sidebar__item__link">
+                        <div className="sidebar__item__img">
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                        </div>
+                        <span className="sidebar__item__text">
+                        Cut & Sanitized
+                        </span>
+                        </div>
+                        
+                    </li>
+                    <li className="sidebar__item">
+                        <div className="sidebar__item__link">
+                        <div className="sidebar__item__img">
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                        </div>
+                        <span className="sidebar__item__text">
+                        Puree
+                        </span>
+                        </div>
+                        
+                    </li>
+                    <li className="sidebar__item">
+                        <div className="sidebar__item__link">
+                        <div className="sidebar__item__img">
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                        </div>
+                        <span className="sidebar__item__text">
+                        Berries
+                        </span>
+                        </div>
+                        
+                    </li>
+                    <li className="sidebar__item">
+                        <div className="sidebar__item__link">
+                        <div className="sidebar__item__img">
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                        </div>
+                        <span className="sidebar__item__text">
+                        Melons
+                        </span>
+                        </div>
+                        
+                    </li>
+                    <li className="sidebar__item">
+                        <div className="sidebar__item__link">
+                        <div className="sidebar__item__img">
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                        </div>
+                        <span className="sidebar__item__text">
+                        Citrus
+                        </span>
+                        </div>
+                        
+                    </li>
+                    <li className="sidebar__item">
+                        <div className="sidebar__item__link">
+                        <div className="sidebar__item__img">
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                        </div>
+                        <span className="sidebar__item__text">
+                        Organic
+                        </span>
+                        </div>
+                        
+                    </li>
+                    <li className="sidebar__item">
+                        <div className="sidebar__item__link">
+                        <div className="sidebar__item__img">
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                        </div>
+                        <span className="sidebar__item__text">
+                        Bulk
+                        </span>
+                        </div>
+                        
+                    </li>
+                </ul>
+            </div>
             <ul className="products__list">
                 {products.map((product,i) => (
                 <li className="products__item" key={i}>
@@ -132,7 +253,7 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                     <div className="products__item__miniature">
                         <span>{product.country}</span>
                         <div className={`products__item__add__btn ${activeBtn.some(item => item === i) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
+                            setActiveBtn([...activeBtn, i])       
                         }}>
                             {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
                                 product.quantity--

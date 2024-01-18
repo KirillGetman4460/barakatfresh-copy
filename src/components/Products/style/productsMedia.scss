@@ -14,6 +14,317 @@
         width: 50%;
     }
 }
+.sidebar__mobile{
+    display: none;
+}
+.bottomsheet{
+    display: none;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 101;
+    position: fixed;
+    &.active{
+        display: block;
+    }
+}
+.bottomsheet_overlay{
+    top: 0;
+    left: 0;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0,.7);
+}
+.sortopts{
+    padding: 20px;
+}
+.bottomsheet_content{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 90%;
+    position: absolute;
+    background-color: #f4f3f3;
+    transform: translateY(0%);
+    transition: all .1s linear;
+}
+
+.sortopts_item{
+    display: flex;
+    padding: 10px 0;
+    & .formradio{
+        display: flex;
+        align-items: center;
+    }
+    & .formradio_title{
+        margin: 0 7px;
+    }
+
+}
+.sortopts_title{
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+.fsmodal{
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+    display: none;
+    &.origin{
+        display: none;
+        z-index: 1000;
+        &.active{
+            display: block;
+        }
+    }
+    &.tags{
+        display: none;
+        z-index: 1000;
+        &.active{
+            display: block;
+        }
+    }
+    &.active{
+        display: block;
+    }
+    & .fsmodal_content{
+        left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    transition: all .1s linear;
+    }
+
+    & .filterpop_header{
+        display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    height: 65px;
+    justify-content: center;
+    border-bottom: 1px solid #f4f3f3;
+        & .filterpop_close{
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 100%;
+            display: flex;
+            font-size: 22px;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        & .filterpop_heading{
+            text-align: center;
+            display: inline-block;
+        }
+        & .filterpop_reset{
+            top: 0;
+            right: 0;
+            height: 100%;
+            padding: 10px;
+            display: flex;
+            font-size: 13px;
+            font-weight: 700;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+    }
+
+}
+.filterblock_body{
+    height: 100%;
+    overflow-y: auto;
+    & .filterblock_items{
+        padding: 20px;
+    }
+
+}
+.filterpop_footer{
+    &.origin{
+        left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    position: absolute;
+    background-color: #fff;
+    }
+}
+.filterblock_popp{
+    
+}
+.filterblock_items{
+    height: 100%;
+    overflow-y: auto;
+ 
+}
+.filterblock{
+    margin-top: -1px;
+    & .filterblock_head{
+        display: flex;
+        padding: 10px;
+        min-height: 55px;
+        flex-direction: row;
+        align-items: center;
+        border-color: #f4f3f3;
+        border-style: solid;
+        border-width: 1px 0;
+        justify-content: space-between;
+        & .filterblock_head_box{
+            display: flex;
+            flex-direction: column;
+            & .filterblock_title{
+                font-weight: 700;
+                font-size: 15px;
+            }
+        }
+
+    }
+}
+.filterpop_footer{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    position: absolute;
+    & .bbutton_primary{
+        color: #fff;
+    border: 1px solid #2cc84d;
+    background-color: #2cc84d;
+    display: block;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 45px;
+    }
+}
 @media(max-width:768px){
     
+    .taskbar{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        height: 44px;
+        background: white;
+        position: fixed;
+
+    }
+    .filters__modile{
+        font-size: 14px;
+    padding: 2px 8px;
+    white-space: nowrap;
+    display: inline-block;
+    }
+    .taskbar_actions{
+        display: flex;
+
+    }
+    .sorting_toggle_text{
+        font-size: 14px;
+    padding: 2px 8px;
+    white-space: nowrap;
+    display: inline-block;
+    }
+    .sorting_toggle{
+        display: flex;
+
+    }
+    .filters_toggle{
+        display: flex;
+    }
+    .sidebar__mobile{
+        display: block;
+    }
+    .products__list .products__item{
+        width: 50%;
+    }
+    .products{
+        max-width: 100%;
+        display: flex;
+       padding-right: 0px;
+       padding-left: 75px;
+    }
+    .content{
+        padding-right: 0px !important;
+        justify-content: flex-end !important;
+    }
+    .products__list{
+        max-width: 693px;
+    }
+    .subcats{
+        display: none;
+    }
+    .prodlist_actionbar{
+        display: none;
+    }
+
+
+    .filter__categories{
+        display: none;
+    }
+    .sidebar__mobile{
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 75px;
+        height: 100%;
+        position: fixed;
+        padding-top: 88px;
+        padding-bottom: 60px;
+        background-color: #eefbf1;
+        & .sidebar__list{
+            height: 100%;
+            overflow-y: auto;
+           
+            & .sidebar__item{
+                & .active{
+                    background-color: #fff;
+                }
+              
+                & .sidebar__item__link{
+                    padding: 7px;
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+                    & .sidebar__item__img{
+                        width: 50px;
+    height: 50px;
+    display: block;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-bottom: 7px;
+    background-color: #fff;
+                        & img{
+                            max-width: 100%;
+                            height: auto;
+                        }
+
+                    }
+                    & .sidebar__item__text{
+                        
+                        display: block;
+                        text-align: center;
+                        font-weight: 700;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
 }

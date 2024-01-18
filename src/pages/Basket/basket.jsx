@@ -26,7 +26,7 @@ const PageBasket = () =>{
         </div>
         <div className="wrapper">
             <BreadCrumbs title={'Cart'}></BreadCrumbs>
-            <div className="content">
+            <div className="content basket">
                 <Basket></Basket>
             </div>
         </div>

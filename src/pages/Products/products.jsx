@@ -10,127 +10,15 @@ import FilterChecbox from '../../components/Filter/filterChecbox'
 import FilterMultiSelect from '../../components/Filter/filterMultiSelect'
 import BreadCrumbs from '../../components/BreadCrumbs/breadCrumbs'
 
+import { NavLink } from "react-router-dom";
+
+import Icon from '@mdi/react';
+import { mdiSort,mdiFilterOutline,mdiRadioboxBlank,mdiClose,mdiCheckboxMarked,mdiCheckboxBlankOutline,mdiChevronLeft,mdiChevronRight,mdiHomeOutline,mdiCartOutline    } from '@mdi/js';
+
 
 const PageProducts = () =>{
   
-    const [products,setProducts] = useState([
-      ...data.products
-    //     {
-    //         id:1,
-    //         name:"Mandarin Kinnow Box",
-    //         photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/m/a/mandarin-pakistan-1100.jpg',
-    //         country :"Pakistan",
-    //         valut:"AED",
-    //         price:48.50,
-    //         new_price:25.00,
-    //         package:"box",
-    //         type:"bulk",
-    //         quantity:1
-    //     },
-    //     {
-    //         id:2,
-    //         name:"Strawberry Egypt Box 2.5kg",
-    //         photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/s/t/strawberry1.jpg',
-    //         country :"Egypt",
-    //         valut:"AED",
-    //         price:78.00,
-    //         new_price:65.00,
-    //         package:"box",
-    //         type:"bulk",
-    //         quantity:1
-    //     },
-    //     {
-    //         id:3,
-    //         name:"Mango Egypt",
-    //         photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/m/a/mango_egypt_4kg_box.jpg',
-    //         country :"Pakistan",
-    //         valut:"AED",
-    //         price:65.00,
-    //         new_price:50.00,
-    //         package:"box",
-    //         type:"bulk",
-    //         quantity:1
-    //     },
-    //     {
-    //         id:4,
-    //         name:"Strawberry Egypt 250g",
-    //         photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/s/h/shutterstock_1855009942.jpg',
-    //         country :"South Africa",
-    //         valut:"AED",
-    //         price:14.00,
-    //         new_price:7.50,
-    //         package:"box",
-    //         type:"bulk",
-    //         quantity:1
-    //     },
-    //     {
-    //         id:5,
-    //         name:"Mandarins 500g",
-    //         photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/m/a/mandarin.jpg',
-    //         country :"Pakistan",
-    //         valut:"AED",
-    //         price:6.00,
-    //         new_price: 1.00,
-    //         package:"box",
-    //         type:"bulk",
-    //         quantity:1
-    //     },
-    //     {
-    //         id:6,
-    //         name:"Mango Puree 1L",
-    //         photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6338.jpg',
-    //         country :"UAE",
-    //         valut:"AED",
-    //         price:35.00, 
-    //         package:"box",
-    //         type:"puree",
-    //         quantity:1
-    //     },
-    //     {
-    //       id:7,
-    //       name:"Mango Puree 1L",
-    //       photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6342.jpg',
-    //       country :"UAE",
-    //       valut:"AED",
-    //       price:35.00, 
-    //       package:"box",
-    //       type:"puree",
-    //       quantity:1
-    //   },
-    //   {
-    //     id:8,
-    //     name:"Mango Puree 1L",
-    //     photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6346.jpg',
-    //     country :"UAE",
-    //     valut:"AED",
-    //     price:45.00, 
-    //     package:"box",
-    //     type:"puree",
-    //     quantity:1
-    // },
-    // {
-    //   id:9,
-    //   name:"Raspberry Puree 1L",
-    //   photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6336.jpg',
-    //   country :"UAE",
-    //   valut:"AED",
-    //   price:45.00, 
-    //   package:"box",
-    //   type:"puree",
-    //   quantity:1
-    // },
-    // {
-    //   id:10,
-    //   name:"Blackberry Puree 1L",
-    //   photo: 'https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6343.jpg',
-    //   country :"UAE",
-    //   valut:"AED",
-    //   price:54.00, 
-    //   package:"box",
-    //   type:"puree",
-    //   quantity:1
-    // },
-    ])
+    const [products,setProducts] = useState([...data.products])
 
   const [origin,setOrigin] = useState(['UAE','South Africa','India','Colombia','Thailand','Egypt','Kenya','China','Lebanon','Vietnam','Chile','Iran','Italy','Turkey','Brazil','Peru','Sri Lanka','Serbia','USA','Ukraine'])
   const [tags,setTags] = useState(['By Air','RIPEN AT HOME','Premium By Air','STEAL DEAL','Ready to eat','Ripen at Home','Ripen at home','Best for Gifting','By Air !','By Air ! Ripen at Home','By Air! Ripen at Home','For cooking','Ideal for Cooking','In High Demand','MUST BUY','Premium by Air','RIPEN AT HOME (RAW)','SWEET & TASTY'])
@@ -142,6 +30,14 @@ const PageProducts = () =>{
   const [selectedCountries, setSelectedCountries] = useState([]);
 
   const [selected, setSelected] = useState([]);
+
+  const [activeSort,setActiveSort] = useState(false)
+
+  const [activeFilt,setActiveFilt] = useState(false)
+
+  const [activeOrigin,setActiveOrigin] = useState(false)
+
+  const [activeTags,setActiveTags] = useState(false)
 
   const {basket} = useSelector(state => state.basket)
 
@@ -288,7 +184,222 @@ const filterBySubcats = (sel) => {
         <div className={`${isFixed ? 'fixed' : ''}`}>
             <Header></Header>
             <Megamenu></Megamenu>
+            
+            
         </div>
+        <div className="fixed__modile">
+            <div className="megamenu modile">
+            <ul className="megamenu__list">
+                <li className="megamenu__item">
+                    <span>Bbq Range</span>
+                </li>
+                <li className="megamenu__item">
+                    <span>Fruits</span>
+                </li>
+                <li className="megamenu__item">
+                    <span>Vegetables</span>
+                </li>
+                <li className="megamenu__item">
+                    <span>Fresh Juices</span>
+                </li>
+                <li className="megamenu__item">
+                    <span>Meats</span>
+                </li>
+                <li className="megamenu__item">
+                    <span>Grab N Go</span>
+                </li>
+                <li className="megamenu__item">
+                    <span>Gifting & Party Needs</span>
+                </li>
+                <li className="megamenu__item">
+                    <span>Organics</span>
+                </li>
+                <li className="megamenu__item">
+                    <span>Bakery</span>
+                </li>
+                <li className="megamenu__item">
+                    <span>Dairy & Eggs</span>
+                </li>
+                <li className="megamenu__item">
+                    <span>Ice Cream</span>
+                </li>
+                <li className="megamenu__item">
+                    <span>Pantry</span>
+                </li>
+            </ul>
+        </div>
+            <div className="products_taskbar">
+              <div className="taskbar">
+                <div className="taskbar_prime"></div>
+                <div className="taskbar_actions">
+                  <div className="sorting" onClick={() => setActiveSort(true)}>
+                  <div className="sorting_toggle">
+                    <div className="sorting_toggle_icon">                
+                      <Icon path={mdiSort} size={1} />
+                    </div>
+                    <div className="sorting_toggle_text">
+                      Sort
+                    </div>
+                  </div>
+                  </div>
+                  <div className="filters__modile" onClick={() => setActiveFilt(true)}>
+                    <div className="filters_toggle">
+                      <div className="filters_toggle_icon">
+                      <Icon path={mdiFilterOutline} size={1} />
+                      </div>
+                      <div className="filters_toggle_text">
+                        Filter
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className={`bottomsheet ${activeSort ? "active" :""}`}>
+                  <div className="bottomsheet_overlay" onClick={() => setActiveSort(false)}></div>
+                  <div className="bottomsheet_content">
+                    <div className="sortopts">
+                      <div className="sortopts_title">Sort by</div>
+                      <ul className="sortopts_list">
+                        <li className="sortopts_item" onClick={() => setActiveSort(false)}>
+                          <div className="formradio">
+                            <div className="formradio_icon"><Icon path={mdiRadioboxBlank} color={"#2cc84d"} size={1} /></div>
+                            <span className="formradio_title">Best Sellers</span>
+                          </div>
+                        </li>
+                        <li className="sortopts_item" onClick={() => setActiveSort(false)}>
+                          <div className="formradio">
+                            <div className="formradio_icon"><Icon path={mdiRadioboxBlank} color={"#2cc84d"} size={1} /></div>
+                            <span className="formradio_title">Biggest Saving</span>
+                          </div>
+                        </li>
+                        <li className="sortopts_item" onClick={() => setActiveSort(false)}>
+                          <div className="formradio">
+                            <div className="formradio_icon"><Icon path={mdiRadioboxBlank} color={"#2cc84d"} size={1} /></div>
+                            <span className="formradio_title">Price: Low to High</span>
+                          </div>
+                        </li>
+                        <li className="sortopts_item" onClick={() => setActiveSort(false)}>
+                          <div className="formradio">
+                            <div className="formradio_icon"><Icon path={mdiRadioboxBlank} color={"#2cc84d"} size={1} /></div>
+                            <span className="formradio_title">Price: High to Low</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
+
+
+                <div className={`fsmodal ${activeFilt ? "active" :""}`}>
+                  <div className="fsmodal_content">
+                    <div>
+                      <div className="filterpop_header">
+                        <div className="filterpop_close" onClick={() => setActiveFilt(false)}><Icon path={mdiClose} color={"rgb(96, 96, 96)"} size={1} /></div>
+                        <h4 className="filterpop_heading">Filter by</h4>
+                        <div className="filterpop_reset">Reset all</div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="filterblock">
+                        <div className="filterblock_head">
+                          <div className="filterblock_head" onClick={() => setActiveOrigin(true)}>
+                            <div className="filterblock_title">Origin</div>
+                            <div className="filterblock_chev"></div>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div className="filterblock">
+                        <div className="filterblock_head">
+                          <div className="filterblock_head" onClick={() => setActiveTags(true)}>
+                            <div className="filterblock_title">Tags</div>
+                            <div className="filterblock_chev"></div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div className="filterpop_footer">
+                      <div className="bbutton_primary"><span>Show results (228)</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className={`fsmodal origin ${activeOrigin ? "active" :""}`}>
+                <div className="fsmodal_content">
+                  
+                        <div>
+                      <div className="filterpop_header">
+                        <div className="filterpop_close" onClick={() => setActiveOrigin(false)}><Icon path={mdiChevronLeft} color={"rgb(96, 96, 96)"} size={1} /></div>
+                        <h4 className="filterpop_heading">Origin</h4>
+                        <div className="filterpop_reset">Reset</div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="filterblock_body">
+                        <ul className="filterblock_items">
+                        {origin.map((item,i) => (
+                        <li className="multi__select__list__item" onClick={() => {
+                            handleCountrySelectChange(item)
+                            handleSelectChange(i)
+                        }}>
+                            {selected && selected.some(item => item === i) ? <Icon path={mdiCheckboxMarked} color={'#2cc84d'} value={false} size={1} /> :   <Icon path={mdiCheckboxBlankOutline } size={1} color={'#2cc84d'} />}   
+                            <span className="multi__select__text">{item}</span>
+                        </li>
+                    ))}
+                        </ul>
+                      </div>
+
+                    </div>
+                 
+                    
+                    <div className="filterpop_footer origin">
+                      <div className="bbutton_primary" onClick={() => setActiveOrigin(false)}><span>APPLY</span></div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div className={`fsmodal tags ${activeTags ? "active" :""}`}>
+                <div className="fsmodal_content">
+                  
+                        <div>
+                      <div className="filterpop_header">
+                        <div className="filterpop_close" onClick={() => setActiveTags(false)}><Icon path={mdiChevronLeft} color={"rgb(96, 96, 96)"} size={1} /></div>
+                        <h4 className="filterpop_heading">Tags</h4>
+                        <div className="filterpop_reset">Reset</div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="filterblock_body">
+                        <ul className="filterblock_items">
+                        {origin.map((item,i) => (
+                        <li className="multi__select__list__item" onClick={() => {
+                            handleCountrySelectChange(item)
+                            handleSelectChange(i)
+                        }}>
+                            {selected && selected.some(item => item === i) ? <Icon path={mdiCheckboxMarked} color={'#2cc84d'} value={false} size={1} /> :   <Icon path={mdiCheckboxBlankOutline } size={1} color={'#2cc84d'} />}   
+                            <span className="multi__select__text">{item}</span>
+                        </li>
+                    ))}
+                        </ul>
+                      </div>
+
+                    </div>
+                 
+                    
+                    <div className="filterpop_footer origin">
+                      <div className="bbutton_primary" onClick={() => setActiveTags(false)}><span>APPLY</span></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            </div>
          <div className="wrapper">
             
           <BreadCrumbs title={title}></BreadCrumbs>
@@ -302,6 +413,25 @@ const filterBySubcats = (sel) => {
           </div>
 
           <Products title={title} products={products} filterBySubcats={filterBySubcats} filterByPrice={filterByPrice} selectPrice={selectPrice} setSelectPrice={setSelectPrice} ></Products>
+        </div>
+        <div className="layout_tabs">
+          <ul className="tabs">
+              <li className="tabs_item">
+                <div className="tabs_link">
+                  <div className="tabs_icon"><Icon path={mdiHomeOutline} size={1} /></div>
+                  <div className="tabs_title">Home</div>
+                </div>
+              </li>
+              <li className="tabs_item">
+                <NavLink to={'/basket'}>
+                <div className="tabs_link">
+                  <div className="tabs_icon"><Icon path={mdiCartOutline } size={1} /></div>
+                  <div className="tabs_title">Cart</div>
+                </div>
+                </NavLink>
+               
+              </li>
+          </ul>
         </div>
       </div>
         </>

@@ -1,0 +1,30 @@
+@media(max-width:1200px){
+    .basket{
+        max-width: 1140px;
+    }
+}
+@media(max-width:989px){
+    .basket{
+     
+    }
+    .basket__conteiner{
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .br_columns{
+        max-width: 720px;
+    }
+    .br_mb20{
+        margin-top: 20px;
+    }
+}
+
+@media(max-width:768px){
+    .br_columns{
+        display: none;
+    }
+    .content.basket{
+        
+    }
+}

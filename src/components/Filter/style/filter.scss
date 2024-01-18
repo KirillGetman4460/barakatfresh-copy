@@ -46,5 +46,20 @@
 .filter__content{
     border: 1px solid #e9e9e9;
     background-color: #f9f9f9;
+    
 }
 
+@media(max-width: 768px){
+    .filter{
+        display: none;
+    }
+    .filterChecbox{
+        display: none;
+    }
+    .filter__multi__select{
+        display: none;
+    }
+    .bread__crumbs{
+        display: none !important;
+    }
+}

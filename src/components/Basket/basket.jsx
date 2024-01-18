@@ -3,7 +3,15 @@ import { useSelector, useDispatch } from 'react-redux'
 import EmptyLogo from '../../img/Basket/empty_cart.61afa099.png'
 import {deleteItem} from '../../store/basketSlice/basketSlice'
 
+import Icon from '@mdi/react';
+
+import { NavLink } from "react-router-dom";
+
+import { mdiSort,mdiFilterOutline,mdiRadioboxBlank,mdiClose,mdiCheckboxMarked,mdiCheckboxBlankOutline,mdiChevronLeft,mdiChevronRight,mdiHomeOutline,mdiCartOutline    } from '@mdi/js';
+
 import './style/basket.scss'
+import './style/basketMedia.scss'
+
 const Basket = () =>{
 
     const {basket} = useSelector(state => state.basket)
@@ -115,6 +123,28 @@ const Basket = () =>{
                 }
                
             </div>
+            <div className="layout_tabs">
+          <ul className="tabs">
+              <li className="tabs_item">
+                <NavLink to={'/'}>
+                <div className="tabs_link">
+                  <div className="tabs_icon"><Icon path={mdiHomeOutline} size={1} /></div>
+                  <div className="tabs_title">Home</div>
+                </div>
+                </NavLink>
+                
+              </li>
+              <li className="tabs_item">
+                <NavLink to={'/basket'}>
+                <div className="tabs_link">
+                  <div className="tabs_icon"><Icon path={mdiCartOutline } size={1} /></div>
+                  <div className="tabs_title">Cart</div>
+                </div>
+                </NavLink>
+               
+              </li>
+          </ul>
+        </div>
         </div>
     )
 }
