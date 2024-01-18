@@ -271,22 +271,31 @@ const filterBySubcats = (sel) => {
                         <li className="sortopts_item" onClick={() => setActiveSort(false)}>
                           <div className="formradio">
                             <div className="formradio_icon"><Icon path={mdiRadioboxBlank} color={"#2cc84d"} size={1} /></div>
-                            <span className="formradio_title">Best Sellers</span>
+                            <span className="formradio_title" onClick={() => setSelectPrice('')}>Best Sellers</span>
                           </div>
                         </li>
-                        <li className="sortopts_item" onClick={() => setActiveSort(false)}>
+                        <li className="sortopts_item" onClick={() => {
+                          setActiveSort(false)
+                          setSelectPrice('bestsaving')
+                        }}>
                           <div className="formradio">
                             <div className="formradio_icon"><Icon path={mdiRadioboxBlank} color={"#2cc84d"} size={1} /></div>
                             <span className="formradio_title">Biggest Saving</span>
                           </div>
                         </li>
-                        <li className="sortopts_item" onClick={() => setActiveSort(false)}>
+                        <li className="sortopts_item" onClick={() => {
+                          setActiveSort(false)
+                          setSelectPrice('high')
+                        }}>
                           <div className="formradio">
                             <div className="formradio_icon"><Icon path={mdiRadioboxBlank} color={"#2cc84d"} size={1} /></div>
                             <span className="formradio_title">Price: Low to High</span>
                           </div>
                         </li>
-                        <li className="sortopts_item" onClick={() => setActiveSort(false)}>
+                        <li className="sortopts_item" onClick={() => {
+                          setActiveSort(false)
+                          setSelectPrice('low')
+                        }}>
                           <div className="formradio">
                             <div className="formradio_icon"><Icon path={mdiRadioboxBlank} color={"#2cc84d"} size={1} /></div>
                             <span className="formradio_title">Price: High to Low</span>
@@ -384,7 +393,7 @@ const filterBySubcats = (sel) => {
                     <div>
                       <div className="filterblock_body">
                         <ul className="filterblock_items">
-                        {origin.map((item,i) => (
+                        {tags.map((item,i) => (
                         <li className="multi__select__list__item" onClick={() => {
                             handleCountrySelectChange(item)
                             handleSelectChange(i)
@@ -417,7 +426,7 @@ const filterBySubcats = (sel) => {
             {/* <FilterChecbox></FilterChecbox>
             <FilterChecbox></FilterChecbox> */}
             <FilterMultiSelect title={'Origin'} origin={origin} sortProductsByCountry={sortProductsByCountry} handleCountrySelectChange={handleCountrySelectChange} resetSelectedCountries={resetSelectedCountries} selected={selected} handleSelectChange={handleSelectChange}></FilterMultiSelect>
-            <FilterMultiSelect title={'Tags'} origin={tags}></FilterMultiSelect>
+            <FilterMultiSelect title={'Tags'} origin={tags} sortProductsByCountry={sortProductsByCountry}></FilterMultiSelect>
           </div>
 
           <Products title={title} products={products} filterBySubcats={filterBySubcats} filterByPrice={filterByPrice} selectPrice={selectPrice} setSelectPrice={setSelectPrice} ></Products>
@@ -435,6 +444,9 @@ const filterBySubcats = (sel) => {
                 <div className="tabs_link">
                   <div className="tabs_icon"><Icon path={mdiCartOutline } size={1} /></div>
                   <div className="tabs_title">Cart</div>
+                  <div className="tabs__basket__count">
+                    {basket.length}
+                  </div>
                 </div>
                 </NavLink>
                

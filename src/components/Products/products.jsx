@@ -15,8 +15,6 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
 
     const dispatch = useDispatch()
 
-    // const {basket} = useSelector(state => state.basket)
-
     useEffect(() =>{
         filterByPrice()
     },[selectPrice])

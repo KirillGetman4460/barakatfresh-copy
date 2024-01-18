@@ -67,8 +67,20 @@
                     align-items: center;
                     justify-content: center;
                     flex-direction: column;
-                    & .tabs_titl{
+                    position: relative;
+                    & .tabs_title{
                         font-size: 12px;
+                    }
+                    & .tabs__basket__count{
+                       
+                        top: -2px;
+                        right: -20px;
+                        font-size: 9px;
+                        padding: 2px 5px;
+                        color: #fff;
+                        border-radius: 10px;
+                        position: absolute;
+                        background-color: #2cc84d;
                     }
                 }
                 
