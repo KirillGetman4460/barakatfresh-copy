@@ -121,7 +121,11 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
             </div>
             <div className="sidebar__mobile">
                 <ul className="sidebar__list">
-                    <li className="sidebar__item">
+                    <li className={`sidebar__item ${active === 1 ? "active" : ""}`}
+                     onClick={() => {
+                        setActive(1)
+                        filterBySubcats('All')
+                    }}>
                         <div className="sidebar__item__link">
                         <div className="sidebar__item__img">
                             <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
@@ -132,10 +136,13 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                         </div>
                         
                     </li>
-                    <li className="sidebar__item">
+                    <li className={`sidebar__item ${active === 2 ? "active" : ""}`} onClick={() => {
+                        setActive(2)
+                        filterBySubcats('Regular Fruits')
+                    }}>
                         <div className="sidebar__item__link">
                         <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Organic.png"} alt="" />
                         </div>
                         <span className="sidebar__item__text">
                         Regular Fruits
@@ -143,10 +150,13 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                         </div>
                         
                     </li>
-                    <li className="sidebar__item">
+                    <li className={`sidebar__item ${active === 3 ? "active" : ""}`} onClick={() => {
+                        setActive(3)
+                        filterBySubcats('Fruit Platters')
+                    }}>
                         <div className="sidebar__item__link">
                         <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/platters_1_3.png"} alt="" />
                         </div>
                         <span className="sidebar__item__text">
                         Fruit Platters
@@ -154,10 +164,13 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                         </div>
                         
                     </li>
-                    <li className="sidebar__item">
+                    <li className={`sidebar__item ${active === 4 ? "active" : ""}`} onClick={() => {
+                        setActive(4)
+                        filterBySubcats('Mangoes')
+                    }}>
                         <div className="sidebar__item__link">
                         <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/Mango.png"} alt="" />
                         </div>
                         <span className="sidebar__item__text">
                         Mangoes
@@ -165,10 +178,13 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                         </div>
                         
                     </li>
-                    <li className="sidebar__item">
+                    <li className={`sidebar__item ${active === 5 ? "active" : ""}`} onClick={() => {
+                        setActive(5)
+                        filterBySubcats('Cut & Sanitized')
+                    }}>
                         <div className="sidebar__item__link">
                         <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Cut_Sanitised_091922_1_1.png"} alt="" />
                         </div>
                         <span className="sidebar__item__text">
                         Cut & Sanitized
@@ -176,10 +192,13 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                         </div>
                         
                     </li>
-                    <li className="sidebar__item">
+                    <li className={`sidebar__item ${active === 6 ? "active" : ""}`} onClick={() => {
+                        setActive(6)
+                        filterBySubcats('Puree')
+                    }}>
                         <div className="sidebar__item__link">
                         <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/puree_1.png"} alt="" />
                         </div>
                         <span className="sidebar__item__text">
                         Puree
@@ -187,10 +206,13 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                         </div>
                         
                     </li>
-                    <li className="sidebar__item">
+                    <li className={`sidebar__item ${active === 7 ? "active" : ""}`} onClick={() => {
+                        setActive(7)
+                        filterBySubcats('Berries')
+                    }}>
                         <div className="sidebar__item__link">
                         <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Berries_091922_1.png"} alt="" />
                         </div>
                         <span className="sidebar__item__text">
                         Berries
@@ -198,10 +220,13 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                         </div>
                         
                     </li>
-                    <li className="sidebar__item">
+                    <li className={`sidebar__item ${active === 8 ? "active" : ""}`} onClick={() => {
+                        setActive(8)
+                        filterBySubcats('Melons')
+                    }}>
                         <div className="sidebar__item__link">
                         <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Melons_091922_1.png"} alt="" />
                         </div>
                         <span className="sidebar__item__text">
                         Melons
@@ -209,10 +234,13 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                         </div>
                         
                     </li>
-                    <li className="sidebar__item">
+                    <li className={`sidebar__item ${active === 9 ? "active" : ""}`} onClick={() => {
+                        setActive(9)
+                        filterBySubcats('Citrus')
+                    }}>
                         <div className="sidebar__item__link">
                         <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Citrus_091922_1.png"} alt="" />
                         </div>
                         <span className="sidebar__item__text">
                         Citrus
@@ -220,10 +248,13 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                         </div>
                         
                     </li>
-                    <li className="sidebar__item">
+                    <li className={`sidebar__item ${active === 10 ? "active" : ""}`} onClick={() => {
+                        setActive(10)
+                        filterBySubcats('Organic')
+                    }}>
                         <div className="sidebar__item__link">
                         <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicFruits_092022_3.png"} alt="" />
                         </div>
                         <span className="sidebar__item__text">
                         Organic
@@ -231,10 +262,13 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                         </div>
                         
                     </li>
-                    <li className="sidebar__item">
+                    <li className={`sidebar__item ${active === 11 ? "active" : ""}`} onClick={() => {
+                        setActive(11)
+                        filterBySubcats('Bulk')
+                    }}>
                         <div className="sidebar__item__link">
                         <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Organics_091922_3_3.png"} alt="" />
                         </div>
                         <span className="sidebar__item__text">
                         Bulk
@@ -248,10 +282,10 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                 {products.map((product,i) => (
                 <li className="products__item" key={i}>
                     <div className="products__item__img">
-                        <img src={product.photo} alt="" />
+                        <img src={product.image} alt="" />
                     </div>
                     <div className="products__item__miniature">
-                        <span>{product.country}</span>
+                        <span>{product.origin}</span>
                         <div className={`products__item__add__btn ${activeBtn.some(item => item === i) ? "active" : ""}`} onClick={() => {
                             setActiveBtn([...activeBtn, i])       
                         }}>
@@ -277,11 +311,11 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                     <div className="products__item__title">{product.name}</div>
                     <div className="products__item__price">
                         <span>{product.valut} {product.price}</span>
-                        {product.new_price && <span>{product.valut} {product.new_price}</span>}          
+                        {product.new_price && <span>AED {product.price_raw}</span>}          
                     </div>
                     <div className="products__item__configs">
-                        <span>1 {product.package}</span>
-                        <span>10 Kg {product.package}</span>
+                        <span>{product.product_option}</span>
+                        <span>10 Kg </span>
                     </div>
                 </li>
                 ))}               

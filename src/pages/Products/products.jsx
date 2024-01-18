@@ -2,6 +2,7 @@ import Header from "../../components/Header/header";
 import {useState,useRef,useEffect} from 'react'
 import { useSelector } from 'react-redux'
 import data from '../../db/products.json'
+import data2 from '../../db/products2.json'
 
 import Megamenu from '../../components/Megamenu/megamenu'
 import Filter from '../../components/Filter/filter'
@@ -17,8 +18,7 @@ import { mdiSort,mdiFilterOutline,mdiRadioboxBlank,mdiClose,mdiCheckboxMarked,md
 
 
 const PageProducts = () =>{
-  
-    const [products,setProducts] = useState([...data.products])
+    const [products,setProducts] = useState(data2.products.all)
 
   const [origin,setOrigin] = useState(['UAE','South Africa','India','Colombia','Thailand','Egypt','Kenya','China','Lebanon','Vietnam','Chile','Iran','Italy','Turkey','Brazil','Peru','Sri Lanka','Serbia','USA','Ukraine'])
   const [tags,setTags] = useState(['By Air','RIPEN AT HOME','Premium By Air','STEAL DEAL','Ready to eat','Ripen at Home','Ripen at home','Best for Gifting','By Air !','By Air ! Ripen at Home','By Air! Ripen at Home','For cooking','Ideal for Cooking','In High Demand','MUST BUY','Premium by Air','RIPEN AT HOME (RAW)','SWEET & TASTY'])
@@ -44,71 +44,79 @@ const PageProducts = () =>{
 
   const filterByPrice = () =>{
     if(selectPrice === 'bestsaving'){
-        setProducts([...products].sort((a,b)=> a.new_price - b.new_price))
-        return
-    }
-    if(selectPrice === 'low'){
-        setProducts([...products].sort((a,b)=> b.price - a.price))
+        setProducts([...products].sort((a,b)=> a.price_raw - b.price_raw))
         return
     }
     if(selectPrice === 'high'){
-        setProducts([...products].sort((a,b)=> a.price - b.price))
+        setProducts([...products].sort((a,b)=> b.price_raw - a.price_raw))
+        return
+    }
+    if(selectPrice === 'low'){
+      setProducts([...products].sort((a,b)=> a.price_raw - b.price_raw))
+      return
     }
   }
 
-  const originalProducts = useRef(products);
-
 const filterBySubcats = (sel) => {
-  let sortedProducts = [...originalProducts.current];
+  
 
   if (sel === 'All') {
-    setProducts(originalProducts.current);
+    setProducts(data2.products.all)
     setTitle('Fruits')
     return;
   }
 
   if (sel === 'Puree') {
-    sortedProducts = sortedProducts.filter(product => product.type === 'puree');
+    setProducts(data2.products.puree)
+
+   
     setTitle('Puree')
   }
   if (sel === 'Regular Fruits') {
-    sortedProducts = sortedProducts.filter(product => product.type === 'regular_fruits');
+    setProducts(data2.products.regular_fruits)
+   
     setTitle('Regular Fruits')
   }
   if (sel === 'Fruit Platters') {
-    sortedProducts = sortedProducts.filter(product => product.type === 'fruit_platters');
+    setProducts(data2.products.fruit_platters)
+    
     setTitle('Fruit Platters')
   }
   if (sel === 'Mangoes') {
-    sortedProducts = sortedProducts.filter(product => product.type === 'mangoes');
+    setProducts(data2.products.mangoes)
+   
     setTitle('Mangoes')
   }
   if (sel === 'Cut & Sanitized') {
-    sortedProducts = sortedProducts.filter(product => product.type === 'cut_sanitized');
+    setProducts(data2.products.cut_sanitized)
+   
     setTitle('Cut & Sanitized')
   }
   if (sel === 'Berries') {
-    sortedProducts = sortedProducts.filter(product => product.type === 'berries');
+    setProducts(data2.products.berries)
+    
     setTitle('Berries')
   }
   if (sel === 'Melons') {
-    sortedProducts = sortedProducts.filter(product => product.type === 'melons');
+    setProducts(data2.products.melons)
+    
     setTitle('Melons')
   }
   if (sel === 'Citrus') {
-    sortedProducts = sortedProducts.filter(product => product.type === 'citrus');
+    setProducts(data2.products.citrus)
+    
     setTitle('Citrus')
   }
   if (sel === 'Organic') {
-    sortedProducts = sortedProducts.filter(product => product.type === 'organic');
+    setProducts(data2.products.organic)
+   
     setTitle('Organic')
   }
   if (sel === 'Bulk') {
-    sortedProducts = sortedProducts.filter(product => product.type === 'bulk');
+    setProducts(data2.products.bulk)
+    
     setTitle('Bulk')
   }
-
-  setProducts(sortedProducts);
 }
 
   const handleCountrySelectChange = (event) => {
@@ -137,10 +145,10 @@ const filterBySubcats = (sel) => {
     let sortedProducts = [...products];
 
     if (selectedCountries.length !== 0) {
-      sortedProducts = sortedProducts.filter(product => selectedCountries.includes(product.country));
+      sortedProducts = sortedProducts.filter(product => selectedCountries.includes(product.origin));
     }
 
-    sortedProducts.sort((a, b) => a.country.localeCompare(b.country));
+    sortedProducts.sort((a, b) => a.origin.localeCompare(b.origin));
 
     setProducts(sortedProducts);
   };
@@ -149,10 +157,10 @@ const filterBySubcats = (sel) => {
     let sortedProducts = [...products];
 
     if (selectedCountries.length !== 0) {
-      sortedProducts = sortedProducts.filter(product => selectedCountries.includes(product.country));
+      sortedProducts = sortedProducts.filter(product => selectedCountries.includes(product.additional_data.labels));
     }
 
-    sortedProducts.sort((a, b) => a.country.localeCompare(b.country));
+    sortedProducts.sort((a, b) => a.additional_data.labels.localeCompare(b.additional_data.labels));
 
     setProducts(sortedProducts);
   }
@@ -161,7 +169,7 @@ const filterBySubcats = (sel) => {
     setSelectedCountries([])
     setSelected([])
     sortProductsByCountry()
-    setProducts(originalProducts.current)
+    setProducts(data2.products.all)
   }
 
   const [isFixed, setIsFixed] = useState(false);

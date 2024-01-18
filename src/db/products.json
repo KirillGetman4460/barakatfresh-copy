@@ -9,7 +9,7 @@
             "price":48.50,
             "new_price":25.00,
             "package":"box",
-            "type":"bulk",
+            "type":"citrus",
             "quantity":1
         },
         {
@@ -57,7 +57,7 @@
             "price":6.00,
             "new_price": 1.00,
             "package":"box",
-            "type":"bulk",
+            "type":"citrus",
             "quantity":1
         },
         {
@@ -114,6 +114,476 @@
       "package":"box",
       "type":"puree",
       "quantity":1
-    }
+    },
+
+    {
+        "id":11,
+        "name":"Strawberry Egypt Box 2.5kg",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/s/t/strawberry1.jpg",
+        "country" :"UAE",
+        "valut":"AED",
+        "price":78.00,
+        "new_price":65.00,
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+      {
+        "id":432,
+        "name":"Strawberry 1Kg Box",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/s/t/strawberry_packet_1kg_morocco.jpg",
+        "country" :"Morocco",
+        "valut":"AED",
+        "price":59.00,
+        "new_price":37.75,
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+      {
+        "id":12,
+        "name":"Strawberry Egypt 250g",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/s/h/shutterstock_1855009942.jpg",
+        "country" :"UAE",
+        "valut":"AED",
+        "price": 14.00, 
+        "new_price":7.50,
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+      {
+        "id":13,
+        "name":"Mandarins 500g",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/m/a/mandarin.jpg",
+        "country" :"UAE",
+        "valut":"AED",
+        "price":6.00, 
+        "new_price":1.00,
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+      {
+        "id":14,
+        "name":"Pomegranate 400-500g",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/p/o/pomegranate-1pcegypt.jpg",
+        "country" :"UAE",
+        "valut":"AED",
+        "price":3.95, 
+        "new_price":2.95,
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+      {
+        "id":15,
+        "name":"Baby Pineapple Peeled (3-4 Pieces)",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/baby-pineapple-peeled.jpg",
+        "country" :"UAE",
+        "valut":"AED",
+        "price": 30.00, 
+        "new_price":22.50,
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+      {
+        "id":16,
+        "name":"Baby Banana",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/m/a/mandarin-with-leaves_1.jpg",
+        "country" :"UAE",
+        "valut":"AED",
+        "price":12.95, 
+        "new_price":9.95,
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+      {
+        "id":65465,
+        "name":"Orange Valencia 400-500g",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/o/r/orange-valencia-1100x1100.jpg",
+        "country" :"South Africa",
+        "valut":"AED",
+        "price": 3.50, 
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+      {
+        "id":6546543,
+        "name":"Grapes White 500g",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/s/o/sonaka_grapes_1.jpg",
+        "country" :"South Africa",
+        "valut":"AED",
+        "price": 11.95, 
+        "new_price":8.50,
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+      {
+        "id":654654332,
+        "name":"Coconut Tender",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/t/e/tender_coconut1_1pc_1_1.jpg",
+        "country" :"Thailand",
+        "valut":"AED",
+        "price": 7.50, 
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+      {
+        "id":6546543332,
+        "name":"Blueberry 125g",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/l/blueberry-125g.jpg",
+        "country" :"Thailand",
+        "valut":"AED",
+        "price": 8.50, 
+        "new_price":7.25,
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+      {
+        "id":6546543332,
+        "name":"Grapes Red Seedless 500g",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/r/grape-red-seedless-500gms.jpg",
+        "country" :"India",
+        "valut":"AED",
+        "price": 10.00, 
+        "new_price":7.95,
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+      {
+        "id":654555543332,
+        "name":"Banana Semi Ripe 0.9-1kg",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/banana_1.jpg",
+        "country" :"India",
+        "valut":"AED",
+        "price": 7.25, 
+        "new_price":6.50,
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+      {
+        "id":6546546546543332,
+        "name":"Dragon Fruits 350-500g",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/d/r/dragon-fruit-300-350g.jpg",
+        "country" :"Vietnam",
+        "valut":"AED",
+        "price": 6.95, 
+        "new_price":4.25,
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+      {
+        "id":653332111,
+        "name":"Avocado Hass 150-200g",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/a/v/avocado-hass-ripe-1pc-1piece.jpg",
+        "country" :"South Africa",
+        "valut":"AED",
+        "price": 9.95, 
+        "new_price":5.75,
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+      
+      {
+        "id":17,
+        "name":"Blackberry Puree 1L",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6343.jpg",
+        "country" :"UAE",
+        "valut":"AED",
+        "price":5.45, 
+        "new_price":7.00,
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+      {
+        "id":18,
+        "name":"Orange Valencia 400-500g",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6343.jpg",
+        "country" :"UAE",
+        "valut":"AED",
+        "price":3.50, 
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+      {
+        "id":19,
+        "name":"Blackberry Puree 1L",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6343.jpg",
+        "country" :"UAE",
+        "valut":"AED",
+        "price":54.00, 
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+      {
+        "id":20,
+        "name":"Blackberry Puree 1L",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6343.jpg",
+        "country" :"UAE",
+        "valut":"AED",
+        "price":54.00, 
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+
+      {
+        "id":21,
+        "name":"Blackberry Puree 1L",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/g/i/gi4a6343.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price":54.00, 
+        "package":"box",
+        "type":"regular_fruits",
+        "quantity":1
+      },
+
+      {
+        "id":22,
+        "name":"Exotic Medley Platter 36cm",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/i/m/img_4220_2__1.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price":130.00, 
+        "new_price":119.00,
+        "package":"box",
+        "type":"fruit_platters",
+        "quantity":1
+      }
+      ,
+      {
+        "id":23,
+        "name":"Sweet Summer Surprise Platter 36cm",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/i/m/img_4225_1__1.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price":149.00, 
+        "new_price":142.00,
+        "package":"box",
+        "type":"fruit_platters",
+        "quantity":1
+      }
+      ,
+      {
+        "id":24,
+        "name":"Vegetable Crudites Platter with Hummus Dip 1.5Kg",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/v/e/vegetable_crudit_platter_with_dip_1.5_kg.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price":49.00, 
+        "new_price":43.00,
+        "package":"box",
+        "type":"fruit_platters",
+        "quantity":1
+      }
+      ,
+      {
+        "id":25,
+        "name":"Skewer Surprise Fruit Platter",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/s/k/skewer_surprise_fruit_platter_1_.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price":79.00, 
+        "new_price":59.00,
+        "package":"box",
+        "type":"fruit_platters",
+        "quantity":1
+      }
+      ,
+      {
+        "id":26,
+        "name":"Berry Bouquet Fruit Platter 36cm",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/e/berry_bouquet_1.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price":169.00, 
+        "new_price":139.00,
+        "package":"box",
+        "type":"fruit_platters",
+        "quantity":1
+      },
+
+      {
+        "id":26,
+        "name":"Mango Fruit Cup 200g",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/e/berry_bouquet_1.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price":18.00, 
+        "new_price":15.75,
+        "package":"box",
+        "type":"mangoes",
+        "quantity":1
+      },
+      {
+        "id":27,
+        "name":"Mango Eat Me 400-500g",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/m/a/mango-eat-me_1pc.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price": 12.50, 
+        "package":"box",
+        "type":"mangoes",
+        "quantity":1
+      },
+      {
+        "id":28,
+        "name":"Mango Long",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/m/a/mango_long_1kg.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price":22.00, 
+        "new_price":19.95,
+        "package":"box",
+        "type":"mangoes",
+        "quantity":1
+      },
+
+      {
+        "id":29,
+        "name":"Baby Pineapple Peeled (3-4 Pieces)",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/baby-pineapple-peeled.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price":30.00, 
+        "new_price":22.50,
+        "package":"box",
+        "type":"cut_sanitized",
+        "quantity":1
+      },
+      {
+        "id":30,
+        "name":"Coconut Chunks 125g",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/c/u/cut_fruits_-_coconut.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price":7.00, 
+        "new_price":4.95,
+        "package":"box",
+        "type":"cut_sanitized",
+        "quantity":1
+      },
+
+      {
+        "id":31 ,
+        "name":"Watermelon Marbles 250g",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/i/m/img_4176-removebg-preview.png",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price":7.75, 
+        "package":"box",
+        "type":"melons",
+        "quantity":1
+      },
+      {
+        "id":32 ,
+        "name":"Watermelon Juice 200ml",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/j/u/just_watermelon-front_200ml.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price":7.75, 
+        "package":"box",
+        "type":"melons",
+        "quantity":1
+      },
+      {
+        "id":33 ,
+        "name":"Sweet Melon",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/s/w/sweet-melon.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price":7.75, 
+        "package":"box",
+        "type":"melons",
+        "quantity":1
+      },
+
+
+      {
+        "id":34 ,
+        "name":"Apple Royal Gala Organic",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/a/p/apple-royal-gala-1-kg-1kg_1.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price":24.25, 
+        "new_price":19.95,
+        "package":"box",
+        "type":"organic",
+        "quantity":1
+      },
+      {
+        "id":35 ,
+        "name":"Lime Organic 500g",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/l/i/lime-green-seedless-250gms_1_2.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price":14.00, 
+        "package":"box",
+        "type":"organic",
+        "quantity":1
+      },
+      {
+        "id":36 ,
+        "name":"Avocado Hass Organic",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/a/v/avocado-hass-organic_1.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price":25.50, 
+        "package":"box",
+        "type":"organic",
+        "quantity":1
+      },
+
+
+      {
+        "id":37 ,
+        "name":"Orange Valencia 2.8-3Kg Bag",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/o/r/orange-valencia-3-kg-box.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price": 18.50, 
+        "package":"box",
+        "type":"bulk",
+        "quantity":1
+      },
+      {
+        "id":33 ,
+        "name":"Coconut King/Yellow Box",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/i/m/img_1171-01_1.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price": 48.00, 
+        "package":"box",
+        "type":"bulk",
+        "quantity":1
+      },
+      {
+        "id":33 ,
+        "name":"Lemon",
+        "photo": "https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/l/e/lemon-3-kg-bag.jpg",
+        "country" :"UAE",   
+        "valut":"AED",
+        "price": 19.50, 
+        "package":"box",
+        "type":"bulk",
+        "quantity":1
+      }
+
+
     ]
 }

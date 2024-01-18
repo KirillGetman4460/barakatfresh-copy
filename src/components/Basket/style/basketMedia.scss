@@ -19,8 +19,113 @@
         margin-top: 20px;
     }
 }
-
+.layout_head{
+    display: none;
+}
+.cart_footer{
+    display: none;
+}
 @media(max-width:768px){
+    .cart_footer{
+        display: block;
+        left: 0;
+    width: 100%;
+    z-index: 99;
+    bottom: 60px;
+    padding: 10px;
+    position: fixed;
+    flex-direction: row;
+    background-color: #fff;
+    border-top: 1px solid #e9e9e9;
+    }
+    .cart_summary{
+        flex-grow: 1;
+        flex-basis: 60%;
+
+    }
+    .summary{
+        display: flex;
+        font-size: 17px;
+        flex-direction: column;
+
+    }
+    .summary_value_subtotal{
+        font-weight: 700;
+    }
+
+    .summary span{
+        display: flex;
+    }
+    .cart_button{
+        flex-grow: 1;
+        flex-basis: 40%;
+        color: #fff;
+        border: 1px solid #2cc84d;
+        background-color: #2cc84d;
+        text-align: center;
+        font-size: 16px;
+        display: block;
+        cursor: pointer;
+        border-radius: 4px;
+        text-align: center;
+        letter-spacing: 1px;
+        line-height: 45px;
+    }
+    .cart_button_title{
+        
+    }
+    .summary_value_vat{
+        font-size: 14px;
+        margin: 0 7px;
+    }
+    .summary_title_vat{
+        font-size: 14px;
+    margin: 0 7px;
+    }
+    .cart_footer_content{
+        display: flex;
+        align-items: center;
+    }
+    .layout_head{
+        display: block;
+        top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    height: 44px;
+    background-color: #fff;
+    border-bottom: 1px solid #f4f3f3;
+    }
+    .rootheader_title{
+        font-size: 16px;
+        max-width: 230px;
+        overflow: hidden;
+        font-weight: 700;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .rootheader_back{
+        top: 0;
+        left: 0;
+        width: 35px;
+        position: absolute;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .rootheader{
+        height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    }
+    .basket__conteiner{
+        padding-top: 44px;
+    }
     .br_columns{
         display: none;
     }

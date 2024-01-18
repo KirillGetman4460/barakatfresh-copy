@@ -1,13 +1,13 @@
 import { useState,useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import EmptyLogo from '../../img/Basket/empty_cart.61afa099.png'
-import {deleteItem} from '../../store/basketSlice/basketSlice'
+import {deleteItem,addBasket,deleteItemBasket,minusQuantity} from '../../store/basketSlice/basketSlice'
 
 import Icon from '@mdi/react';
 
 import { NavLink } from "react-router-dom";
 
-import { mdiSort,mdiFilterOutline,mdiRadioboxBlank,mdiClose,mdiCheckboxMarked,mdiCheckboxBlankOutline,mdiChevronLeft,mdiChevronRight,mdiHomeOutline,mdiCartOutline ,mdiPlus,mdiMinus,mdiDeleteOutline    } from '@mdi/js';
+import {mdiSort,mdiFilterOutline,mdiRadioboxBlank,mdiClose,mdiCheckboxMarked,mdiCheckboxBlankOutline,mdiChevronLeft,mdiChevronRight,mdiHomeOutline,mdiCartOutline ,mdiPlus,mdiMinus,mdiDeleteOutline    } from '@mdi/js';
 
 import './style/basket.scss'
 import './style/basketMedia.scss'
@@ -22,6 +22,20 @@ const Basket = () =>{
 
     return (
         <div className="basket">
+            <div className="layout_head">
+                <div className="rootheader">
+                    <NavLink to={'/'}>
+                    <div className="rootheader_back">
+                        <div className="rootheader_back__icon">
+                            <Icon path={mdiChevronLeft} size={1} color={'rgb(96, 96, 96)'} />
+                        </div>
+                        
+                    </div>
+                    </NavLink>
+                    
+                    <div className="rootheader_title">Cart</div>
+                </div>
+            </div>
             <div className="basket__conteiner">
             {!basket.length ?
                 <div className='basket__empty'>
@@ -50,30 +64,34 @@ const Basket = () =>{
                             {basket.map(product => (
                                  <li className="cartitems_item" key={basket.id}>
                                  <div className="cartitem_thumb">
-                                     <img src={product.photo} alt="" />
+                                     <img src={product.image} alt="" />
                                  </div>
                                  <div className="cartitem_row">
                                      <span className="cartitem_title">{product.name}</span>
                                      <div className="cartitem_price">
                                          <div className="itemprice">
-                                             <div className="special">{product.valut} {product.new_price}</div>
+                                             <div className="special">{product.valut} {product.price_rew}</div>
                                              <div className="strike">{product.valut} {product.price}</div>
                                          </div>
                                      </div>
                                      <div className="cartitem_tags">
-                                         <div className="cartitem_tag">{product.country}</div>
-                                         <div className="cartitem_tag">1 {product.package}</div>
+                                         <div className="cartitem_tag">{product.origin}</div>
+                                         <div className="cartitem_tag">1 {product.product_option}</div>
                                      </div>
                                  </div>
                                  <div className="cartitem_actions">
                                      <div className="itemqty">
                                          <div className="counter">
-                                            <span className='decrease'>
+                                            <span className='decrease' onClick={() => dispatch(addBasket(product))}>
                                                 <Icon path={mdiPlus} size={1} color={'#2cc84d'} />
                                             </span>
                                              
                                              <span className='counter_value'>{product.quantity}</span>
-                                             <span className='increase'>
+                                             <span className='increase' onClick={() =>{
+                                                 
+                                                 dispatch(minusQuantity(product))
+                                                 dispatch(deleteItemBasket(product))
+                                             }}>
                                              <Icon path={mdiMinus} size={1} color={'#2cc84d'} />
                                             </span>
                                             
@@ -100,7 +118,7 @@ const Basket = () =>{
                         <div className="summary_body">
                             <div className="summary_item">
                                 <span>Subtotal</span>
-                                <span>AED 52.00</span>
+                                <span>AED {totalPrice}</span>
                             </div>
                             <div className="summary_sep"></div>
                             <div className="summary_item total">
@@ -122,6 +140,29 @@ const Basket = () =>{
                     </>
                 }
                
+            </div>
+            <div className="cart_footer">
+                <div className="cart_footer_content">
+                    <div className="cart_summary">
+                        <div className="summary">
+                            <span>
+                                <span>Subtotal</span>
+                                <div className="summary_title_vat">(Incl. Tax)</div>
+                            </span>
+                            <span>
+                                <div className="summary_value_subtotal">
+                                    AED {totalPrice}
+                                </div>
+                                <div className="summary_value_vat">
+                                    (AED 0.36)
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div className="cart_button">
+                        <span className='cart_button_title'>PROCEED</span>
+                    </div>
+                </div>
             </div>
             <div className="layout_tabs">
           <ul className="tabs">
