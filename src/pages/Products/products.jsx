@@ -29,7 +29,10 @@ const PageProducts = () =>{
 
   const [selectedCountries, setSelectedCountries] = useState([]);
 
+  const [selectedTags, setSelectedTags] = useState([]);
+
   const [selected, setSelected] = useState([]);
+  const [tagsSelected,setTagsSelected] = useState([])
 
   const [activeSort,setActiveSort] = useState(false)
 
@@ -127,6 +130,15 @@ const filterBySubcats = (sel) => {
     }
     
   };
+  const handleTagsSelectChange = (event) => {
+    const checkSelect = selectedTags.find(item => item === event)
+    if(!checkSelect){
+      setSelectedTags(prev => [...prev, event])
+      return
+    }
+    
+  };
+
 
   const handleSelectChange = (event) => {
     setSelected((prev) => {  
@@ -141,6 +153,20 @@ const filterBySubcats = (sel) => {
     });
   };
 
+  const handleTagsChange = (event) => {
+    setTagsSelected((prev) => {  
+      const isSelected = prev.includes(event);
+  
+      if (isSelected) {
+       
+        return prev.filter((item) => item !== event);
+      } else {
+        return [...prev, event];
+      }
+    });
+  };
+
+
   const sortProductsByCountry = () => {
     let sortedProducts = [...products];
 
@@ -153,15 +179,28 @@ const filterBySubcats = (sel) => {
     setProducts(sortedProducts);
   };
 
-  const sortProductsByTags = () =>{
+  const sortProductsByTags = () => {
+
+    
     let sortedProducts = [...products];
-
-    if (selectedCountries.length !== 0) {
-      sortedProducts = sortedProducts.filter(product => selectedCountries.includes(product.additional_data.labels));
+  
+    if (selectedTags.length !== 0) {
+      sortedProducts = sortedProducts.filter(product => 
+        product.additional_data && product.additional_data.labels && 
+        selectedTags.some(countryLabel => product.additional_data.labels.includes(countryLabel))
+      );
     }
-
-    sortedProducts.sort((a, b) => a.additional_data.labels.localeCompare(b.additional_data.labels));
-
+  
+    sortedProducts.sort((a, b) => {
+      const labelsA = a.additional_data && a.additional_data.labels || [];
+      const labelsB = b.additional_data && b.additional_data.labels || [];
+  
+      const labelA = labelsA.length > 0 ? labelsA[0] : '';
+      const labelB = labelsB.length > 0 ? labelsB[0] : '';
+  
+      return labelA.localeCompare(labelB);
+    });
+  
     setProducts(sortedProducts);
   }
 
@@ -200,6 +239,24 @@ const filterBySubcats = (sel) => {
             <ul className="megamenu__list">
                 <li className="megamenu__item">
                     <span>Bbq Range</span>
+                    <div className="megamenu_child">
+                      <div className="submenu">
+                        <div className="br_wrapper">
+                          <ul className="submenu_list">
+                            <li className="submenu_item">
+                              <div className="submenu_link">
+                                <div className="submenu_image">
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organic.png'} alt="" />
+                                </div>
+                                <div className="submenu_title">
+                                  Regular Fruits
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                 </li>
                 <li className="megamenu__item">
                     <span>Fruits</span>
@@ -425,8 +482,8 @@ const filterBySubcats = (sel) => {
             <Filter></Filter>
             {/* <FilterChecbox></FilterChecbox>
             <FilterChecbox></FilterChecbox> */}
-            <FilterMultiSelect title={'Origin'} origin={origin} sortProductsByCountry={sortProductsByCountry} handleCountrySelectChange={handleCountrySelectChange} resetSelectedCountries={resetSelectedCountries} selected={selected} handleSelectChange={handleSelectChange}></FilterMultiSelect>
-            <FilterMultiSelect title={'Tags'} origin={tags} sortProductsByCountry={sortProductsByCountry}></FilterMultiSelect>
+            <FilterMultiSelect title={'Origin'} origin={origin} sortProductsByCountry={sortProductsByCountry} handleCountrySelectChange={handleCountrySelectChange} resetSelectedCountries={resetSelectedCountries} selected={selected} handleSelectChange={handleSelectChange} ></FilterMultiSelect>
+            <FilterMultiSelect title={'Tags'} origin={tags} sortProductsByCountry={sortProductsByTags} handleCountrySelectChange={handleTagsSelectChange} handleSelectChange={handleTagsChange} selected={tagsSelected}></FilterMultiSelect>
           </div>
 
           <Products title={title} products={products} filterBySubcats={filterBySubcats} filterByPrice={filterByPrice} selectPrice={selectPrice} setSelectPrice={setSelectPrice} ></Products>
