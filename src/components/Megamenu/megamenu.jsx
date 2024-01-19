@@ -186,30 +186,30 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organic.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organic_091922_2.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Regular Fruits
+                                Regular Vegetables
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/platters_1_3.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_IndianRange.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Fruit Platters
+                                From India
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Thai_viet.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Mangoes
+                                Thai/vietnam
                                 </div>
                               </div>
                             </li>
@@ -217,70 +217,50 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cut_Sanitised_091922_1_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Flat_Beans.png'} alt="" />
+                                </div>
+                                <div className="submenu_title">
+                                Levant
+                                </div>
+                              </div>
+                            </li>
+
+                            <li className="submenu_item">
+                              <div className="submenu_link">
+                                <div className="submenu_image">
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/locally_grown.png'} alt="" />
+                                </div>
+                                <div className="submenu_title">
+                                Locally Grown
+                                </div>
+                              </div>
+                            </li>
+
+                            <li className="submenu_item">
+                              <div className="submenu_link">
+                                <div className="submenu_image">
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Leafies.png'} alt="" />
+                                </div>
+                                <div className="submenu_title">
+                                Leafies
+                                </div>
+                              </div>
+                            </li>
+                            
+                            <li className="submenu_item">
+                              <div className="submenu_link">
+                                <div className="submenu_image">
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cut_Sanitised_091922_2_2.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
                                 Cut & Sanitized
                                 </div>
                               </div>
                             </li>
-
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Mangoes
-                                </div>
-                              </div>
-                            </li>
-
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/puree_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Puree
-                                </div>
-                              </div>
-                            </li>
-                            
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Berries_091922_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Berries
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Melons_091922_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Melons
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Citrus_091922_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Citrus
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicFruits_092022_3.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Capsicum_Mix.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
                                 Organic
@@ -290,13 +270,14 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organics_091922_3_3.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Bulk_091922_2.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
                                 Bulk
                                 </div>
                               </div>
                             </li>
+          
 
 
                           </ul>
@@ -313,30 +294,30 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organic.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/GI4A6319-1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Regular Fruits
+                                Mocktails
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/platters_1_3.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_FamilyPacks_092022_2.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Fruit Platters
+                                Family Packs
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Shots_091922_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Mangoes
+                                Shots
                                 </div>
                               </div>
                             </li>
@@ -344,10 +325,10 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cut_Sanitised_091922_1_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Burn_Stubborn_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Cut & Sanitized
+                                Cold Pressed
                                 </div>
                               </div>
                             </li>
@@ -355,10 +336,10 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Iced_Tea_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Mangoes
+                                Iced Tea
                                 </div>
                               </div>
                             </li>
@@ -366,10 +347,10 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/puree_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Juices_091922_2_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Puree
+                                Juices
                                 </div>
                               </div>
                             </li>
@@ -377,54 +358,63 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Berries_091922_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/green_chia.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Berries
+                                Healthy Juice Range
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Melons_091922_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Smoothies_091922_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Melons
+                                Smoothies
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Citrus_091922_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_JuiceCombos_091922_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Citrus
+                                Juice Combos
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicFruits_092022_3.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/myD_CoQ-10.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Organic
+                                Myd Range
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organics_091922_3_3.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/gi4a6307__1_.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Bulk
+                                Ghaf Range
                                 </div>
                               </div>
                             </li>
-
+                            <li className="submenu_item">
+                              <div className="submenu_link">
+                                <div className="submenu_image">
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Keto_092022_1.png'} alt="" />
+                                </div>
+                                <div className="submenu_title">
+                                Keto
+                                </div>
+                              </div>
+                            </li>
 
                           </ul>
                         </div>
@@ -440,63 +430,30 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organic.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Chicken_092022_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Regular Fruits
+                                Chicken
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/platters_1_3.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_LambMutton_092022_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Fruit Platters
+                                Lamb/mutton
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Beef_092022_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Mangoes
-                                </div>
-                              </div>
-                            </li>
-                            
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cut_Sanitised_091922_1_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Cut & Sanitized
-                                </div>
-                              </div>
-                            </li>
-
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Mangoes
-                                </div>
-                              </div>
-                            </li>
-
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/puree_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Puree
+                                Beef
                                 </div>
                               </div>
                             </li>
@@ -504,10 +461,43 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Berries_091922_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Turkey_092022_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Berries
+                                Turkey
+                                </div>
+                              </div>
+                            </li>
+
+                            <li className="submenu_item">
+                              <div className="submenu_link">
+                                <div className="submenu_image">
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Seafood.png'} alt="" />
+                                </div>
+                                <div className="submenu_title">
+                                Seafood
+                                </div>
+                              </div>
+                            </li>
+
+                            <li className="submenu_item">
+                              <div className="submenu_link">
+                                <div className="submenu_image">
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_MarinatedMeats_092022_3.png'} alt="" />
+                                </div>
+                                <div className="submenu_title">
+                                Marinated Meats
+                                </div>
+                              </div>
+                            </li>
+                            
+                            <li className="submenu_item">
+                              <div className="submenu_link">
+                                <div className="submenu_image">
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_4.png'} alt="" />
+                                </div>
+                                <div className="submenu_title">
+                                Sausages & Burgers
                                 </div>
                               </div>
                             </li>
@@ -524,35 +514,13 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Citrus_091922_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/chicken.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Citrus
+                                Premium Meats
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicFruits_092022_3.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Organic
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organics_091922_3_3.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Bulk
-                                </div>
-                              </div>
-                            </li>
-
-
                           </ul>
                         </div>
                       </div>
@@ -567,63 +535,30 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organic.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Chicken_Tikka.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Regular Fruits
+                                Keto
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/platters_1_3.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_VegetarianTreats_092222_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Fruit Platters
+                                Salads
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_ReadyMeals_092222_2.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Mangoes
-                                </div>
-                              </div>
-                            </li>
-                            
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cut_Sanitised_091922_1_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Cut & Sanitized
-                                </div>
-                              </div>
-                            </li>
-
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Mangoes
-                                </div>
-                              </div>
-                            </li>
-
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/puree_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Puree
+                                Ready Meals
                                 </div>
                               </div>
                             </li>
@@ -631,50 +566,103 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Berries_091922_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Sandwiches-removebg-preview.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Berries
+                                Sandwiches
+                                </div>
+                              </div>
+                            </li>
+
+                            <li className="submenu_item">
+                              <div className="submenu_link">
+                                <div className="submenu_image">
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/FRUIT_CUBES.png'} alt="" />
+                                </div>
+                                <div className="submenu_title">
+                                Cut Fruits
+                                </div>
+                              </div>
+                            </li>
+
+                            <li className="submenu_item">
+                              <div className="submenu_link">
+                                <div className="submenu_image">
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/F649442_-_Chicken_Breast.png'} alt="" />
+                                </div>
+                                <div className="submenu_title">
+                                Cook In The Bag
+                                </div>
+                              </div>
+                            </li>
+                            
+                            <li className="submenu_item">
+                              <div className="submenu_link">
+                                <div className="submenu_image">
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_ReadyToCook_091922_1.png'} alt="" />
+                                </div>
+                                <div className="submenu_title">
+                                Ready To Cook
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Melons_091922_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Dips.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Melons
+                                Fresh Dips
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Citrus_091922_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_BreakfastPots_092222_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Citrus
+                                Breakfast Pots
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicFruits_092022_3.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Skewres_2__1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Organic
+                                Skewers
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organics_091922_3_3.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Croissants_Danish_092222_2.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Bulk
+                                Croissants & Danish
+                                </div>
+                              </div>
+                            </li>
+                            <li className="submenu_item">
+                              <div className="submenu_link">
+                                <div className="submenu_image">
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cakes_092322_1.png'} alt="" />
+                                </div>
+                                <div className="submenu_title">
+                                Cakes
+                                </div>
+                              </div>
+                            </li>
+                            <li className="submenu_item">
+                              <div className="submenu_link">
+                                <div className="submenu_image">
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_SoupsSauces_Gravies_092222_1.png'} alt="" />
+                                </div>
+                                <div className="submenu_title">
+                                Soups, Sauces & Gravies
                                 </div>
                               </div>
                             </li>
@@ -694,23 +682,45 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organic.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/healthy_treat_basket.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Regular Fruits
+                                Gift Baskets
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/platters_1_3.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/berry_bouquet.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Fruit Platters
+                                Party Platters
                                 </div>
                               </div>
                             </li>
+                            <li className="submenu_item">
+                              <div className="submenu_link">
+                                <div className="submenu_image">
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/party_lovers.png'} alt="" />
+                                </div>
+                                <div className="submenu_title">
+                                Party Packs
+                                </div>
+                              </div>
+                            </li>
+                            
+                            <li className="submenu_item">
+                              <div className="submenu_link">
+                                <div className="submenu_image">
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/berries_more.png'} alt="" />
+                                </div>
+                                <div className="submenu_title">
+                                Fruit Boxes
+                                </div>
+                              </div>
+                            </li>
+
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -721,91 +731,17 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cut_Sanitised_091922_1_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Cut & Sanitized
-                                </div>
-                              </div>
-                            </li>
 
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cakes_092322_2.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Mangoes
+                                Cakes
                                 </div>
                               </div>
                             </li>
-
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/puree_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Puree
-                                </div>
-                              </div>
-                            </li>
-                            
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Berries_091922_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Berries
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Melons_091922_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Melons
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Citrus_091922_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Citrus
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicFruits_092022_3.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Organic
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organics_091922_3_3.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Bulk
-                                </div>
-                              </div>
-                            </li>
-
 
                           </ul>
                         </div>
@@ -821,30 +757,30 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organic.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicVegetables_092022_2.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Regular Fruits
+                                Organic Vegetables
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/platters_1_3.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicFruits_092022_4.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Fruit Platters
+                                Organic Fruits
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicMilk_092022_2.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Mangoes
+                                Organic Milk
                                 </div>
                               </div>
                             </li>
@@ -852,10 +788,10 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cut_Sanitised_091922_1_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicEggs_092022_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Cut & Sanitized
+                                Organic Eggs
                                 </div>
                               </div>
                             </li>
@@ -863,77 +799,13 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Grocery_092022_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Mangoes
+                                Grocery
                                 </div>
                               </div>
                             </li>
-
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/puree_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Puree
-                                </div>
-                              </div>
-                            </li>
-                            
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Berries_091922_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Berries
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Melons_091922_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Melons
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Citrus_091922_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Citrus
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicFruits_092022_3.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Organic
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organics_091922_3_3.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Bulk
-                                </div>
-                              </div>
-                            </li>
-
-
                           </ul>
                         </div>
                       </div>
@@ -948,30 +820,30 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organic.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Croissants_Danish_092222_1_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Regular Fruits
+                                Croissants & Danish
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/platters_1_3.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Bread_Loafs_092222_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Fruit Platters
+                                Bread & Loafs
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Keto_Pecan.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Mangoes
+                                Keto
                                 </div>
                               </div>
                             </li>
@@ -979,10 +851,10 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cut_Sanitised_091922_1_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Donuts_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Cut & Sanitized
+                                Donuts
                                 </div>
                               </div>
                             </li>
@@ -990,10 +862,10 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Buns_Rolls_092222_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Mangoes
+                                Buns & Rolls
                                 </div>
                               </div>
                             </li>
@@ -1001,10 +873,10 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/puree_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cakes_092222_1_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Puree
+                                Cookies & Muffins
                                 </div>
                               </div>
                             </li>
@@ -1012,55 +884,13 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Berries_091922_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cookies_Muffins_092222_2.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Berries
+                                Cakes
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Melons_091922_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Melons
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Citrus_091922_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Citrus
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicFruits_092022_3.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Organic
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organics_091922_3_3.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Bulk
-                                </div>
-                              </div>
-                            </li>
-
-
                           </ul>
                         </div>
                       </div>
@@ -1075,30 +905,30 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organic.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_FreshMilk_092322_2.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Regular Fruits
+                                Fresh Milk
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/platters_1_3.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_LongShelfLife-Milk_092322_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Fruit Platters
+                                Long Shelf Life Milk
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_MilkAlternatives_092322_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Mangoes
+                                Milk Alternatives
                                 </div>
                               </div>
                             </li>
@@ -1106,10 +936,10 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cut_Sanitised_091922_1_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Eggs_092322_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Cut & Sanitized
+                                Eggs
                                 </div>
                               </div>
                             </li>
@@ -1117,10 +947,10 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Paneer_Tofu_092322_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Mangoes
+                                Paneer & Tofu
                                 </div>
                               </div>
                             </li>
@@ -1128,10 +958,10 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/puree_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Butter_Ghee_092322_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Puree
+                                Butter & Ghee
                                 </div>
                               </div>
                             </li>
@@ -1139,55 +969,33 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Berries_091922_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Yogurt_Lassi_092322_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Berries
+                                Yogurt & Lassi
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Melons_091922_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cream_Laban_092322_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Melons
+                                Cream & Laban
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Citrus_091922_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cheese_092322_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Citrus
+                                Cheese
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicFruits_092022_3.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Organic
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organics_091922_3_3.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Bulk
-                                </div>
-                              </div>
-                            </li>
-
-
                           </ul>
                         </div>
                       </div>
@@ -1202,118 +1010,33 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organic.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Icecreams_091922_4.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Regular Fruits
+                                Ice Creams
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/platters_1_3.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_JuicePops_092322_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Fruit Platters
+                                Juice Pops
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Sorbet_092322_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Mangoes
+                                Sorbet
                                 </div>
                               </div>
                             </li>
-                            
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cut_Sanitised_091922_1_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Cut & Sanitized
-                                </div>
-                              </div>
-                            </li>
-
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Mangoes
-                                </div>
-                              </div>
-                            </li>
-
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/puree_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Puree
-                                </div>
-                              </div>
-                            </li>
-                            
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Berries_091922_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Berries
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Melons_091922_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Melons
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Citrus_091922_1.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Citrus
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicFruits_092022_3.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Organic
-                                </div>
-                              </div>
-                            </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organics_091922_3_3.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Bulk
-                                </div>
-                              </div>
-                            </li>
-
 
                           </ul>
                         </div>
@@ -1329,30 +1052,30 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organic.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/rice_pulses.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Regular Fruits
+                                Rice & Pulses
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/platters_1_3.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Dates_Nuts_092322_2.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Fruit Platters
+                                Dates & Nuts
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Tea_Coffee_2_.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Mangoes
+                                Tea & Coffee
                                 </div>
                               </div>
                             </li>
@@ -1360,10 +1083,10 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cut_Sanitised_091922_1_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/chocolates.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Cut & Sanitized
+                                Chocolates & Sweets
                                 </div>
                               </div>
                             </li>
@@ -1371,10 +1094,10 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Spices_condiments.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Mangoes
+                                Herbs & Spices
                                 </div>
                               </div>
                             </li>
@@ -1382,10 +1105,10 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/puree_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/Ghee_Oil.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Puree
+                                Oil, Ghee & Butter Range
                                 </div>
                               </div>
                             </li>
@@ -1393,55 +1116,43 @@ const Megamenu = () =>{
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Berries_091922_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Water_092322_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Berries
+                                Water
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Melons_091922_1.png'} alt="" />
+                                  <img src={'src="https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicGrocery_092322_2.png"'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Melons
+                                Organic Grocery
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Citrus_091922_1.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_IndianBreakfast_092322_1.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Citrus
+                                Indian Breakfast
                                 </div>
                               </div>
                             </li>
                             <li className="submenu_item">
                               <div className="submenu_link">
                                 <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicFruits_092022_3.png'} alt="" />
+                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/shutterstock_2117856260.png'} alt="" />
                                 </div>
                                 <div className="submenu_title">
-                                Organic
+                                Pasta
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organics_091922_3_3.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                Bulk
-                                </div>
-                              </div>
-                            </li>
-
-
                           </ul>
                         </div>
                       </div>
