@@ -1,13 +1,21 @@
+import {useRef} from 'react'
 import Header from "../../components/Header/header";
 import Megamenu from '../../components/Megamenu/megamenu'
+import { Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { useSelector } from 'react-redux'
 import {useState,useEffect} from 'react'
 import { NavLink } from "react-router-dom";
 import Icon from '@mdi/react';
+
 import { mdiSort,mdiFilterOutline,mdiRadioboxBlank,mdiClose,mdiCheckboxMarked,mdiCheckboxBlankOutline,mdiChevronLeft,mdiChevronRight,mdiHomeOutline,mdiCartOutline    } from '@mdi/js';
 import './style/style.scss'
+import 'swiper/css/navigation';
+import 'swiper/css';
 const MainPage = () =>{
     const [isFixed, setIsFixed] = useState(false);
+
+    const swiperRef = useRef(null);
 
     const {basket} = useSelector(state => state.basket)
     useEffect(() => {
@@ -22,6 +30,35 @@ const MainPage = () =>{
         return () => {
           window.removeEventListener('scroll', handleScroll);
         };
+      }, []);
+
+      useEffect(() => {
+        // const swiperContainer = swiperRef.current;
+        // const params = {
+        //   navigation: true,
+        //   pagination: true,
+        //   // These are new...
+        //   injectStyles: [
+        //     `
+        //       .swiper-button-next,
+        //       .swiper-button-prev {
+        //         background-color: white;
+        //         padding: 8px 16px;
+        //         border-radius: 100%;
+        //         border: 2px solid black;
+        //         color: red;
+        //       }
+        //       .swiper-pagination-bullet{
+        //         width: 40px;
+        //         height: 40px;
+        //         background-color: red;
+        //       }
+        //   `,
+        //   ],
+        // };
+    
+        // Object.assign(swiperContainer, params);
+        // swiperContainer.initialize();
       }, []);
     return(
         <div id="__next">
@@ -97,11 +134,310 @@ const MainPage = () =>{
                                 <div className="styles_myitems_head__WGXb2">
                                     <h2 className="styles_myitems_heading__hZrvZ">Latest promotions</h2>
                                 </div>
-                                <div className="styles_myitems_list__UK74U"><a
-                                     className="styles_myitems_nav__PVypE styles_left__yNTs7"><i
-                                         className="mdi mdi-chevron-left" style={{lineHeight:0}}></i></a>
+                                <div className="styles_myitems_list__UK74U">
+                                    {/* <a
+                                     className="styles_myitems_nav__PVypE styles_left__yNTs7">
+                                        <i
+                                         className="mdi mdi-chevron-left" style={{lineHeight:0}}></i></a> */}
                                     
+    <Swiper
+      spaceBetween={50}
+      slidesPerView={4}
+      modules={[Navigation]}
+      navigation
+      ref={swiperRef}
+    >
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+
+    </Swiper>
+  
+
                                     <div id="latest_promotions" className="owl-carousel">
+                                        
                                         <div className="styles_myitems_item__XSuD6">
                                             <div className="styles_miniature__bauyi">
                                                 <div className="styles_miniature_thumb__pC4As">
@@ -651,8 +987,9 @@ const MainPage = () =>{
                                                 </div>
                                             </div>
                                         </div>
-                                    </div><a className="styles_myitems_nav__PVypE styles_right__HStKy"><i
-                                         className="mdi mdi-chevron-right" style={{lineHeight:0}}></i></a>
+                                    </div>
+                                    {/* <a className="styles_myitems_nav__PVypE styles_right__HStKy"><i
+                                         className="mdi mdi-chevron-right" style={{lineHeight:0}}></i></a> */}
                                 </div>
                             </div>
                         </div>
@@ -667,9 +1004,305 @@ const MainPage = () =>{
                                 <div className="styles_myitems_head__WGXb2">
                                     <h2 className="styles_myitems_heading__hZrvZ">Grab n Go</h2>
                                 </div>
-                                <div className="styles_myitems_list__UK74U"><a
+                                <div className="styles_myitems_list__UK74U">
+                                <Swiper
+      spaceBetween={50}
+      slidesPerView={4}
+      modules={[Navigation]}
+      navigation
+      ref={swiperRef}
+    >
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+
+    </Swiper>
+                                    {/* <a
                                      className="styles_myitems_nav__PVypE styles_left__yNTs7"><i
-                                         className="mdi mdi-chevron-left" style={{lineHeight:0}}></i></a>
+                                         className="mdi mdi-chevron-left" style={{lineHeight:0}}></i></a> */}
+                                    
                                     <div id="grab_n_go" className="owl-carousel">
                                         <div className="styles_myitems_item__XSuD6">
                                             <div className="styles_miniature__bauyi">
@@ -1215,9 +1848,305 @@ const MainPage = () =>{
                                 <div className="styles_myitems_head__WGXb2">
                                     <h2 className="styles_myitems_heading__hZrvZ">Best Products</h2>
                                 </div>
-                                <div className="styles_myitems_list__UK74U"><a
-                                     className="styles_myitems_nav__PVypE styles_left__yNTs7"><i
-                                         className="mdi mdi-chevron-left" style={{lineHeight:0}}></i></a>
+                                <div className="styles_myitems_list__UK74U">
+                                    {/* <a className="styles_myitems_nav__PVypE styles_left__yNTs7">
+                                        <i
+                                         className="mdi mdi-chevron-left" style={{lineHeight:0}}></i></a> */}
+<Swiper
+      spaceBetween={50}
+      slidesPerView={4}
+      modules={[Navigation]}
+      navigation
+      ref={swiperRef}
+    >
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+
+    </Swiper>
+                                         
                                     <div id="best_products" className="owl-carousel">
                                         <div className="styles_myitems_item__XSuD6">
                                             <div className="styles_miniature__bauyi">
@@ -1753,7 +2682,8 @@ const MainPage = () =>{
                             </div>
                         </div>
                         <div className="br_mb50">
-                            <div className="styles_banner___0eKA"><a
+                            <div className="styles_banner___0eKA">
+                                <a
                                     href="https://barakatfresh.ae/meats/premium-meats.html"><span
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
                                             src="https://media.barakatfresh.ae/media/wysiwyg/Premium_Meat_-_Banner_1180x324_2_100523.jpg" /></span></a>
@@ -1764,9 +2694,304 @@ const MainPage = () =>{
                                 <div className="styles_myitems_head__WGXb2">
                                     <h2 className="styles_myitems_heading__hZrvZ">Meats</h2>
                                 </div>
-                                <div className="styles_myitems_list__UK74U"><a
+                                <div className="styles_myitems_list__UK74U">
+                                <Swiper
+      spaceBetween={50}
+      slidesPerView={4}
+      modules={[Navigation]}
+      navigation
+      ref={swiperRef}
+    >
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+
+    </Swiper>
+                                    {/* <a
                                      className="styles_myitems_nav__PVypE styles_left__yNTs7"><i
-                                         className="mdi mdi-chevron-left" style={{lineHeight:0}}></i></a>
+                                         className="mdi mdi-chevron-left" style={{lineHeight:0}}></i></a> */}
                                     <div id="meats" className="owl-carousel">
                                         <div className="styles_myitems_item__XSuD6">
                                             <div className="styles_miniature__bauyi">
@@ -2301,9 +3526,301 @@ const MainPage = () =>{
                                 <div className="styles_myitems_head__WGXb2">
                                     <h2 className="styles_myitems_heading__hZrvZ">Ready Meals</h2>
                                 </div>
-                                <div className="styles_myitems_list__UK74U"><a
-                                     className="styles_myitems_nav__PVypE styles_left__yNTs7"><i
-                                         className="mdi mdi-chevron-left" style={{lineHeight:0}}></i></a>
+                                <div className="styles_myitems_list__UK74U">
+                                <Swiper
+      spaceBetween={50}
+      slidesPerView={4}
+      modules={[Navigation]}
+      navigation
+      ref={swiperRef}
+    >
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+
+    </Swiper>
                                     <div id="ready_meals" className="owl-carousel">
                                         <div className="styles_myitems_item__XSuD6">
                                             <div className="styles_miniature__bauyi">
@@ -2834,9 +4351,302 @@ const MainPage = () =>{
                                 <div className="styles_myitems_head__WGXb2">
                                     <h2 className="styles_myitems_heading__hZrvZ">Family Packs</h2>
                                 </div>
-                                <div className="styles_myitems_list__UK74U"><a
-                                     className="styles_myitems_nav__PVypE styles_left__yNTs7"><i
-                                         className="mdi mdi-chevron-left" style={{lineHeight:0}}></i></a>
+                                <div className="styles_myitems_list__UK74U">
+                                <Swiper
+      spaceBetween={50}
+      slidesPerView={4}
+      modules={[Navigation]}
+      navigation
+      ref={swiperRef}
+    >
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+
+    </Swiper>
+                                   
                                     <div id="family_packs" className="owl-carousel">
                                         <div className="styles_myitems_item__XSuD6">
                                             <div className="styles_miniature__bauyi">
@@ -3397,9 +5207,301 @@ const MainPage = () =>{
                                 <div className="styles_myitems_head__WGXb2">
                                     <h2 className="styles_myitems_heading__hZrvZ">Gift Baskets</h2>
                                 </div>
-                                <div className="styles_myitems_list__UK74U"><a
-                                     className="styles_myitems_nav__PVypE styles_left__yNTs7"><i
-                                         className="mdi mdi-chevron-left" style={{lineHeight:0}}></i></a>
+                                <div className="styles_myitems_list__UK74U">
+                                <Swiper
+      spaceBetween={50}
+      slidesPerView={4}
+      modules={[Navigation]}
+      navigation
+      ref={swiperRef}
+    >
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+
+    </Swiper>
                                     <div id="gift_baskets" className="owl-carousel">
                                         <div className="styles_myitems_item__XSuD6">
                                             <div className="styles_miniature__bauyi">
@@ -3941,9 +6043,301 @@ const MainPage = () =>{
                                      className="styles_myitems_headlink__MiemD"><a
                                             href="https://barakatfresh.ae/exotic-fruits.html">Show all</a></span>
                                 </div>
-                                <div className="styles_myitems_list__UK74U"><a
-                                     className="styles_myitems_nav__PVypE styles_left__yNTs7"><i
-                                         className="mdi mdi-chevron-left" style={{lineHeight:0}}></i></a>
+                                <div className="styles_myitems_list__UK74U">
+                                <Swiper
+      spaceBetween={50}
+      slidesPerView={4}
+      modules={[Navigation]}
+      navigation
+      ref={swiperRef}
+    >
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+
+    </Swiper>
                                     <div id="exotic_range" className="owl-carousel">
                                         <div className="styles_myitems_item__XSuD6">
                                             <div className="styles_miniature__bauyi">
@@ -4506,9 +6900,301 @@ const MainPage = () =>{
                                      className="styles_myitems_headlink__MiemD"><a
                                             href="https://barakatfresh.ae/organics.html">Show all</a></span>
                                 </div>
-                                <div className="styles_myitems_list__UK74U"><a
-                                     className="styles_myitems_nav__PVypE styles_left__yNTs7"><i
-                                         className="mdi mdi-chevron-left" style={{lineHeight:0}}></i></a>
+                                <div className="styles_myitems_list__UK74U">
+                                <Swiper
+      spaceBetween={50}
+      slidesPerView={4}
+      modules={[Navigation]}
+      navigation
+      ref={swiperRef}
+    >
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+
+    </Swiper>
                                     <div id="organics" className="owl-carousel">
                                         <div className="styles_myitems_item__XSuD6">
                                             <div className="styles_miniature__bauyi">
@@ -5064,9 +7750,301 @@ const MainPage = () =>{
                                      className="styles_myitems_headlink__MiemD"><a
                                             href="https://barakatfresh.ae/bulk-buy.html">Show all</a></span>
                                 </div>
-                                <div className="styles_myitems_list__UK74U"><a
-                                     className="styles_myitems_nav__PVypE styles_left__yNTs7"><i
-                                         className="mdi mdi-chevron-left" style={{lineHeight:0}}></i></a>
+                                <div className="styles_myitems_list__UK74U">
+                                <Swiper
+      spaceBetween={50}
+      slidesPerView={4}
+      modules={[Navigation]}
+      navigation
+      ref={swiperRef}
+    >
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+
+    </Swiper>
                                     <div id="bulk_buy" className="owl-carousel">
                                         <div className="styles_myitems_item__XSuD6">
                                             <div className="styles_miniature__bauyi">
@@ -5628,9 +8606,301 @@ const MainPage = () =>{
                                      className="styles_myitems_headlink__MiemD"><a
                                             href="https://barakatfresh.ae/ice-cream/ice-pops.html">Show all</a></span>
                                 </div>
-                                <div className="styles_myitems_list__UK74U"><a
-                                     className="styles_myitems_nav__PVypE styles_left__yNTs7"><i
-                                         className="mdi mdi-chevron-left" style={{lineHeight:0}}></i></a>
+                                <div className="styles_myitems_list__UK74U">
+                                <Swiper
+      spaceBetween={50}
+      slidesPerView={4}
+      modules={[Navigation]}
+      navigation
+      ref={swiperRef}
+    >
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+
+    </Swiper>
                                     <div id="juice_pops" className="owl-carousel">
                                         <div className="styles_myitems_item__XSuD6">
                                             <div className="styles_miniature__bauyi">
@@ -6161,9 +9431,301 @@ const MainPage = () =>{
                                      className="styles_myitems_headlink__MiemD"><a
                                             href="https://barakatfresh.ae/dairy-eggs/eggs.html">Show all</a></span>
                                 </div>
-                                <div className="styles_myitems_list__UK74U"><a
-                                     className="styles_myitems_nav__PVypE styles_left__yNTs7"><i
-                                         className="mdi mdi-chevron-left" style={{lineHeight:0}}></i></a>
+                                <div className="styles_myitems_list__UK74U">
+                                <Swiper
+      spaceBetween={50}
+      slidesPerView={4}
+      modules={[Navigation]}
+      navigation
+      ref={swiperRef}
+    >
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+
+    </Swiper>
                                     <div id="eggs" className="owl-carousel">
                                         <div className="styles_myitems_item__XSuD6">
                                             <div className="styles_miniature__bauyi">
@@ -6702,9 +10264,301 @@ const MainPage = () =>{
                                      className="styles_myitems_headlink__MiemD"><a
                                             href="https://barakatfresh.ae/chef-s-corner.html">Show all</a></span>
                                 </div>
-                                <div className="styles_myitems_list__UK74U"><a
-                                     className="styles_myitems_nav__PVypE styles_left__yNTs7"><i
-                                         className="mdi mdi-chevron-left" style={{lineHeight:0}}></i></a>
+                                <div className="styles_myitems_list__UK74U">
+                                <Swiper
+      spaceBetween={50}
+      slidesPerView={4}
+      modules={[Navigation]}
+      navigation
+      ref={swiperRef}
+    >
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <div className="styles_myitems_item__XSuD6">
+                                            <div className="styles_miniature__bauyi">
+                                                <div className="styles_miniature_thumb__pC4As">
+                                                    <div className="styles_miniature_badges__0wu3u">
+                                                        <div className="styles_badges__FtItY"><span
+                                                             className="styles_badges_item__I757N">Expiry - 31st
+                                                                Jan</span></div>
+                                                    </div><span className="styles_miniature_percent__Y0sR7">59%</span><a
+                                                        href="https://barakatfresh.ae/bayara-pistachio-kernels-jumbo-400g.html">
+                                                        <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                                src="https://media.barakatfresh.ae/media/catalog/product/cache/7882635054f2a739adc70897c8dcd5ad/b/a/bayara_almonds_blanched_jumbo_200g.jpg"
+                                                                width="420" height="420" decoding="async" data-nimg="1"
+                                                                loading="lazy" style={{color:"black"}} /></div>
+                                                    </a>
+                                                </div>
+                                                <div className="styles_miniature_addcart__nrwcj">
+                                                    <div className="styles_addtocart__vPSiL">
+                                                        <div className="styles_addtocart_container__R8iNc">
+                                                            <div className="styles_addtocart_box__4cn_x">
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                    <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                                <div className="styles_addtocart_textbox__nF655">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div
+                                                                 className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                    <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                        style={{lineHeight:0}}></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_origin__0XxsK"></div>
+                                                <div>
+                                                    <div className="styles_miniature_name__NNCqq"><span
+                                                         className="styles_miniature_name_text__9uWQ2">Bayara Almonds
+                                                            Blanched Jumbo 200g</span></div>
+                                                    <div className="styles_miniature_price__5I4vS">
+                                                        <div className="styles_pricing__k23Ku">
+                                                            <div className="styles_pricing_regular__sizHW"><span
+                                                                 className="styles_pricing_strike__m89Q_">AED
+                                                                    20.75</span><span
+                                                                 className="styles_pricing_special__qHGqh">AED
+                                                                    8.50</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="styles_miniature_configs__T57kw"><template
+                                                            data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                                </div>
+                                            </div>
+                                        </div>
+      </SwiperSlide>
+
+    </Swiper>
                                     <div id="ready_to_cook" className="owl-carousel">
                                         <div className="styles_myitems_item__XSuD6">
                                             <div className="styles_miniature__bauyi">

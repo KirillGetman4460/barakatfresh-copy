@@ -4,3 +4,38 @@
 // @import url("https://barakatfresh.ae/_next/static/css/b1e7717ca9120d88.css");
 // @import url("https://barakatfresh.ae/_next/static/css/969796deb352e7e9.css");
 // @import url("https://barakatfresh.ae/_next/static/css/969796deb352e7e9.css");
+.swiper-button-prev, .swiper-button-next{
+    height: 60px !important;
+    background-color: #f4f3f3;
+    top: 40% !important;
+    z-index: 20;
+    &.swiper-button-disabled{
+        opacity: 1 !important;
+    }
+  }
+  .swiper-button-prev:after, .swiper-button-next:after{
+    font-size: 18px !important;
+    color: rgb(96, 96, 96);
+    font-weight: 700;
+  }
+.swiper-button-next,
+          .swiper-button-prev {
+            
+          }
+
+          .swiper-button-prev {
+          
+          }
+         
+          .swiper-button-next {
+           
+          }
+
+          .swiper-button-next::after,
+          .swiper-button-prev::after {
+            content: "";
+          }
+
+          .swiper-pagination-bullet{
+           
+          }
