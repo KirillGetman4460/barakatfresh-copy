@@ -20,6 +20,8 @@ const Basket = () =>{
 
     const totalPrice = basket.reduce((acc, product) => acc + product.price, 0)
 
+    const [active,setActive] = useState(false)
+
     return (
         <div className="basket">
             <div className="layout_head">
@@ -132,7 +134,7 @@ const Basket = () =>{
                         </div>
                     </div>
                     <div className="br_mb20">
-                        <div className="bbutton">
+                        <div className="bbutton" onClick={() => setActive(true)}>
                             <span>PROCEED</span>
                         </div>
                     </div>
@@ -186,6 +188,69 @@ const Basket = () =>{
               </li>
           </ul>
         </div>
+
+
+<div class={`AddAddress_openDrawerInfo__1RYmr AddAddress_activeDrawer__3ZoVX ${active ? "active" : ""}`}>
+    <div className="AddAddress__over" onClick={() => setActive(false)}></div>
+           
+            <div class="AddAddress_addressDrawer__7UnTN">
+                <div class="AddAddress_addForm__Kxv6z">
+                    <div class="AddAddress_headingDrawer__3X5jA">
+                        <h3>Complete your address</h3>
+                        {/* <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined AddAddress_change__28BeF AddAddress_changeButton__1njIK MuiButton-outlinedPrimary" tabindex="0" type="button">
+                            <span class="MuiButton-label">Change</span>
+                            <span class="MuiTouchRipple-root"></span>
+                        </button> */}
+                        <div class="AddAddress_closeButton__1vtED" onClick={() => setActive(false)}>
+                <Icon path={mdiClose } size={1} color={'rgb(96, 96, 96)'} />
+            </div>
+                    </div>
+                    
+                    <div class="AddAddress_addressDetail__3W0VD">Al Wahda Street - Al Majaz - Al Majaz 2 - Sharjah</div>
+                    <div class="AddAddress_desktopForm__1d-SB">
+                        <div class="AddAddress_formInput__1MrR5">
+                            <div class="AddAddress_subInp__307n1">
+                                <input  name="buidling" placeholder="Building Name*" class="AddAddress_inputField__2KRq1" />
+                                   
+                            </div>
+                            <div class="AddAddress_subInp__307n1">
+                                <input maxlength="12" name="flat" autocomplete="off" placeholder="Flat No*" class="AddAddress_inputField__2KRq1" value="" />
+                            </div>
+                        </div>
+                        <div class="AddAddress_formInput__1MrR5">
+                            <input maxlength="200" name="how" autocomplete="off" placeholder="How to Reach (Optional)" class="AddAddress_howToField__3kqTP" value="" />
+                        </div>
+                        <div class="AddAddress_addressTags__3icXy">
+                            <div>
+                                <div class="AddAddress_tagHeading__2dcbU">Tag location:</div>
+                            <div class="AddAddress_tags__2-OCm">
+                                <button class="MuiButtonBase-root MuiButton-root MuiButton-text AddAddress_active__Wk-RW" tabindex="0" type="button">
+                                    <span class="MuiButton-label">home</span>
+                                    <span class="MuiTouchRipple-root"></span>
+                                </button>
+                                <button class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" type="button">
+                                    <span class="MuiButton-label">office</span>
+                                    <span class="MuiTouchRipple-root"></span>
+                                </button>
+                                <button class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" type="button">
+                                    <span class="MuiButton-label">hotel</span>
+                                    <span class="MuiTouchRipple-root"></span>
+                                </button>
+                                <button class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" type="button">
+                                    <span class="MuiButton-label">Other</span>
+                                    <span class="MuiTouchRipple-root"></span>
+                                </button>
+                            </div>
+                            </div>
+                            <button class="MuiButtonBase-root MuiButton-root MuiButton-contained AddAddress_confirm__1odIY MuiButton-containedPrimary Mui-disabled Mui-disabled" tabindex="-1" type="button" disabled="">
+                                <span class="MuiButton-label" onClick={() => setActive(false)}><span class="AddAddress_addAddressText__3eKwd">Continue</span></span>
+                            </button>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+        
         </div>
     )
 }

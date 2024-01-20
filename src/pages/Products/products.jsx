@@ -1,13 +1,11 @@
 import Header from "../../components/Header/header";
-import {useState,useRef,useEffect} from 'react'
+import {useState,useEffect} from 'react'
 import { useSelector } from 'react-redux'
 import data from '../../db/products.json'
-import data2 from '../../db/products2.json'
 
 import Megamenu from '../../components/Megamenu/megamenu'
 import Filter from '../../components/Filter/filter'
 import Products from '../../components/Products/products'
-import FilterChecbox from '../../components/Filter/filterChecbox'
 import FilterMultiSelect from '../../components/Filter/filterMultiSelect'
 import BreadCrumbs from '../../components/BreadCrumbs/breadCrumbs'
 
@@ -18,11 +16,27 @@ import { mdiSort,mdiFilterOutline,mdiRadioboxBlank,mdiClose,mdiCheckboxMarked,md
 
 
 const PageProducts = () =>{
-    const [products,setProducts] = useState(data2.products.all)
+    const [products,setProducts] = useState(data.products.all)
 
   const [origin,setOrigin] = useState(['UAE','South Africa','India','Colombia','Thailand','Egypt','Kenya','China','Lebanon','Vietnam','Chile','Iran','Italy','Turkey','Brazil','Peru','Sri Lanka','Serbia','USA','Ukraine'])
   const [tags,setTags] = useState(['By Air','RIPEN AT HOME','Premium By Air','STEAL DEAL','Ready to eat','Ripen at Home','Ripen at home','Best for Gifting','By Air !','By Air ! Ripen at Home','By Air! Ripen at Home','For cooking','Ideal for Cooking','In High Demand','MUST BUY','Premium by Air','RIPEN AT HOME (RAW)','SWEET & TASTY'])
 
+  const [subCatsItem,setSubCatsItem] = useState([
+    {title:"ALL",img:"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"},
+    {title:"Regular Fruits",img:"https://media.barakatfresh.ae/media/catalog/category/1457586_Organic.png"},
+    {title:"Fruit Platters",img:"https://media.barakatfresh.ae/media/catalog/category/platters_1_3.png"},
+    {title:"Mangoes",img:"https://media.barakatfresh.ae/media/catalog/category/Mango.png"},
+    {title:"Cut & Sanitized",img:"https://media.barakatfresh.ae/media/catalog/category/1457586_Cut_Sanitised_091922_1_1.png"},
+    {title:"Puree",img:"https://media.barakatfresh.ae/media/catalog/category/puree_1.png"},
+    {title:"Berries",img:"https://media.barakatfresh.ae/media/catalog/category/1457586_Berries_091922_1.png"},
+    {title:"Citrus",img:"https://media.barakatfresh.ae/media/catalog/category/1457586_Citrus_091922_1.png"},
+    {title:"Organic",img:"https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicFruits_092022_3.png"},
+    {title:"Bulk",img:"https://media.barakatfresh.ae/media/catalog/category/1457586_Organics_091922_3_3.png"},
+    {title:"Melons",img:"https://media.barakatfresh.ae/media/catalog/category/1457586_Melons_091922_1.png"}
+])
+
+const titleSelect = useSelector(state => state.basket.title)
+const [selectSubCats,setSelectSubCats] = useState(titleSelect)
   const [title,setTitle] = useState('Fruits')
 
   const [selectPrice,setSelectPrice] = useState('')
@@ -43,6 +57,7 @@ const PageProducts = () =>{
   const [activeTags,setActiveTags] = useState(false)
 
   const {basket} = useSelector(state => state.basket)
+  
 
 
   const filterByPrice = () =>{
@@ -60,63 +75,63 @@ const PageProducts = () =>{
     }
   }
 
-const filterBySubcats = (sel) => {
-  
+const filterBySubcats = () => {
 
-  if (sel === 'All') {
-    setProducts(data2.products.all)
+
+  if (selectSubCats === 'ALL') {
+    setProducts(data.products.all)
     setTitle('Fruits')
     return;
   }
 
-  if (sel === 'Puree') {
-    setProducts(data2.products.puree)
+  if (selectSubCats === 'Puree') {
+    setProducts(data.products.puree)
 
    
     setTitle('Puree')
   }
-  if (sel === 'Regular Fruits') {
-    setProducts(data2.products.regular_fruits)
+  if (selectSubCats === 'Regular Fruits') {
+    setProducts(data.products.regular_fruits)
    
     setTitle('Regular Fruits')
   }
-  if (sel === 'Fruit Platters') {
-    setProducts(data2.products.fruit_platters)
+  if (selectSubCats === 'Fruit Platters') {
+    setProducts(data.products.fruit_platters)
     
     setTitle('Fruit Platters')
   }
-  if (sel === 'Mangoes') {
-    setProducts(data2.products.mangoes)
+  if (selectSubCats === 'Mangoes') {
+    setProducts(data.products.mangoes)
    
     setTitle('Mangoes')
   }
-  if (sel === 'Cut & Sanitized') {
-    setProducts(data2.products.cut_sanitized)
+  if (selectSubCats === 'Cut & Sanitized') {
+    setProducts(data.products.cut_sanitized)
    
     setTitle('Cut & Sanitized')
   }
-  if (sel === 'Berries') {
-    setProducts(data2.products.berries)
+  if (selectSubCats === 'Berries') {
+    setProducts(data.products.berries)
     
     setTitle('Berries')
   }
-  if (sel === 'Melons') {
-    setProducts(data2.products.melons)
+  if (selectSubCats === 'Melons') {
+    setProducts(data.products.melons)
     
     setTitle('Melons')
   }
-  if (sel === 'Citrus') {
-    setProducts(data2.products.citrus)
+  if (selectSubCats === 'Citrus') {
+    setProducts(data.products.citrus)
     
     setTitle('Citrus')
   }
-  if (sel === 'Organic') {
-    setProducts(data2.products.organic)
+  if (selectSubCats === 'Organic') {
+    setProducts(data.products.organic)
    
     setTitle('Organic')
   }
-  if (sel === 'Bulk') {
-    setProducts(data2.products.bulk)
+  if (selectSubCats === 'Bulk') {
+    setProducts(data.products.bulk)
     
     setTitle('Bulk')
   }
@@ -168,7 +183,7 @@ const filterBySubcats = (sel) => {
 
 
   const sortProductsByCountry = () => {
-    let sortedProducts = [...products];
+    let sortedProducts = [...data.products.all];
 
     if (selectedCountries.length !== 0) {
       sortedProducts = sortedProducts.filter(product => selectedCountries.includes(product.origin));
@@ -182,7 +197,7 @@ const filterBySubcats = (sel) => {
   const sortProductsByTags = () => {
 
     
-    let sortedProducts = [...products];
+    let sortedProducts = [...data.products.all];
   
     if (selectedTags.length !== 0) {
       sortedProducts = sortedProducts.filter(product => 
@@ -208,7 +223,7 @@ const filterBySubcats = (sel) => {
     setSelectedCountries([])
     setSelected([])
     sortProductsByCountry()
-    setProducts(data2.products.all)
+    setProducts(data.products.all)
   }
 
   const [isFixed, setIsFixed] = useState(false);
@@ -226,6 +241,11 @@ const filterBySubcats = (sel) => {
           window.removeEventListener('scroll', handleScroll);
         };
       }, []);
+
+    useEffect(() =>{
+        filterBySubcats()
+    },[selectSubCats])
+
     return(
         <>
         <div className={`${isFixed ? 'fixed' : ''}`}>
@@ -238,25 +258,7 @@ const filterBySubcats = (sel) => {
             <div className="megamenu modile">
             <ul className="megamenu__list">
                 <li className="megamenu__item">
-                    <span>Bbq Range</span>
-                    <div className="megamenu_child">
-                      <div className="submenu">
-                        <div className="br_wrapper">
-                          <ul className="submenu_list">
-                            <li className="submenu_item">
-                              <div className="submenu_link">
-                                <div className="submenu_image">
-                                  <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organic.png'} alt="" />
-                                </div>
-                                <div className="submenu_title">
-                                  Regular Fruits
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+                    <span>Bbq Range</span>s
                 </li>
                 <li className="megamenu__item">
                     <span>Fruits</span>
@@ -364,7 +366,6 @@ const filterBySubcats = (sel) => {
                   </div>
                 </div>
 
-
                 <div className={`fsmodal ${activeFilt ? "active" :""}`}>
                   <div className="fsmodal_content">
                     <div>
@@ -435,7 +436,6 @@ const filterBySubcats = (sel) => {
                   </div>
                 </div>
 
-
                 <div className={`fsmodal tags ${activeTags ? "active" :""}`}>
                 <div className="fsmodal_content">
                   
@@ -486,7 +486,7 @@ const filterBySubcats = (sel) => {
             <FilterMultiSelect title={'Tags'} origin={tags} sortProductsByCountry={sortProductsByTags} handleCountrySelectChange={handleTagsSelectChange} handleSelectChange={handleTagsChange} selected={tagsSelected}></FilterMultiSelect>
           </div>
 
-          <Products title={title} products={products} filterBySubcats={filterBySubcats} filterByPrice={filterByPrice} selectPrice={selectPrice} setSelectPrice={setSelectPrice} ></Products>
+          <Products subCatsItem={subCatsItem} setSubCatsItem={setSubCatsItem} setSelectSubCats={setSelectSubCats}  title={title} products={products} filterBySubcats={filterBySubcats} filterByPrice={filterByPrice} selectPrice={selectPrice} setSelectPrice={setSelectPrice} ></Products>
         </div>
         <div className="layout_tabs">
           <ul className="tabs">

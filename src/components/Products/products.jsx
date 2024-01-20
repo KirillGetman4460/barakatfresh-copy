@@ -7,7 +7,7 @@ import Icon from '@mdi/react';
 import { mdiPlus,mdiMinus  } from '@mdi/js';
 
 import { useEffect, useState } from 'react'
-const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setSelectPrice}) =>{
+const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setSelectPrice,setSelectSubCats,subCatsItem}) =>{
 
     const [active,setActive] = useState(null)
 
@@ -38,83 +38,16 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
             </div>
             <div className="subcats">
                 <ul className="subcats__list">
-                    <li className={`subcats__item ${active === 1 ? "active" : ""}`} onClick={() => {
-                        setActive(1)
-                        filterBySubcats('All')
-                    }}>
-                        <span className='subcats__item__img'><img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png'} alt="" /></span>
-                        <span className='subcats__item__text'>ALL</span>
-                    </li>
-                    <li className={`subcats__item ${active === 2 ? "active" : ""}`}  onClick={() => {
-                        setActive(2)
-                        filterBySubcats('Regular Fruits')}
-                    }>
-                        <span className='subcats__item__img'><img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organic.png'} alt="" /></span>
-                        <span className='subcats__item__text'>Regular Fruits</span>
-                    </li>
-                    <li className={`subcats__item ${active === 3 ? "active" : ""}`}  onClick={() => {
-                        setActive(3)
-                        filterBySubcats('Fruit Platters')
-                    }}>
-                        <span className='subcats__item__img'><img src={'https://media.barakatfresh.ae/media/catalog/category/platters_1_3.png'} alt="" /></span>
-                        <span className='subcats__item__text'>Fruit Platters</span>
-                    </li>
-                    <li className={`subcats__item ${active === 4 ? "active" : ""}`}  onClick={() => {
-                        setActive(4)
-                        filterBySubcats('Mangoes')
-                    }}>
-                        <span className='subcats__item__img'><img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" /></span>
-                        <span className='subcats__item__text'>Mangoes</span>
-                    </li>
-                    <li className={`subcats__item ${active === 5 ? "active" : ""}`}  onClick={() => {
-                        setActive(5)
-                        filterBySubcats('Cut & Sanitized')
-                    }}>
-                        <span className='subcats__item__img'><img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cut_Sanitised_091922_1_1.png'} alt="" /></span>
-                        <span className='subcats__item__text'>Cut & Sanitized</span>
-                    </li>
-                    <li className={`subcats__item ${active === 6 ? "active" : ""}`}  onClick={() => {
-                        setActive(6)
-                        filterBySubcats('Puree')
-                    }}>
-                        <span className='subcats__item__img'><img src={'https://media.barakatfresh.ae/media/catalog/category/puree_1.png'} alt="" /></span>
-                        <span className='subcats__item__text'>Puree</span>
-                    </li>
-                    <li className={`subcats__item ${active === 7 ? "active" : ""}`}  onClick={() => {
-                        setActive(7)
-                        filterBySubcats('Berries')
-                    }}>
-                        <span className='subcats__item__img'><img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Berries_091922_1.png'} alt="" /></span>
-                        <span className='subcats__item__text'>Berries</span>
-                    </li>
-                    <li className={`subcats__item ${active === 8 ? "active" : ""}`}  onClick={() => {
-                        setActive(8)
-                        filterBySubcats('Melons')}
-                    }>
-                        <span className='subcats__item__img'><img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Melons_091922_1.png'} alt="" /></span>
-                        <span className='subcats__item__text'>Melons</span>
-                    </li>
-                    <li className={`subcats__item ${active === 9 ? "active" : ""}`}  onClick={() => {
-                        setActive(9)
-                        filterBySubcats('Citrus')
-                    }}>
-                        <span className='subcats__item__img'><img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Citrus_091922_1.png'} alt="" /></span>
-                        <span className='subcats__item__text'>Citrus</span>
-                    </li>
-                    <li className={`subcats__item ${active === 10 ? "active" : ""}`}  onClick={() => {
-                        setActive(10)
-                        filterBySubcats('Organic')
-                    }}>
-                        <span className='subcats__item__img'><img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicFruits_092022_3.png'} alt="" /></span>
-                        <span className='subcats__item__text'>Organic</span>
-                    </li>
-                    <li className={`subcats__item ${active === 11 ? "active" : ""}`}  onClick={() => {
-                        setActive(11)
-                        filterBySubcats('Bulk')
-                    }}>
-                        <span className='subcats__item__img'><img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organics_091922_3_3.png'} alt="" /></span>
-                        <span className='subcats__item__text'>Bulk</span>
-                    </li>
+                    {subCatsItem.map((item,i) => (
+                        <li className={`subcats__item ${active === i ? "active" : ""}`} onClick={() => {
+                            setActive(i)
+                            setSelectSubCats(item.title)
+                        }}>
+                            <span className='subcats__item__img'><img src={item.img} alt="" /></span>
+                            <span className='subcats__item__text'>{item.title}</span>
+                        </li>
+                    ))}
+                    
                 </ul>
             </div>
             <div className="sidebar__mobile">

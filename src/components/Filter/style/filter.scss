@@ -10,7 +10,25 @@
     overflow: auto;
     max-height: 300px;
     border-radius: 4px;
+    & a.active{
+        & .filter__item{
+            background-color: #def8e3;
+            & span{
+                font-weight: 700;
+            }
+            & .filter__item__icon{
+                display: block;
+            }
+        }
+    }
     & .filter__item{
+        position: relative;
+        & .filter__item__icon{
+            position: absolute;
+            top: 6px;
+            right: 10px;
+            display: none;
+        }
         & span{
             padding: 8px 10px;
     display: flex;
