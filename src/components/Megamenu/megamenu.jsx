@@ -65,7 +65,7 @@ const Megamenu = () =>{
                     </div>
                 </li>
                 <li className="megamenu__item">
-                  <NavLink to={'/'}>
+                  <NavLink to={'/fruits'}>
                     <span onMouseEnter={() => setActive(2)}>Fruits</span>
                   </NavLink>
                    
@@ -73,7 +73,7 @@ const Megamenu = () =>{
                     <div className="submenu">
                         <div className="br_wrapper">
                           <ul className="submenu_list">
-                            <NavLink to={'/'}>
+                            <NavLink to={'/fruits'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Regular Fruits'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -85,7 +85,7 @@ const Megamenu = () =>{
                               </div>
                             </li>
                             </NavLink>
-                           <NavLink to={'/'}>
+                           <NavLink to={'/fruits'}>
                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Fruit Platters'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -97,7 +97,7 @@ const Megamenu = () =>{
                               </div>
                             </li>
                            </NavLink>
-                           <NavLink to={'/'}>
+                           <NavLink to={'/fruits'}>
                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Mangoes'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -110,7 +110,7 @@ const Megamenu = () =>{
                             </li>
                            </NavLink>
                            
-                            <NavLink to={'/'}>
+                            <NavLink to={'/fruits'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Cut & Sanitized'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -123,7 +123,7 @@ const Megamenu = () =>{
                             </li>
                             </NavLink>
                             
-                            <NavLink to={'/'}>
+                            <NavLink to={'/fruits'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Mangoes'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -136,7 +136,7 @@ const Megamenu = () =>{
                             </li>
                             </NavLink>
                           
-                          <NavLink to={'/'}>
+                          <NavLink to={'/fruits'}>
                           <li className="submenu_item" onClick={() => dispatch(selectTitle('Puree'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -149,7 +149,7 @@ const Megamenu = () =>{
                             </li>
                           </NavLink>
                             
-                            <NavLink to={'/'}>
+                            <NavLink to={'/fruits'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Berries'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -161,7 +161,7 @@ const Megamenu = () =>{
                               </div>
                             </li>
                             </NavLink>
-                            <NavLink to={'/'}>
+                            <NavLink to={'/fruits'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Melons'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -173,7 +173,7 @@ const Megamenu = () =>{
                               </div>
                             </li>
                             </NavLink>
-                          <NavLink to={'/'}>
+                          <NavLink to={'/fruits'}>
                           <li className="submenu_item" onClick={() => dispatch(selectTitle('Citrus'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -185,7 +185,7 @@ const Megamenu = () =>{
                               </div>
                             </li>
                           </NavLink>
-                            <NavLink to={'/'}>
+                            <NavLink to={'/fruits'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Organic'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -197,7 +197,7 @@ const Megamenu = () =>{
                               </div>
                             </li>
                             </NavLink>
-                         <NavLink to={'/'}>
+                         <NavLink to={'/fruits'}>
                          <li className="submenu_item" onClick={() => dispatch(selectTitle('Bulk'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">

@@ -30,7 +30,7 @@ const Filter = () =>{
                         </div>
                     </div>
                     </NavLink>
-                    <NavLink to={'/'}>
+                    <NavLink to={'/fruits'}>
                     <div className="filter__item" onClick={() => dispatch(selectTitle(''))}>
                         <span>Fruits</span>
                         <div className="filter__item__icon">
