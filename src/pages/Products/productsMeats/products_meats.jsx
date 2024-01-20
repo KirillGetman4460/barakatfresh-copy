@@ -211,6 +211,8 @@ const filterBySubcats = () => {
     setProducts(sortedProducts);
   }
 
+  
+
   const resetSelectedCountries = () =>{
     setSelectedCountries([])
     setSelected([])

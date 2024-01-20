@@ -199,29 +199,31 @@ const filterBySubcats = () => {
   };
 
   const sortProductsByTags = () => {
-
-    
     let sortedProducts = [...data.products_fresh_juices.all];
-  
+
     if (selectedTags.length !== 0) {
-      sortedProducts = sortedProducts.filter(product => 
-        product.additional_data && product.additional_data.labels && 
-        selectedTags.some(countryLabel => product.additional_data.labels.includes(countryLabel))
+      sortedProducts = sortedProducts.filter(
+        (product) =>
+          product.additional_data &&
+          product.additional_data.labels &&
+          selectedTags.some((countryLabel) =>
+            product.additional_data.labels.includes(countryLabel)
+          )
       );
     }
-  
+
     sortedProducts.sort((a, b) => {
-      const labelsA = a.additional_data && a.additional_data.labels || [];
-      const labelsB = b.additional_data && b.additional_data.labels || [];
-  
-      const labelA = labelsA.length > 0 ? labelsA[0] : '';
-      const labelB = labelsB.length > 0 ? labelsB[0] : '';
-  
+      const labelsA = (a.additional_data && a.additional_data.labels) || [];
+      const labelsB = (b.additional_data && b.additional_data.labels) || [];
+
+      const labelA = labelsA.length > 0 ? labelsA[0] : "";
+      const labelB = labelsB.length > 0 ? labelsB[0] : "";
+
       return labelA.localeCompare(labelB);
     });
-  
+
     setProducts(sortedProducts);
-  }
+  };
 
   const resetSelectedCountries = () =>{
     setSelectedCountries([])
