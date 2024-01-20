@@ -184,7 +184,7 @@ const filterBySubcats = () => {
 
 
   const sortProductsByCountry = () => {
-    let sortedProducts = [...data.products_meats.all];
+    let sortedProducts = [...data.products_pantry.all];
 
     if (selectedCountries.length !== 0) {
       sortedProducts = sortedProducts.filter(product => selectedCountries.includes(product.origin));
@@ -198,7 +198,7 @@ const filterBySubcats = () => {
   const sortProductsByTags = () => {
 
     
-    let sortedProducts = [...data.products_meats.all];
+    let sortedProducts = [...data.products_pantry.all];
   
     if (selectedTags.length !== 0) {
       sortedProducts = sortedProducts.filter(product => 
@@ -224,7 +224,8 @@ const filterBySubcats = () => {
     setSelectedCountries([])
     setSelected([])
     sortProductsByCountry()
-    setProducts(data.data.products_meats.all)
+    setTagsSelected([])
+    setProducts(data.products_pantry.all)
   }
 
   const [isFixed, setIsFixed] = useState(false);
@@ -484,7 +485,7 @@ const filterBySubcats = () => {
             {/* <FilterChecbox></FilterChecbox>
             <FilterChecbox></FilterChecbox> */}
             <FilterMultiSelect title={'Origin'} origin={origin} sortProductsByCountry={sortProductsByCountry} handleCountrySelectChange={handleCountrySelectChange} resetSelectedCountries={resetSelectedCountries} selected={selected} handleSelectChange={handleSelectChange} ></FilterMultiSelect>
-            <FilterMultiSelect title={'Tags'} origin={tags} sortProductsByCountry={sortProductsByTags} handleCountrySelectChange={handleTagsSelectChange} handleSelectChange={handleTagsChange} selected={tagsSelected}></FilterMultiSelect>
+            <FilterMultiSelect title={'Tags'} origin={tags} sortProductsByCountry={sortProductsByTags} handleCountrySelectChange={handleTagsSelectChange} resetSelectedCountries={resetSelectedCountries} handleSelectChange={handleTagsChange} selected={tagsSelected}></FilterMultiSelect>
           </div>
 
           <Products subCatsItem={subCatsItem} title={title} products={products} filterBySubcats={filterBySubcats} selectSubCats={selectSubCats} setSelectSubCats={setSelectSubCats}  filterByPrice={filterByPrice} selectPrice={selectPrice} setSelectPrice={setSelectPrice} ></Products>
