@@ -95,32 +95,32 @@ const filterBySubcats = () => {
     setTitle('Lamb/Mutton')
   }
   if (selectSubCats === 'Beef') {
-    setProducts(data.products_fresh_juices.beef)
+    setProducts(data.products_meats.beef)
     
     setTitle('Beef')
   }
   if (selectSubCats === 'Turkey') {
-    setProducts(data.products_fresh_juices.turkey)
+    setProducts(data.products_meats.turkey)
     
     setTitle('Turkey')
   }
   if (selectSubCats === 'Seafood') {
-    setProducts(data.products_fresh_juices.seafood)
+    setProducts(data.products_meats.seafood)
     
     setTitle('Seafood')
   }
   if (selectSubCats === 'Marinated Meats') {
-    setProducts(data.products_fresh_juices.marinated_meats)
+    setProducts(data.products_meats.marinated_meats)
     
     setTitle('Marinated Meats')
   }
   if (selectSubCats === 'Sausages & Burgers') {
-    setProducts(data.products_fresh_juices.sausages_burgers)
+    setProducts(data.products_meats.sausages_burgers)
     
     setTitle('Sausages & Burgers')
   }
   if (selectSubCats === 'Premium Meats') {
-    setProducts(data.products_fresh_juices.premium_meats)
+    setProducts(data.products_meats.premium_meats)
     
     setTitle('Premium Meats')
   }
