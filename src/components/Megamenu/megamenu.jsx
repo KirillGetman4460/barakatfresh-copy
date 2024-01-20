@@ -21,6 +21,7 @@ const Megamenu = () =>{
                       <div className="submenu">
                         <div className="br_wrapper">
                           <ul className="submenu_list">
+                            <NavLink to={'/bbq'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Fruit & Veg Skewers'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -31,6 +32,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                            <NavLink to={'/bbq'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Meats & Marinates'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -41,6 +44,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                            <NavLink to={'/bbq'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Burgers Sausages & Buns'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -51,6 +56,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                           
                             
                           </ul>
                         </div>
@@ -59,13 +66,14 @@ const Megamenu = () =>{
                 </li>
                 <li className="megamenu__item">
                   <NavLink to={'/'}>
-                    <span onMouseEnter={() => setActive(2)} onMouseLeave={() => setActive(0)}>Fruits</span>
+                    <span onMouseEnter={() => setActive(2)}>Fruits</span>
                   </NavLink>
                    
                     <div className={`megamenu_child ${active === 2 ? "active" : ""}`} onMouseLeave={() => setActive(0)}>
                     <div className="submenu">
                         <div className="br_wrapper">
                           <ul className="submenu_list">
+                            <NavLink to={'/'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Regular Fruits'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -76,7 +84,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Fruit Platters'))}>
+                            </NavLink>
+                           <NavLink to={'/'}>
+                           <li className="submenu_item" onClick={() => dispatch(selectTitle('Fruit Platters'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/platters_1_3.png'} alt="" />
@@ -86,7 +96,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Mangoes'))}>
+                           </NavLink>
+                           <NavLink to={'/'}>
+                           <li className="submenu_item" onClick={() => dispatch(selectTitle('Mangoes'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/Mango.png'} alt="" />
@@ -96,7 +108,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            
+                           </NavLink>
+                           
+                            <NavLink to={'/'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Cut & Sanitized'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -107,7 +121,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-
+                            </NavLink>
+                            
+                            <NavLink to={'/'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Mangoes'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -118,8 +134,10 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Puree'))}>
+                            </NavLink>
+                          
+                          <NavLink to={'/'}>
+                          <li className="submenu_item" onClick={() => dispatch(selectTitle('Puree'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/puree_1.png'} alt="" />
@@ -129,7 +147,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                          </NavLink>
                             
+                            <NavLink to={'/'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Berries'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -140,6 +160,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                            <NavLink to={'/'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Melons'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -150,7 +172,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Citrus'))}>
+                            </NavLink>
+                          <NavLink to={'/'}>
+                          <li className="submenu_item" onClick={() => dispatch(selectTitle('Citrus'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Citrus_091922_1.png'} alt="" />
@@ -160,6 +184,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                          </NavLink>
+                            <NavLink to={'/'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Organic'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -170,7 +196,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Bulk'))}>
+                            </NavLink>
+                         <NavLink to={'/'}>
+                         <li className="submenu_item" onClick={() => dispatch(selectTitle('Bulk'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Organics_091922_3_3.png'} alt="" />
@@ -180,6 +208,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                         </NavLink>
+                           
 
 
                           </ul>
@@ -197,6 +227,7 @@ const Megamenu = () =>{
                     <div className="submenu">
                         <div className="br_wrapper">
                           <ul className="submenu_list">
+                            <NavLink to={'/vegetables'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Regular Vegetables'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -207,7 +238,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('From India'))}>
+                            </NavLink>
+                           <NavLink to={'/vegetables'}>
+                           <li className="submenu_item" onClick={() => dispatch(selectTitle('From India'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_IndianRange.png'} alt="" />
@@ -217,7 +250,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Thai/vietnam'))}>
+                           </NavLink>
+                           <NavLink to={'/vegetables'}>
+                           <li className="submenu_item" onClick={() => dispatch(selectTitle('Thai/vietnam'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/Thai_viet.png'} alt="" />
@@ -227,8 +262,10 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                           </NavLink>
                             
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Levant'))}>
+                           <NavLink to={'/vegetables'}>
+                           <li className="submenu_item" onClick={() => dispatch(selectTitle('Levant'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/Flat_Beans.png'} alt="" />
@@ -238,8 +275,10 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Locally Grown'))}>
+                            </NavLink> 
+                           
+                          <NavLink to={'/vegetables'}>
+                          <li className="submenu_item" onClick={() => dispatch(selectTitle('Locally Grown'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/locally_grown.png'} alt="" />
@@ -249,7 +288,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-
+                          </NavLink>
+                           
+                            <NavLink to={'/vegetables'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Leafies'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -260,7 +301,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
                             
+                            <NavLink to={'/vegetables'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Cut & Sanitized'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -271,7 +314,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Organic'))}>
+                            </NavLink>
+                           <NavLink to={'/vegetables'}>
+                           <li className="submenu_item" onClick={() => dispatch(selectTitle('Organic'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/Capsicum_Mix.png'} alt="" />
@@ -281,7 +326,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Bulk'))}>
+                           </NavLink>
+                          <NavLink to={'/vegetables'}>
+                          <li className="submenu_item" onClick={() => dispatch(selectTitle('Bulk'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Bulk_091922_2.png'} alt="" />
@@ -291,6 +338,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                          </NavLink>
+                            
           
 
 
@@ -307,8 +356,10 @@ const Megamenu = () =>{
                     <div className={`megamenu_child ${active === 4 ? "active" : ""}`} onMouseLeave={() => setActive(0)}>
                     <div className="submenu">
                         <div className="br_wrapper">
+                         
                           <ul className="submenu_list">
-                            <li className="submenu_item"  onClick={() => dispatch(selectTitle('Mocktails'))}>
+                          <NavLink to={'/fresh_juices'}>
+                          <li className="submenu_item"  onClick={() => dispatch(selectTitle('Mocktails'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/GI4A6319-1.png'} alt="" />
@@ -318,6 +369,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                            <NavLink to={'/fresh_juices'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Family Packs'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -328,7 +381,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Shots'))}>
+                            </NavLink>
+                           <NavLink to={'/fresh_juices'}>
+                           <li className="submenu_item" onClick={() => dispatch(selectTitle('Shots'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Shots_091922_1.png'} alt="" />
@@ -338,7 +393,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                           </NavLink>
                             
+                            <NavLink to={'/fresh_juices'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Cold Pressed'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -349,7 +406,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-
+                            </NavLink>
+                          
+                            <NavLink to={'/fresh_juices'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Iced Tea'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -360,8 +419,10 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Juices'))}>
+                            </NavLink>
+                            
+                                <NavLink to={'/fresh_juices'}>
+                                <li className="submenu_item" onClick={() => dispatch(selectTitle('Juices'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Juices_091922_2_1.png'} alt="" />
@@ -371,7 +432,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                                </NavLink>
                             
+                            <NavLink to={'/fresh_juices'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Healthy Juice Range'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -382,6 +445,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                            <NavLink to={'/fresh_juices'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Smoothies'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -392,6 +457,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                            <NavLink to={'/fresh_juices'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Juice Combos'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -402,7 +469,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Myd Range'))}>
+                            </NavLink>
+                           <NavLink to={'/fresh_juices'}>
+                           <li className="submenu_item" onClick={() => dispatch(selectTitle('Myd Range'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/myD_CoQ-10.png'} alt="" />
@@ -412,6 +481,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                           </NavLink>
+                            <NavLink to={'/fresh_juices'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Ghaf Range'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -422,6 +493,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                            <NavLink to={'/fresh_juices'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Keto'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -432,6 +505,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                           
 
                           </ul>
                         </div>
@@ -447,6 +522,7 @@ const Megamenu = () =>{
                     <div className="submenu">
                         <div className="br_wrapper">
                           <ul className="submenu_list">
+                            <NavLink to={'/meats'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Chicken'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -457,7 +533,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Lamb/mutton'))}>
+                            </NavLink>
+                           <NavLink to={'/meats'}>
+                           <li className="submenu_item" onClick={() => dispatch(selectTitle('Lamb/mutton'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_LambMutton_092022_1.png'} alt="" />
@@ -467,6 +545,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                           </NavLink>
+                            <NavLink to={'/meats'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Beef'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -477,8 +557,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Turkey'))}>
+                            </NavLink>
+                           <NavLink to={'/meats'}>
+                           <li className="submenu_item" onClick={() => dispatch(selectTitle('Turkey'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Turkey_092022_1.png'} alt="" />
@@ -488,7 +569,10 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-
+                           </NavLink>
+                            
+                            
+                            <NavLink to={'/meats'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Seafood'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -499,7 +583,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-
+                            </NavLink>
+                            
+                            <NavLink to={'/meats'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Marinated Meats'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -510,7 +596,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
                             
+                            <NavLink to={'/meats'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Sausages & Burgers'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -521,6 +609,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                            <NavLink to={'/meats'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Melons'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -531,7 +621,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Premium Meats'))}>
+                            </NavLink>
+                          <NavLink to={'/meats'}>
+                          <li className="submenu_item" onClick={() => dispatch(selectTitle('Premium Meats'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/chicken.png'} alt="" />
@@ -541,6 +633,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                          </NavLink>
+                            
                           </ul>
                         </div>
                       </div>
@@ -555,6 +649,7 @@ const Megamenu = () =>{
                     <div className="submenu">
                         <div className="br_wrapper">
                           <ul className="submenu_list">
+                            <NavLink to={'/grab_to_go'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Keto'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -565,7 +660,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Salads'))}>
+                            </NavLink>
+                           <NavLink to={'/grab_to_go'}>
+                           <li className="submenu_item" onClick={() => dispatch(selectTitle('Salads'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_VegetarianTreats_092222_1.png'} alt="" />
@@ -575,6 +672,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                           </NavLink>
+                            <NavLink to={'/grab_to_go'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Ready Meals'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -585,7 +684,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            
+                            </NavLink>
+                           
+                            <NavLink to={'/grab_to_go'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Sandwiches'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -596,7 +697,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-
+                            </NavLink>
+                            <NavLink to={'/grab_to_go'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Cut Fruits'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -607,8 +709,10 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
 
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Cook In The Bag'))}>
+                           <NavLink to={'/grab_to_go'}>
+                           <li className="submenu_item" onClick={() => dispatch(selectTitle('Cook In The Bag'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/F649442_-_Chicken_Breast.png'} alt="" />
@@ -618,7 +722,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            
+                           </NavLink>
+
+                            <NavLink to={'/grab_to_go'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Ready To Cook'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -629,6 +735,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                            
+                            <NavLink to={'/grab_to_go'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Fresh Dips'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -639,6 +748,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                            <NavLink to={'/grab_to_go'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Breakfast Pots'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -649,6 +760,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                            <NavLink to={'/grab_to_go'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Skewers'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -659,6 +772,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                            <NavLink to={'/grab_to_go'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Croissants & Danish'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -669,6 +784,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                            <NavLink to={'/grab_to_go'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Cakes'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -679,6 +796,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                            <NavLink to={'/grab_to_go'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Soups, Sauces & Gravies'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -689,6 +808,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                           
 
 
                           </ul>
@@ -697,11 +818,15 @@ const Megamenu = () =>{
                     </div>
                 </li>
                 <li className="megamenu__item">
+                    <NavLink to={'/gifting_needs'}>
                     <span onMouseEnter={() => setActive(7)} >Gifting & Party Needs</span>
+                    </NavLink>
+                    
                     <div className={`megamenu_child ${active === 7 ? "active" : ""}`} onMouseLeave={() => setActive(0)}>
                     <div className="submenu">
                         <div className="br_wrapper">
                           <ul className="submenu_list">
+                            <NavLink to={'/gifting_needs'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Gift Baskets'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -712,6 +837,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                            <NavLink to={'/gifting_needs'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Party Platters'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -722,7 +849,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Party Packs'))}> 
+                            </NavLink>
+                          <NavLink to={'/gifting_needs'}>
+                          <li className="submenu_item" onClick={() => dispatch(selectTitle('Party Packs'))}> 
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/party_lovers.png'} alt="" />
@@ -732,7 +861,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                          </NavLink>
                             
+                            <NavLink to={'/gifting_needs'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Fruit Boxes'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -743,7 +874,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-
+                            </NavLink>
+                            
+                            <NavLink to={'/gifting_needs'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Mangoes'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -753,8 +886,10 @@ const Megamenu = () =>{
                                 Mangoes
                                 </div>
                               </div>
-                            </li>
-
+                            </li> 
+                          </NavLink>
+                            
+                            <NavLink to={'/gifting_needs'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Cakes'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -765,6 +900,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                            
 
                           </ul>
                         </div>
@@ -772,11 +909,15 @@ const Megamenu = () =>{
                     </div>
                 </li>
                 <li className="megamenu__item">
+                    <NavLink to={'/organics'}>
                     <span onMouseEnter={() => setActive(8)} >Organics</span>
+                    </NavLink>
+                    
                     <div className={`megamenu_child ${active === 8 ? "active" : ""}`} onMouseLeave={() => setActive(0)}>
                     <div className="submenu">
                         <div className="br_wrapper">
                           <ul className="submenu_list">
+                            <NavLink to={'/organics'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Organic Vegetables'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -787,6 +928,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                            </NavLink>
+                            <NavLink to={'/organics'}>
                             <li className="submenu_item" onClick={() => dispatch(selectTitle('Organic Fruits'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
@@ -797,7 +940,10 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Organic Milk'))}>
+                    </NavLink>
+                            
+                    <NavLink to={'/organics'}>
+                    <li className="submenu_item" onClick={() => dispatch(selectTitle('Organic Milk'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicMilk_092022_2.png'} alt="" />
@@ -807,8 +953,10 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                    </NavLink>
                             
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Organic Eggs'))}>
+                    <NavLink to={'/organics'}>
+                    <li className="submenu_item" onClick={() => dispatch(selectTitle('Organic Eggs'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicEggs_092022_1.png'} alt="" />
@@ -818,8 +966,11 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Grocery'))}>
+                    </NavLink>
+                            
+                           
+                    <NavLink to={'/organics'}>
+                    <li className="submenu_item" onClick={() => dispatch(selectTitle('Grocery'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Grocery_092022_1.png'} alt="" />
@@ -829,18 +980,24 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                    </NavLink>
+                          
                           </ul>
                         </div>
                       </div>
                     </div>
                 </li>
                 <li className="megamenu__item">
-                    <span onMouseEnter={() => setActive(9)}>Bakery</span>
+                  <NavLink to={'/bakery'}>
+                  <span onMouseEnter={() => setActive(9)}>Bakery</span>
+                  </NavLink>
+                    
                     <div className={`megamenu_child ${active === 9 ? "active" : ""}`} onMouseLeave={() => setActive(0)}>
                     <div className="submenu">
                         <div className="br_wrapper">
                           <ul className="submenu_list">
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Croissants & Danish'))}>
+                          <NavLink to={'/bakery'}>
+                          <li className="submenu_item" onClick={() => dispatch(selectTitle('Croissants & Danish'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Croissants_Danish_092222_1_1.png'} alt="" />
@@ -850,7 +1007,10 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Bread & Loafs'))}>
+                  </NavLink>
+                            
+                  <NavLink to={'/bakery'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Bread & Loafs'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Bread_Loafs_092222_1.png'} alt="" />
@@ -860,7 +1020,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Keto'))}>
+                  </NavLink>
+                  <NavLink to={'/bakery'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Keto'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/Keto_Pecan.png'} alt="" />
@@ -870,8 +1032,10 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                  </NavLink>
                             
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Donuts'))}>
+                  <NavLink to={'/bakery'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Donuts'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/Donuts_1.png'} alt="" />
@@ -881,8 +1045,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-
-                            <li className="submenu_item"  onClick={() => dispatch(selectTitle('Buns & Rolls'))}>
+                  </NavLink>
+                  <NavLink to={'/bakery'}>
+                  <li className="submenu_item"  onClick={() => dispatch(selectTitle('Buns & Rolls'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Buns_Rolls_092222_1.png'} alt="" />
@@ -892,8 +1057,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Cookies & Muffins'))}>
+                  </NavLink>
+                  <NavLink to={'/bakery'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Cookies & Muffins'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cakes_092222_1_1.png'} alt="" />
@@ -903,8 +1069,11 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                  </NavLink>
                             
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Cakes'))}>
+
+                  <NavLink to={'/bakery'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Cakes'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cookies_Muffins_092222_2.png'} alt="" />
@@ -914,18 +1083,25 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                  </NavLink>
+                            
+                            
                           </ul>
                         </div>
                       </div>
                     </div>
                 </li>
                 <li className="megamenu__item">
-                    <span onMouseEnter={() => setActive(10)}>Dairy & Eggs</span>
+                <NavLink to={'/dairy_eggs'}>
+                <span onMouseEnter={() => setActive(10)}>Dairy & Eggs</span>
+                  </NavLink>
+                   
                     <div className={`megamenu_child ${active === 10 ? "active" : ""}`} onMouseLeave={() => setActive(0)}>
                     <div className="submenu">
                         <div className="br_wrapper">
                           <ul className="submenu_list">
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Fresh Milk'))}>
+                          <NavLink to={'/dairy_eggs'}>
+                          <li className="submenu_item" onClick={() => dispatch(selectTitle('Fresh Milk'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_FreshMilk_092322_2.png'} alt="" />
@@ -935,7 +1111,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item"  onClick={() => dispatch(selectTitle('Long Shelf Life Milk'))}>
+                  </NavLink>
+                  <NavLink to={'/dairy_eggs'}>
+                  <li className="submenu_item"  onClick={() => dispatch(selectTitle('Long Shelf Life Milk'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_LongShelfLife-Milk_092322_1.png'} alt="" />
@@ -945,7 +1123,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Milk Alternatives'))}>
+                  </NavLink>
+                  <NavLink to={'/dairy_eggs'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Milk Alternatives'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_MilkAlternatives_092322_1.png'} alt="" />
@@ -955,8 +1135,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Eggs'))}>
+                  </NavLink>
+                  <NavLink to={'/dairy_eggs'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Eggs'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Eggs_092322_1.png'} alt="" />
@@ -966,8 +1147,10 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Paneer & Tofu'))}>
+                  </NavLink>
+                            
+                  <NavLink to={'/dairy_eggs'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Paneer & Tofu'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Paneer_Tofu_092322_1.png'} alt="" />
@@ -977,8 +1160,10 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                  </NavLink>
 
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Butter & Ghee'))}>
+                  <NavLink to={'/dairy_eggs'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Butter & Ghee'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Butter_Ghee_092322_1.png'} alt="" />
@@ -988,8 +1173,11 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                  </NavLink>
+
                             
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Yogurt & Lassi'))}>
+                  <NavLink to={'/dairy_eggs'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Yogurt & Lassi'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Yogurt_Lassi_092322_1.png'} alt="" />
@@ -999,7 +1187,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Cream & Laban'))}>
+                  </NavLink>
+                  <NavLink to={'/dairy_eggs'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Cream & Laban'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cream_Laban_092322_1.png'} alt="" />
@@ -1009,7 +1199,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Cheese'))}>
+                  </NavLink>
+                  <NavLink to={'/dairy_eggs'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Cheese'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Cheese_092322_1.png'} alt="" />
@@ -1019,18 +1211,25 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                  </NavLink>
+                            
+                          
                           </ul>
                         </div>
                       </div>
                     </div>
                 </li>
                 <li className="megamenu__item">
-                    <span onMouseEnter={() => setActive(11)}>Ice Cream</span>
+                  <NavLink to={'/ice_cream'}>
+                  <span onMouseEnter={() => setActive(11)}>Ice Cream</span>
+                  </NavLink>
+                    
                     <div className={`megamenu_child ${active === 11 ? "active" : ""}`} onMouseLeave={() => setActive(0)}>
                     <div className="submenu">
                         <div className="br_wrapper">
                           <ul className="submenu_list">
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Ice Creams'))}>
+                          <NavLink to={'/ice_cream'}>
+                          <li className="submenu_item" onClick={() => dispatch(selectTitle('Ice Creams'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Icecreams_091922_4.png'} alt="" />
@@ -1040,7 +1239,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Juice Pops'))}>
+                  </NavLink>
+                  <NavLink to={'/ice_cream'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Juice Pops'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_JuicePops_092322_1.png'} alt="" />
@@ -1050,7 +1251,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Sorbet'))}>
+                  </NavLink>
+                  <NavLink to={'/ice_cream'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Sorbet'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Sorbet_092322_1.png'} alt="" />
@@ -1060,6 +1263,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                  </NavLink>
+                            
+                           
 
                           </ul>
                         </div>
@@ -1067,12 +1273,16 @@ const Megamenu = () =>{
                     </div>
                 </li>
                 <li className="megamenu__item">
-                    <span onMouseEnter={() => setActive(12)}>Pantry</span>
+                <NavLink to={'/pantry'}>
+                <span onMouseEnter={() => setActive(12)}>Pantry</span>
+                  </NavLink>
+                    
                     <div className={`megamenu_child ${active === 12 ? "active" : ""}`} onMouseLeave={() => setActive(0)}>
                     <div className="submenu">
                         <div className="br_wrapper">
                           <ul className="submenu_list">
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Rice & Pulses'))}>
+                          <NavLink to={'/pantry'}>
+                          <li className="submenu_item" onClick={() => dispatch(selectTitle('Rice & Pulses'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/rice_pulses.png'} alt="" />
@@ -1082,7 +1292,10 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Dates & Nuts'))}>
+                  </NavLink>
+                           
+                  <NavLink to={'/pantry'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Dates & Nuts'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Dates_Nuts_092322_2.png'} alt="" />
@@ -1092,7 +1305,10 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Tea & Coffee'))}>
+                  </NavLink>
+                            
+                  <NavLink to={'/pantry'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Tea & Coffee'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/Tea_Coffee_2_.png'} alt="" />
@@ -1102,8 +1318,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Chocolates & Sweets'))}>
+                  </NavLink>
+                  <NavLink to={'/pantry'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Chocolates & Sweets'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/chocolates.png'} alt="" />
@@ -1113,8 +1330,10 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Herbs & Spices'))}>
+                  </NavLink>
+                            
+                  <NavLink to={'/pantry'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Herbs & Spices'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/Spices_condiments.png'} alt="" />
@@ -1124,8 +1343,11 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                  </NavLink>
 
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Oil, Ghee & Butter Range'))}>
+                            
+                  <NavLink to={'/pantry'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Oil, Ghee & Butter Range'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/Ghee_Oil.png'} alt="" />
@@ -1135,8 +1357,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Water'))}>
+                  </NavLink>
+                  <NavLink to={'/pantry'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Water'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_Water_092322_1.png'} alt="" />
@@ -1146,7 +1369,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Organic Grocery'))}>
+                  </NavLink>
+                  <NavLink to={'/pantry'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Organic Grocery'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'src="https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicGrocery_092322_2.png"'} alt="" />
@@ -1156,7 +1381,9 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Indian Breakfast'))}>
+                  </NavLink>
+                  <NavLink to={'/pantry'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Indian Breakfast'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/1457586_IndianBreakfast_092322_1.png'} alt="" />
@@ -1166,7 +1393,10 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
-                            <li className="submenu_item" onClick={() => dispatch(selectTitle('Pasta'))}>
+                  </NavLink>
+                          
+                  <NavLink to={'/pantry'}>
+                  <li className="submenu_item" onClick={() => dispatch(selectTitle('Pasta'))}>
                               <div className="submenu_link">
                                 <div className="submenu_image">
                                   <img src={'https://media.barakatfresh.ae/media/catalog/category/shutterstock_2117856260.png'} alt="" />
@@ -1176,6 +1406,8 @@ const Megamenu = () =>{
                                 </div>
                               </div>
                             </li>
+                  </NavLink>
+                            
                           </ul>
                         </div>
                       </div>

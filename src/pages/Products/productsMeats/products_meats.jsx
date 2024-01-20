@@ -56,7 +56,9 @@ const PageProductsMeats = () =>{
 
   const [activeTags,setActiveTags] = useState(false)
 
-  const [selectSubCats,setSelectSubCats] = useState('')
+  const mainTitle = useSelector(state => state.basket.title)
+
+  const [selectSubCats,setSelectSubCats] = useState(mainTitle)
 
   const {basket} = useSelector(state => state.basket)
 
@@ -220,8 +222,12 @@ const filterBySubcats = () => {
   const [isFixed, setIsFixed] = useState(false);
 
   useEffect(() =>{
+    setSelectSubCats(mainTitle)
+  },[mainTitle])
+
+  useEffect(() =>{
     filterBySubcats()
-  },[selectSubCats])
+  },[selectSubCats,mainTitle])
 
     useEffect(() => {
         const handleScroll = () => {

@@ -35,8 +35,6 @@ const PageProducts = () =>{
     {title:"Melons",img:"https://media.barakatfresh.ae/media/catalog/category/1457586_Melons_091922_1.png"}
 ])
 
-const titleSelect = useSelector(state => state.basket.title)
-const [selectSubCats,setSelectSubCats] = useState(titleSelect)
   const [title,setTitle] = useState('Fruits')
 
   const [selectPrice,setSelectPrice] = useState('')
@@ -55,6 +53,9 @@ const [selectSubCats,setSelectSubCats] = useState(titleSelect)
   const [activeOrigin,setActiveOrigin] = useState(false)
 
   const [activeTags,setActiveTags] = useState(false)
+  const mainTitle = useSelector(state => state.basket.title)
+
+  const [selectSubCats,setSelectSubCats] = useState(mainTitle)
 
   const {basket} = useSelector(state => state.basket)
   
@@ -243,9 +244,13 @@ const filterBySubcats = () => {
         };
       }, []);
 
+      useEffect(() =>{
+        setSelectSubCats(mainTitle)
+      },[mainTitle])
+
     useEffect(() =>{
         filterBySubcats()
-    },[selectSubCats])
+    },[selectSubCats,mainTitle])
 
     return(
         <>
