@@ -228,6 +228,9 @@ const filterBySubcats = () => {
   useEffect(() =>{
     filterBySubcats()
   },[selectSubCats,mainTitle])
+  useEffect(() =>{
+    products.map(item => item.quantity = 1)
+  },[products])
 
     useEffect(() => {
         const handleScroll = () => {

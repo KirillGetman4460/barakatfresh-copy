@@ -208,6 +208,9 @@ const filterBySubcats = () => {
           window.removeEventListener('scroll', handleScroll);
         };
       }, []);
+      useEffect(() =>{
+        products.map(item => item.quantity = 1)
+      },[products])
     return(
         <>
         <div className={`${isFixed ? 'fixed' : ''}`}>

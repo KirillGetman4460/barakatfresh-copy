@@ -143,31 +143,12 @@ const MainPage = () =>{
                     <div className="br_wrapper br_mb10 br_mt20">
                     <div className="styles_heroslider__VyI6P">
                             <Swiper
-                                spaceBetween={50}
+                                spaceBetween={0}
                                 slidesPerView={1}
                                 modules={[Navigation]}
                                 navigation
                                 ref={swiperRef}
-                                breakpoints={{
-                                  340: {
-                                      slidesPerView: 1,
-                                  },
-                                  440: {
-                                      slidesPerView: 1,
-                                  },
-                                  540: {
-                                      slidesPerView: 1,
-                                  },
-                                  640: {
-                                    slidesPerView: 2,
-                                  },
-                                  970: {
-                                    slidesPerView: 3,
-                                  },
-                                  971: {
-                                      slidesPerView: 4,
-                                    },
-                                }}
+                               
                             >
                                 <SwiperSlide>
                                 <span
