@@ -191,10 +191,9 @@ const MainPage = () =>{
                     </div><template data-dgst="DYNAMIC_SERVER_USAGE"></template>
                     <div className="br_wrapper">
                         <div className="br_mb50">
-                            <div className="styles_banner___0eKA"><a
-                                    href="https://barakatfresh.ae/express-delivery.html"><span
+                            <div className="styles_banner___0eKA"><span
                                     className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
-                                            src="https://media.barakatfresh.ae/media/wysiwyg/Express_Delivery_90_Mins_-_1800x75_Link_V2_1_.jpg" /></span></a>
+                                            src="https://media.barakatfresh.ae/media/wysiwyg/Express_Delivery_90_Mins_-_1800x75_Link_V2_1_.jpg" /></span>
                             </div>
                         </div>
                         <div className="br_mb50">
@@ -325,9 +324,9 @@ const MainPage = () =>{
                             </div>
                         </div>
                         <div className="br_mb50">
-                            <div className="styles_banner___0eKA"><a href="https://barakatfresh.ae/ready-to-eat.html"><span
+                            <div className="styles_banner___0eKA"><span
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
-                                            src="https://media.barakatfresh.ae/media/codazon/slideshow/m/i/microsoftteams-image_27_.png" /></span></a>
+                                            src="https://media.barakatfresh.ae/media/codazon/slideshow/m/i/microsoftteams-image_27_.png" /></span>
                             </div>
                         </div>
                         <div className="br_mb50">
@@ -451,9 +450,9 @@ const MainPage = () =>{
                             </div>
                         </div>
                         <div className="br_mb50">
-                            <div className="styles_banner___0eKA"><a href="https://barakatfresh.ae/best-products.html"><span
+                            <div className="styles_banner___0eKA"><span
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
-                                            src="https://media.barakatfresh.ae/media/catalog/tmp/category/Best_Food_-_Unlock_Flavorful_Savings_-_Online_Banner-01.jpg" /></span></a>
+                                            src="https://media.barakatfresh.ae/media/catalog/tmp/category/Best_Food_-_Unlock_Flavorful_Savings_-_Online_Banner-01.jpg" /></span>
                             </div>
                         </div>
                         <div className="br_mb50">
@@ -580,10 +579,9 @@ const MainPage = () =>{
                         </div>
                         <div className="br_mb50">
                             <div className="styles_banner___0eKA">
-                                <a
-                                    href="https://barakatfresh.ae/meats/premium-meats.html"><span
+                             <span
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
-                                            src="https://media.barakatfresh.ae/media/wysiwyg/Premium_Meat_-_Banner_1180x324_2_100523.jpg" /></span></a>
+                                            src="https://media.barakatfresh.ae/media/wysiwyg/Premium_Meat_-_Banner_1180x324_2_100523.jpg" /></span>
                             </div>
                         </div>
                         <div className="br_mb50">
@@ -708,9 +706,9 @@ const MainPage = () =>{
                         </div>
                         
                         <div className="br_mb50">
-                            <div className="styles_banner___0eKA"><a href="https://barakatfresh.ae/value-packs.html"><span
+                            <div className="styles_banner___0eKA"><span
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
-                                            src="https://media.barakatfresh.ae/media/wysiwyg/Family_Size_-_Banner_v2-01.jpg" /></span></a>
+                                            src="https://media.barakatfresh.ae/media/wysiwyg/Family_Size_-_Banner_v2-01.jpg" /></span>
                             </div>
                         </div>
                         <div className="br_mb50">
@@ -814,9 +812,9 @@ const MainPage = () =>{
                             </div>
                         </div>
                         <div className="br_mb50">
-                            <div className="styles_banner___0eKA"><a href="https://barakatfresh.ae/gift-baskets.html"><span
+                            <div className="styles_banner___0eKA"><span
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
-                                            src="https://media.barakatfresh.ae/media/app/ExpressDelivery-90-mins-web.jpg" /></span></a>
+                                            src="https://media.barakatfresh.ae/media/app/ExpressDelivery-90-mins-web.jpg" /></span>
                             </div>
                         </div>
                         <div className="br_mb50">
@@ -920,9 +918,9 @@ const MainPage = () =>{
                         </div>
                        
                         <div className="br_mb50">
-                            <div className="styles_banner___0eKA"><a href="https://barakatfresh.ae/organics.html"><span
+                            <div className="styles_banner___0eKA"><span
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
-                                            src="https://media.barakatfresh.ae/media/wysiwyg/home/mid-section/Eweborganic1.jpg" /></span></a>
+                                            src="https://media.barakatfresh.ae/media/wysiwyg/home/mid-section/Eweborganic1.jpg" /></span>
                             </div>
                         </div>
                         <div className="br_mb50">
@@ -1047,9 +1045,9 @@ const MainPage = () =>{
                             </div>
                         </div>
                         <div className="br_mb50">
-                            <div className="styles_banner___0eKA"><a href="https://barakatfresh.ae/bulk-buy.html"><span
+                            <div className="styles_banner___0eKA"><span
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
-                                            src="https://media.barakatfresh.ae/media/wysiwyg/home/mid-section/EWBulkBuy.png" /></span></a>
+                                            src="https://media.barakatfresh.ae/media/wysiwyg/home/mid-section/EWBulkBuy.png" /></span>
                             </div>
                         </div>
                         <div className="br_mb50">
@@ -1173,9 +1171,9 @@ const MainPage = () =>{
                             </div>
                         </div>
                         <div className="br_mb50">
-                            <div className="styles_banner___0eKA"><a href="https://barakatfresh.ae/vegetables.html"><span
+                            <div className="styles_banner___0eKA"><span
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
-                                            src="https://media.barakatfresh.ae/media/wysiwyg/home/mid-section/WebBannerAED-25E1.gif" /></span></a>
+                                            src="https://media.barakatfresh.ae/media/wysiwyg/home/mid-section/WebBannerAED-25E1.gif" /></span>
                             </div>
                         </div>
                         <div className="br_mb50">
@@ -1298,10 +1296,9 @@ const MainPage = () =>{
                             </div>
                         </div>
                         <div className="br_mb50">
-                            <div className="styles_banner___0eKA"><a
-                                    href="https://barakatfresh.ae/https:/barakatfresh.ae/en/influencer-exclusive"><span
+                            <div className="styles_banner___0eKA"><span
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
-                                            src="https://media.barakatfresh.ae/media/wysiwyg/Vip_revised.jpg" /></span></a>
+                                            src="https://media.barakatfresh.ae/media/wysiwyg/Vip_revised.jpg" /></span>
                             </div>
                         </div>
                         <div className="br_mb50">
@@ -1424,9 +1421,9 @@ const MainPage = () =>{
                             </div>
                         </div>
                         <div className="br_mb50">
-                            <div className="styles_banner___0eKA"><a href="https://barakatfresh.ae/fresh-dips.html"><span
+                            <div className="styles_banner___0eKA"><span
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
-                                            src="https://media.barakatfresh.ae/media/wysiwyg/home/mid-section/EWfreshdip2.jpg" /></span></a>
+                                            src="https://media.barakatfresh.ae/media/wysiwyg/home/mid-section/EWfreshdip2.jpg" /></span>
                             </div>
                         </div>
                         <div className="br_mb50">
