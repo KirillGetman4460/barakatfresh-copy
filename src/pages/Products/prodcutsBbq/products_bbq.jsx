@@ -95,21 +95,31 @@ const filterBySubcats = () => {
   
 }
 
-  const handleCountrySelectChange = (event) => {
-    const checkSelect = selectedCountries.find(item => item === event)
-    if(!checkSelect){
-      setSelectedCountries(prev => [...prev, event])
-      return
+const handleCountrySelectChange = (event) => {
+  setSelectedCountries(prev => {
+    const isAlreadySelected = prev.includes(event);
+
+    if (isAlreadySelected) {
+
+      return prev.filter(item => item !== event);
+    } else {
+
+      return [...prev, event];
     }
-    
-  };
+  });
+};
   const handleTagsSelectChange = (event) => {
-    const checkSelect = selectedTags.find(item => item === event)
-    if(!checkSelect){
-      setSelectedTags(prev => [...prev, event])
-      return
-    }
-    
+    setSelectedTags(prev => {
+      const isAlreadySelected = prev.includes(event);
+  
+      if (isAlreadySelected) {
+  
+        return prev.filter(item => item !== event);
+      } else {
+  
+        return [...prev, event];
+      }
+    });
   };
 
 
