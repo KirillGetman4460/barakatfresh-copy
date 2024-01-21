@@ -1564,10 +1564,13 @@ const MainPage = () =>{
         <div className="layout_tabs">
           <ul className="tabs">
               <li className="tabs_item">
+                <NavLink to={'/'}>
                 <div className="tabs_link">
                   <div className="tabs_icon"><Icon path={mdiHomeOutline} size={1} /></div>
                   <div className="tabs_title">Home</div>
                 </div>
+                </NavLink>
+                
               </li>
               <li className="tabs_item">
                 <NavLink to={'/basket'}>
