@@ -235,7 +235,7 @@ const handleTagsSelectChange = (event) => {
   
     
   };
-
+  const [activeCatigoriesModal,setActiveCatigoriesModal] = useState(false)
   const resetSelectedCountries = () => {
 
     setSelectedCountries([])
@@ -538,10 +538,23 @@ const handleTagsSelectChange = (event) => {
         <div className="layout_tabs">
           <ul className="tabs">
               <li className="tabs_item">
+                <NavLink to={'/'}>
                 <div className="tabs_link">
                   <div className="tabs_icon"><Icon path={mdiHomeOutline} size={1} /></div>
                   <div className="tabs_title">Home</div>
                 </div>
+                </NavLink>
+                
+              </li>
+              <li className="tabs_item" onClick={() => setActiveCatigoriesModal(true)}>
+                
+                <div className="tabs_link">
+                  <div className="tabs_icon"><Icon path={mdiCartOutline } size={1} /></div>
+                  <div className="tabs_title">Categories</div>
+                  
+                </div>
+                
+               
               </li>
               <li className="tabs_item">
                 <NavLink to={'/basket'}>
@@ -556,6 +569,552 @@ const handleTagsSelectChange = (event) => {
                
               </li>
           </ul>
+        </div>
+        <div className={`catigories__modal ${activeCatigoriesModal ? "active" : ""}`}>
+            <div className="styles_layout_head__MwRSe">
+                <div className="styles_rootheader__Z2vaD">
+                    <div className="styles_rootheader_back__B_zcz" onClick={() =>setActiveCatigoriesModal(false)}>
+                    <NavLink to={'/'}>
+                    <div className="rootheader_back">
+                        <div className="rootheader_back__icon">
+                            <Icon path={mdiChevronLeft} size={1} color={'rgb(96, 96, 96)'} />
+                        </div>
+                        
+                    </div>
+                    </NavLink>
+                    </div>
+                    <div className="styles_rootheader_title__KYVsS">
+                    Categories
+                    </div>
+                </div>
+            </div>
+            <div className="styles_layout_content__MXhSs">
+                <div className='styles_categories__lVYo4'>
+                    <ul>
+
+                        <li>
+                            <div className="styles_cateogry__Qk2PS">
+                                <div className="styles_cateogry_head___695v">
+                                    <h4 className='styles_cateogry_head_text__YBp1L'>Bbq Range</h4>
+                                    <div className="styles_cateogry_head_link__e__6j">
+                                        Show all
+                                    </div>
+                                </div>
+                                <div className="styles_subcategories__MPoD4">
+                                    <ul className='styles_subcategories_list___9jiE'>
+                                       
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                        <NavLink to={'/'}>
+                                        <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/Skewres_2_.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Fruit & Veg Skewers</div>
+                                            </NavLink>
+                                           
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_MarinatedMeats_092022_2.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Meats & Marinates</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="styles_cateogry__Qk2PS">
+                                <div className="styles_cateogry_head___695v">
+                                    <h4 className='styles_cateogry_head_text__YBp1L'>Fruits</h4>
+                                    <div className="styles_cateogry_head_link__e__6j">
+                                        Show all
+                                    </div>
+                                </div>
+                                <div className="styles_subcategories__MPoD4">
+                                    <ul className='styles_subcategories_list___9jiE'>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/Skewres_2_.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Fruit & Veg Skewers</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_MarinatedMeats_092022_2.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Meats & Marinates</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="styles_cateogry__Qk2PS">
+                                <div className="styles_cateogry_head___695v">
+                                    <h4 className='styles_cateogry_head_text__YBp1L'>Fruits</h4>
+                                    <div className="styles_cateogry_head_link__e__6j">
+                                        Show all
+                                    </div>
+                                </div>
+                                <div className="styles_subcategories__MPoD4">
+                                    <ul className='styles_subcategories_list___9jiE'>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/Skewres_2_.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Fruit & Veg Skewers</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_MarinatedMeats_092022_2.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Meats & Marinates</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="styles_cateogry__Qk2PS">
+                                <div className="styles_cateogry_head___695v">
+                                    <h4 className='styles_cateogry_head_text__YBp1L'>Fruits</h4>
+                                    <div className="styles_cateogry_head_link__e__6j">
+                                        Show all
+                                    </div>
+                                </div>
+                                <div className="styles_subcategories__MPoD4">
+                                    <ul className='styles_subcategories_list___9jiE'>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/Skewres_2_.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Fruit & Veg Skewers</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_MarinatedMeats_092022_2.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Meats & Marinates</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="styles_cateogry__Qk2PS">
+                                <div className="styles_cateogry_head___695v">
+                                    <h4 className='styles_cateogry_head_text__YBp1L'>Fruits</h4>
+                                    <div className="styles_cateogry_head_link__e__6j">
+                                        Show all
+                                    </div>
+                                </div>
+                                <div className="styles_subcategories__MPoD4">
+                                    <ul className='styles_subcategories_list___9jiE'>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/Skewres_2_.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Fruit & Veg Skewers</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_MarinatedMeats_092022_2.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Meats & Marinates</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="styles_cateogry__Qk2PS">
+                                <div className="styles_cateogry_head___695v">
+                                    <h4 className='styles_cateogry_head_text__YBp1L'>Fruits</h4>
+                                    <div className="styles_cateogry_head_link__e__6j">
+                                        Show all
+                                    </div>
+                                </div>
+                                <div className="styles_subcategories__MPoD4">
+                                    <ul className='styles_subcategories_list___9jiE'>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/Skewres_2_.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Fruit & Veg Skewers</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_MarinatedMeats_092022_2.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Meats & Marinates</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="styles_cateogry__Qk2PS">
+                                <div className="styles_cateogry_head___695v">
+                                    <h4 className='styles_cateogry_head_text__YBp1L'>Fruits</h4>
+                                    <div className="styles_cateogry_head_link__e__6j">
+                                        Show all
+                                    </div>
+                                </div>
+                                <div className="styles_subcategories__MPoD4">
+                                    <ul className='styles_subcategories_list___9jiE'>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/Skewres_2_.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Fruit & Veg Skewers</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_MarinatedMeats_092022_2.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Meats & Marinates</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="styles_cateogry__Qk2PS">
+                                <div className="styles_cateogry_head___695v">
+                                    <h4 className='styles_cateogry_head_text__YBp1L'>Fruits</h4>
+                                    <div className="styles_cateogry_head_link__e__6j">
+                                        Show all
+                                    </div>
+                                </div>
+                                <div className="styles_subcategories__MPoD4">
+                                    <ul className='styles_subcategories_list___9jiE'>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/Skewres_2_.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Fruit & Veg Skewers</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_MarinatedMeats_092022_2.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Meats & Marinates</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="styles_cateogry__Qk2PS">
+                                <div className="styles_cateogry_head___695v">
+                                    <h4 className='styles_cateogry_head_text__YBp1L'>Fruits</h4>
+                                    <div className="styles_cateogry_head_link__e__6j">
+                                        Show all
+                                    </div>
+                                </div>
+                                <div className="styles_subcategories__MPoD4">
+                                    <ul className='styles_subcategories_list___9jiE'>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/Skewres_2_.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Fruit & Veg Skewers</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_MarinatedMeats_092022_2.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Meats & Marinates</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="styles_cateogry__Qk2PS">
+                                <div className="styles_cateogry_head___695v">
+                                    <h4 className='styles_cateogry_head_text__YBp1L'>Fruits</h4>
+                                    <div className="styles_cateogry_head_link__e__6j">
+                                        Show all
+                                    </div>
+                                </div>
+                                <div className="styles_subcategories__MPoD4">
+                                    <ul className='styles_subcategories_list___9jiE'>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/Skewres_2_.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Fruit & Veg Skewers</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_MarinatedMeats_092022_2.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Meats & Marinates</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="styles_cateogry__Qk2PS">
+                                <div className="styles_cateogry_head___695v">
+                                    <h4 className='styles_cateogry_head_text__YBp1L'>Fruits</h4>
+                                    <div className="styles_cateogry_head_link__e__6j">
+                                        Show all
+                                    </div>
+                                </div>
+                                <div className="styles_subcategories__MPoD4">
+                                    <ul className='styles_subcategories_list___9jiE'>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/Skewres_2_.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Fruit & Veg Skewers</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_MarinatedMeats_092022_2.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Meats & Marinates</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="styles_cateogry__Qk2PS">
+                                <div className="styles_cateogry_head___695v">
+                                    <h4 className='styles_cateogry_head_text__YBp1L'>Fruits</h4>
+                                    <div className="styles_cateogry_head_link__e__6j">
+                                        Show all
+                                    </div>
+                                </div>
+                                <div className="styles_subcategories__MPoD4">
+                                    <ul className='styles_subcategories_list___9jiE'>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/Skewres_2_.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Fruit & Veg Skewers</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_MarinatedMeats_092022_2.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Meats & Marinates</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                        <li className='styles_subcategories_item__mWsEc'>
+                                            <div className="styles_subcategory_thumb__w40Bs">
+                                                <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
+                                            </div>
+                                            <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
       </div>
         </>
