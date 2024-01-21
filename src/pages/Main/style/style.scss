@@ -1,9 +1,5 @@
-// @import url("https://barakatfresh.ae/_next/static/css/3ce6ee6c106e8149.css");
 
-// @import url("https://barakatfresh.ae/_next/static/css/b1e7717ca9120d88.css");
-// @import url("https://barakatfresh.ae/_next/static/css/b1e7717ca9120d88.css");
-// @import url("https://barakatfresh.ae/_next/static/css/969796deb352e7e9.css");
-// @import url("https://barakatfresh.ae/_next/static/css/969796deb352e7e9.css");
+
 .swiper-button-prev, .swiper-button-next{
     height: 60px !important;
     background-color: #f4f3f3;
@@ -28,9 +24,15 @@
   }
   .styles_miniature_thumb__pC4As {
     height:100%;
-  
-  }
 
+  }
+  .styles_miniature_image__XbgdR{
+
+    position: relative;
+  }
+  .products__item__add__btn.main{
+    z-index: 100 !important;
+  }
   @media(max-width:540px){
     .styles_myitems_item__XSuD6{
       display: block !important;

@@ -18,8 +18,8 @@ const Basket = () =>{
 
     const dispatch = useDispatch()
 
-    const totalPrice = basket.reduce((acc, product) => acc + product.price, 0)
-
+    const totalPrice = basket.reduce((acc, product) => acc + Math.round(product.price_raw), 0)
+  
     const [active,setActive] = useState(false)
 
     return (
@@ -125,7 +125,7 @@ const Basket = () =>{
                             <div className="summary_sep"></div>
                             <div className="summary_item total">
                                 <span>Grand Total <i>(Incl. Tax)</i></span>
-                                <span>AED 52.00</span>
+                                <span>AED {totalPrice}</span>
                             </div>
                             <div className="summary_item tax">
                                 <span>Tax</span>

@@ -254,42 +254,68 @@ const filterBySubcats = () => {
         <div className="fixed__modile">
             <div className="megamenu modile">
             <ul className="megamenu__list">
-                <li className="megamenu__item">
-                    <span>Bbq Range</span>s
+                 <NavLink to={'/bbq'}>
+                 <li className="megamenu__item">
+                    <span>Bbq Range</span>
                 </li>
+                 </NavLink>
+                <NavLink to={'/fruits'}>
                 <li className="megamenu__item">
                     <span>Fruits</span>
                 </li>
+                </NavLink>
+                <NavLink to={'/vegetables'}>
                 <li className="megamenu__item">
                     <span>Vegetables</span>
                 </li>
+                </NavLink>
+                <NavLink to={'/fresh_juices'}>
                 <li className="megamenu__item">
                     <span>Fresh Juices</span>
                 </li>
+                </NavLink>
+                <NavLink to={'/meats'}>
                 <li className="megamenu__item">
                     <span>Meats</span>
                 </li>
+                </NavLink>
+                <NavLink to={'/grab_to_go'}>
                 <li className="megamenu__item">
                     <span>Grab N Go</span>
                 </li>
+                </NavLink>
+                <NavLink to={'/gifting_needs'}>
                 <li className="megamenu__item">
                     <span>Gifting & Party Needs</span>
                 </li>
+                </NavLink>
+                <NavLink to={'/organics'}>
                 <li className="megamenu__item">
                     <span>Organics</span>
                 </li>
+                </NavLink>
+                <NavLink to={'/bakery'}>
                 <li className="megamenu__item">
                     <span>Bakery</span>
                 </li>
+                </NavLink>
+                <NavLink to={'/dairy_eggs'}>
                 <li className="megamenu__item">
                     <span>Dairy & Eggs</span>
                 </li>
+                </NavLink>
+                <NavLink to={'/ice_cream'}>
                 <li className="megamenu__item">
                     <span>Ice Cream</span>
                 </li>
+                </NavLink>
+                <NavLink to={'/pantry'}>
                 <li className="megamenu__item">
                     <span>Pantry</span>
                 </li>
+                </NavLink>
+               
+               
             </ul>
         </div>
             <div className="products_taskbar">
