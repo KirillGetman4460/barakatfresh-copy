@@ -146,6 +146,26 @@ const MainPage = () =>{
       modules={[Navigation]}
       navigation
       ref={swiperRef}
+      breakpoints={{
+        340: {
+            slidesPerView: 1,
+        },
+        440: {
+            slidesPerView: 1,
+        },
+        540: {
+            slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 2,
+        },
+        970: {
+          slidesPerView: 3,
+        },
+        971: {
+            slidesPerView: 4,
+          },
+      }}
     >
       <SwiperSlide>
       <div className="styles_myitems_item__XSuD6">
@@ -1180,6 +1200,26 @@ const MainPage = () =>{
       slidesPerView={4}
       modules={[Navigation]}
       navigation
+      breakpoints={{
+        340: {
+            slidesPerView: 1,
+        },
+        440: {
+            slidesPerView: 1,
+        },
+        540: {
+            slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 2,
+        },
+        970: {
+          slidesPerView: 3,
+        },
+        971: {
+            slidesPerView: 4,
+          },
+      }}
       ref={swiperRef}
     >
       <SwiperSlide>
@@ -1759,6 +1799,26 @@ const MainPage = () =>{
       slidesPerView={4}
       modules={[Navigation]}
       navigation
+      breakpoints={{
+        340: {
+            slidesPerView: 1,
+        },
+        440: {
+            slidesPerView: 1,
+        },
+        540: {
+            slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 2,
+        },
+        970: {
+          slidesPerView: 3,
+        },
+        971: {
+            slidesPerView: 4,
+          },
+      }}
       ref={swiperRef}
     >
       <SwiperSlide>
@@ -2866,6 +2926,26 @@ const MainPage = () =>{
       slidesPerView={4}
       modules={[Navigation]}
       navigation
+      breakpoints={{
+        340: {
+            slidesPerView: 1,
+        },
+        440: {
+            slidesPerView: 1,
+        },
+        540: {
+            slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 2,
+        },
+        970: {
+          slidesPerView: 3,
+        },
+        971: {
+            slidesPerView: 4,
+          },
+      }}
       ref={swiperRef}
     >
       <SwiperSlide>
@@ -3430,6 +3510,26 @@ const MainPage = () =>{
       slidesPerView={4}
       modules={[Navigation]}
       navigation
+      breakpoints={{
+        340: {
+            slidesPerView: 1,
+        },
+        440: {
+            slidesPerView: 1,
+        },
+        540: {
+            slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 2,
+        },
+        970: {
+          slidesPerView: 3,
+        },
+        971: {
+            slidesPerView: 4,
+          },
+      }}
       ref={swiperRef}
     >
       <SwiperSlide>
@@ -5198,6 +5298,26 @@ const MainPage = () =>{
       slidesPerView={4}
       modules={[Navigation]}
       navigation
+      breakpoints={{
+        340: {
+            slidesPerView: 1,
+        },
+        440: {
+            slidesPerView: 1,
+        },
+        540: {
+            slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 2,
+        },
+        970: {
+          slidesPerView: 3,
+        },
+        971: {
+            slidesPerView: 4,
+          },
+      }}
       ref={swiperRef}
     >
       <SwiperSlide>
@@ -5786,6 +5906,26 @@ const MainPage = () =>{
       spaceBetween={50}
       slidesPerView={4}
       modules={[Navigation]}
+      breakpoints={{
+        340: {
+            slidesPerView: 1,
+        },
+        440: {
+            slidesPerView: 1,
+        },
+        540: {
+            slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 2,
+        },
+        970: {
+          slidesPerView: 3,
+        },
+        971: {
+            slidesPerView: 4,
+          },
+      }}
       navigation
       ref={swiperRef}
     >
@@ -6367,6 +6507,26 @@ const MainPage = () =>{
       slidesPerView={4}
       modules={[Navigation]}
       navigation
+      breakpoints={{
+        340: {
+            slidesPerView: 1,
+        },
+        440: {
+            slidesPerView: 1,
+        },
+        540: {
+            slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 2,
+        },
+        970: {
+          slidesPerView: 3,
+        },
+        971: {
+            slidesPerView: 4,
+          },
+      }}
       ref={swiperRef}
     >
       <SwiperSlide>
@@ -6952,6 +7112,26 @@ const MainPage = () =>{
       spaceBetween={50}
       slidesPerView={4}
       modules={[Navigation]}
+      breakpoints={{
+        340: {
+            slidesPerView: 1,
+        },
+        440: {
+            slidesPerView: 1,
+        },
+        540: {
+            slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 2,
+        },
+        970: {
+          slidesPerView: 3,
+        },
+        971: {
+            slidesPerView: 4,
+          },
+      }}
       navigation
       ref={swiperRef}
     >
@@ -7510,6 +7690,26 @@ const MainPage = () =>{
       slidesPerView={4}
       modules={[Navigation]}
       navigation
+      breakpoints={{
+        340: {
+            slidesPerView: 1,
+        },
+        440: {
+            slidesPerView: 1,
+        },
+        540: {
+            slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 2,
+        },
+        970: {
+          slidesPerView: 3,
+        },
+        971: {
+            slidesPerView: 4,
+          },
+      }}
       ref={swiperRef}
     >
       <SwiperSlide>
@@ -8072,6 +8272,26 @@ const MainPage = () =>{
       spaceBetween={50}
       slidesPerView={4}
       modules={[Navigation]}
+      breakpoints={{
+        340: {
+            slidesPerView: 1,
+        },
+        440: {
+            slidesPerView: 1,
+        },
+        540: {
+            slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 2,
+        },
+        970: {
+          slidesPerView: 3,
+        },
+        971: {
+            slidesPerView: 4,
+          },
+      }}
       navigation
       ref={swiperRef}
     >

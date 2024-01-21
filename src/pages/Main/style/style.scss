@@ -13,29 +13,26 @@
         opacity: 1 !important;
     }
   }
+
   .swiper-button-prev:after, .swiper-button-next:after{
     font-size: 18px !important;
     color: rgb(96, 96, 96);
     font-weight: 700;
+  
   }
-.swiper-button-next,
-          .swiper-button-prev {
-            
-          }
 
-          .swiper-button-prev {
-          
-          }
-         
-          .swiper-button-next {
-           
-          }
 
-          .swiper-button-next::after,
-          .swiper-button-prev::after {
-            content: "";
-          }
+  .styles_addtocart_box__4cn_x{
+    display: none;
+  
+  }
+  .styles_miniature_thumb__pC4As {
+    height:100%;
+  
+  }
 
-          .swiper-pagination-bullet{
-           
-          }
+  @media(max-width:540px){
+    .styles_myitems_item__XSuD6{
+      display: block !important;
+    }
+  }
