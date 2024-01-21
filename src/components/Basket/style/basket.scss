@@ -272,7 +272,24 @@
 
     }
 }
-
+.AddAddress_addressDetail__3W0VD.title{
+    & .AddAddress_subInp__307n1{
+        & .AddAddress_subInp__307n1{
+            width: 100%;
+            & input{
+                width: 100% !important;
+            }
+        }
+    }
+}
+.AddAddress_active__Wk-RW.active{
+    background: #2cc84d;
+    padding: 3px 10px;
+    border-radius: 0.5rem;
+    & .MuiButton-label{
+        color: white;
+    }
+}
 .basket__empty{
     width: 40%;
     margin: 0 auto;

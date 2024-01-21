@@ -22,6 +22,8 @@ const Basket = () =>{
   
     const [active,setActive] = useState(false)
 
+    const [activeAdress,setActiveAdress] = useState(1)
+
     return (
         <div className="basket">
             <div className="layout_head">
@@ -206,7 +208,11 @@ const Basket = () =>{
             </div>
                     </div>
                     
-                    <div class="AddAddress_addressDetail__3W0VD">Al Wahda Street - Al Majaz - Al Majaz 2 - Sharjah</div>
+                    <div class="AddAddress_formInput__1MrR5 title">
+                            <input maxlength="200" name="how" autocomplete="off" placeholder="Adress" class="AddAddress_howToField__3kqTP" value="" />
+                        </div>
+
+
                     <div class="AddAddress_desktopForm__1d-SB">
                         <div class="AddAddress_formInput__1MrR5">
                             <div class="AddAddress_subInp__307n1">
@@ -224,19 +230,27 @@ const Basket = () =>{
                             <div>
                                 <div class="AddAddress_tagHeading__2dcbU">Tag location:</div>
                             <div class="AddAddress_tags__2-OCm">
-                                <button class="MuiButtonBase-root MuiButton-root MuiButton-text AddAddress_active__Wk-RW" tabindex="0" type="button">
-                                    <span class="MuiButton-label">home</span>
+                                <button class={`MuiButtonBase-root MuiButton-root MuiButton-text AddAddress_active__Wk-RW ${activeAdress === 1 ? "active" : ''}`} tabindex="0" type="button"
+                                    onClick={() => setActiveAdress(1)}
+                                >
+                                    <span class="MuiButton-label">Home</span>
                                     <span class="MuiTouchRipple-root"></span>
                                 </button>
-                                <button class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" type="button">
-                                    <span class="MuiButton-label">office</span>
+                                <button 
+                                onClick={() => setActiveAdress(2)}
+                                class={`MuiButtonBase-root MuiButton-root MuiButton-text AddAddress_active__Wk-RW ${activeAdress === 2 ? "active" : ''}`}  tabindex="0" type="button">
+                                    <span class="MuiButton-label">Office</span>
                                     <span class="MuiTouchRipple-root"></span>
                                 </button>
-                                <button class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" type="button">
-                                    <span class="MuiButton-label">hotel</span>
+                                <button 
+                                onClick={() => setActiveAdress(3)}
+                                class={`MuiButtonBase-root MuiButton-root MuiButton-text AddAddress_active__Wk-RW ${activeAdress === 3 ? "active" : ''}`}  tabindex="0" type="button">
+                                    <span class="MuiButton-label">Hotel</span>
                                     <span class="MuiTouchRipple-root"></span>
                                 </button>
-                                <button class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" type="button">
+                                <button 
+                                onClick={() => setActiveAdress(4)}
+                                class={`MuiButtonBase-root MuiButton-root MuiButton-text AddAddress_active__Wk-RW ${activeAdress === 4 ? "active" : ''}`}  tabindex="0" type="button">
                                     <span class="MuiButton-label">Other</span>
                                     <span class="MuiTouchRipple-root"></span>
                                 </button>

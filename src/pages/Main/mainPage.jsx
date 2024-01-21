@@ -1,7 +1,7 @@
 import {useRef} from 'react'
 import Header from "../../components/Header/header";
 import Megamenu from '../../components/Megamenu/megamenu'
-import { addBasket,minusQuantity,deleteItemBasket } from '../../store/basketSlice/basketSlice';
+import { addBasket,minusQuantity,deleteItemBasket,selectTitle } from '../../store/basketSlice/basketSlice';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useSelector,useDispatch } from 'react-redux'
@@ -1794,8 +1794,11 @@ const MainPage = () =>{
                                 <div className="styles_subcategories__MPoD4">
                                     <ul className='styles_subcategories_list___9jiE'>
                                        
-                                        <li className='styles_subcategories_item__mWsEc'>
-                                        <NavLink to={'/'}>
+                                        <li className='styles_subcategories_item__mWsEc' onClick={() =>{
+                                            setActiveCatigoriesModal(false)
+                                            dispatch(selectTitle('Fruit & Veg Skewers'))
+                                        }}>
+                                        <NavLink to={'/bbq'}>
                                         <div className="styles_subcategory_thumb__w40Bs">
                                                 <img src="https://media.barakatfresh.ae/media/catalog/category/Skewres_2_.png" alt="" />
                                             </div>
@@ -1803,17 +1806,30 @@ const MainPage = () =>{
                                             </NavLink>
                                            
                                         </li>
-                                        <li className='styles_subcategories_item__mWsEc'>
-                                            <div className="styles_subcategory_thumb__w40Bs">
+                                        <li className='styles_subcategories_item__mWsEc' onClick={() =>{
+                                             setActiveCatigoriesModal(false)
+                                            dispatch(selectTitle('Meats & Marinates'))}}>
+                                        <NavLink to={'/bbq'}>
+                                        <div className="styles_subcategory_thumb__w40Bs">
                                                 <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_MarinatedMeats_092022_2.png" alt="" />
                                             </div>
                                             <div className="styles_subcategory_title__1CXbb">Meats & Marinates</div>
+                                            </NavLink>
+
+                                            
                                         </li>
-                                        <li className='styles_subcategories_item__mWsEc'>
-                                            <div className="styles_subcategory_thumb__w40Bs">
+                                        
+                                        <li className='styles_subcategories_item__mWsEc'onClick={() =>{
+                                             setActiveCatigoriesModal(false)
+                                            dispatch(selectTitle('Burgers Sausages & Buns'))
+                                        }}>
+                                        <NavLink to={'/bbq'}>
+                                        <div className="styles_subcategory_thumb__w40Bs">
                                                 <img src="https://media.barakatfresh.ae/media/catalog/category/1457586_Sausages_Burgers_092222_3.png" alt="" />
                                             </div>
                                             <div className="styles_subcategory_title__1CXbb">Burgers Sausages & Buns</div>
+                                            </NavLink>
+                                            
                                         </li>
                                     </ul>
                                 </div>

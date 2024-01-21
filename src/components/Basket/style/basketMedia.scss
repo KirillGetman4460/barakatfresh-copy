@@ -68,6 +68,9 @@
     grid-gap: 2rem;
     gap: 2rem;
     margin: 0.2rem;
+    &.title{
+      margin-bottom: 20px;
+    }
   }
   .AddAddress_howToField__3kqTP {
     border-bottom: 1px solid rgba(57, 63, 82, 0.1);
