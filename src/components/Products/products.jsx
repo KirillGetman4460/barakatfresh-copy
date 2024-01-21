@@ -1,12 +1,14 @@
-import './style/products.scss'
-import './style/productsMedia.scss'
+
 import { useSelector, useDispatch } from 'react-redux'
+import { NavLink } from "react-router-dom";
 import { addBasket,minusQuantity,deleteItemBasket } from '../../store/basketSlice/basketSlice';
 
 import Icon from '@mdi/react';
 import { mdiPlus,mdiMinus  } from '@mdi/js';
 
 import { useEffect, useState } from 'react'
+import './style/products.scss'
+import './style/productsMedia.scss'
 const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setSelectPrice,setSelectSubCats,subCatsItem}) =>{
 
     const [active,setActive] = useState(null)
@@ -86,7 +88,15 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                 {products.map((product,i) => (
                 <li className="products__item" key={i}>
                     <div className="products__item__img">
-                        <img src={product.image} alt="" />
+                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img src={product.image} alt="" />
+                       
+</NavLink>
+                    
+                       
+                        
                     </div>
                     <div className="products__item__miniature">
                         <span>{product.origin}</span>
