@@ -141,54 +141,82 @@ const MainPage = () =>{
             <div className="styles_layout_content__z1Aw8">
                 <div>
                     <div className="br_wrapper br_mb10 br_mt20">
-                        <div className="styles_heroslider__VyI6P"><a
-                             className="styles_heroslider_nav__hxUxJ styles_left__U0pvb"><i className="mdi mdi-chevron-left"
-                                    style={{lineHeight:0}}></i></a>
-                            <div id="homehero" className="owl-carousel"><a
-                                    href="https://barakatfresh.ae/latest-promotions.html"><span
+                    <div className="styles_heroslider__VyI6P">
+                            <Swiper
+                                spaceBetween={50}
+                                slidesPerView={1}
+                                modules={[Navigation]}
+                                navigation
+                                ref={swiperRef}
+                                breakpoints={{
+                                  340: {
+                                      slidesPerView: 1,
+                                  },
+                                  440: {
+                                      slidesPerView: 1,
+                                  },
+                                  540: {
+                                      slidesPerView: 1,
+                                  },
+                                  640: {
+                                    slidesPerView: 2,
+                                  },
+                                  970: {
+                                    slidesPerView: 3,
+                                  },
+                                  971: {
+                                      slidesPerView: 4,
+                                    },
+                                }}
+                            >
+                                <SwiperSlide>
+                                <span
                                      className="styles_heroslider_link__oRd9B"><img alt=""
                                             src="https://media.barakatfresh.ae/media/codazon/slideshow/w/e/web_banner_-_steal_deal_-_nov2023_wk3_with_mandarin-01.jpg"
                                             width="1180" height="324" decoding="async" data-nimg="1"
-                                            style={{color:"black"}} /></span></a><a
-                                    href="https://barakatfresh.ae/ready-to-eat/breakfast-pots.html"><span
+                                            style={{color:"black"}} />
+                                </span>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                <span
                                      className="styles_heroslider_link__oRd9B"><img alt=""
                                             src="https://media.barakatfresh.ae/media/codazon/slideshow/b/r/breakfast_pots_-_online_banner-01_3_1.jpg"
                                             width="1180" height="324" decoding="async" data-nimg="1"
-                                            style={{color:"black"}} /></span></a><a
-                                    href="https://barakatfresh.ae/fresh-juices/mocktails.html"><span
+                                            style={{color:"black"}} /></span>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                               <span
                                      className="styles_heroslider_link__oRd9B"><img alt=""
                                             src="https://media.barakatfresh.ae/media/codazon/slideshow/m/i/microsoftteams-image_41__3.png"
                                             width="1180" height="324" decoding="async" data-nimg="1"
-                                            style={{color:"black"}} /></span></a><a
-                                    href="https://barakatfresh.ae/bbq-range.html"><span
+                                            style={{color:"black"}} /></span>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                               <span
                                      className="styles_heroslider_link__oRd9B"><img alt=""
                                             src="https://media.barakatfresh.ae/media/codazon/slideshow/1/7/1779256_bbqbanner_ads_1180x324_110823.jpg"
                                             width="1180" height="324" decoding="async" data-nimg="1"
-                                            style={{color:"black"}} /></span></a><a
-                                    href="https://barakatfresh.ae/keto-range.html"><span
+                                            style={{color:"black"}} /></span>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                <span
                                      className="styles_heroslider_link__oRd9B"><img alt=""
                                             src="https://media.barakatfresh.ae/media/codazon/slideshow/w/e/website_banner.jpg"
                                             width="1180" height="324" decoding="async" data-nimg="1"
-                                            style={{color:"black"}} /></span></a><a
-                                    href="https://www.emiratesrc.ae/gaza/Default_en.aspx"><span
+                                            style={{color:"black"}} /></span>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                               <span
                                      className="styles_heroslider_link__oRd9B"><img alt=""
                                             src="https://media.barakatfresh.ae/media/codazon/slideshow/g/a/gaza_-_donation_drive-01_3_.jpg"
                                             width="1180" height="324" decoding="async" data-nimg="1"
-                                            style={{color:"black"}} /></span></a><a
-                                    href="https://barakatfresh.ae/fresh-juices.html"><span
-                                     className="styles_heroslider_link__oRd9B"><img alt=""
-                                            src="https://media.barakatfresh.ae/media/codazon/slideshow/b/a/barakat_fresh_-_banners_v2-01.jpg"
-                                            width="1180" height="324" decoding="async" data-nimg="1"
-                                            style={{color:"black"}} /></span></a><a
-                                    href="https://barakatfresh.ae/whychoosebarakat"><span
-                                     className="styles_heroslider_link__oRd9B"><img alt=""
-                                            src="https://media.barakatfresh.ae/media/codazon/slideshow/b/a/barakat_fresh_-_banners_v2-04.jpg"
-                                            width="1180" height="324" decoding="async" data-nimg="1"
-                                            style={{color:"black"}} /></span></a></div><a
-                             className="styles_heroslider_nav__hxUxJ styles_right__mwjpA"><i
-                                 className="mdi mdi-chevron-right" style={{lineHeight:0}}></i></a>
+                                            style={{color:"black"}} /></span>
+                                </SwiperSlide>
+                            </Swiper>
                         </div>
-                    </div><template data-dgst="DYNAMIC_SERVER_USAGE"></template>
+                        
+                    </div>
+                   
                     <div className="br_wrapper">
                         <div className="br_mb50">
                             <div className="styles_banner___0eKA"><span
