@@ -246,10 +246,17 @@ const MainPage = () =>{
                                                             Jan</span></div>
                                                 </div><span className="styles_miniature_percent__Y0sR7">59%</span>
                                                
-                                                    <div className="styles_miniature_image__XbgdR"><img alt="product"
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                        <NavLink to={`/${product.id}`} state={{ product }}
+
+                                                        >
+                                                        <img alt="product"
                                                             src={product.image}
                                                             width="420" height="420" decoding="async" data-nimg="1"
                                                             loading="lazy" style={{color:"black"}} />
+                                                        </NavLink>
+                                                     
+                                                    
                                                      <div className="products__item__miniature">
                        
 
@@ -373,10 +380,15 @@ const MainPage = () =>{
                                                             Jan</span></div>
                                                 </div><span className="styles_miniature_percent__Y0sR7">59%</span>
                                                
-                                                    <div className="styles_miniature_image__XbgdR"><img alt="product"
-                                                            src={product.image}
-                                                            width="420" height="420" decoding="async" data-nimg="1"
-                                                            loading="lazy" style={{color:"black"}} />
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
                                                      <div className="products__item__miniature">
                        
 
@@ -501,10 +513,15 @@ const MainPage = () =>{
                                                             Jan</span></div>
                                                 </div><span className="styles_miniature_percent__Y0sR7">59%</span>
                                                
-                                                    <div className="styles_miniature_image__XbgdR"><img alt="product"
-                                                            src={product.image}
-                                                            width="420" height="420" decoding="async" data-nimg="1"
-                                                            loading="lazy" style={{color:"black"}} />
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
                                                      <div className="products__item__miniature">
                        
 
@@ -628,10 +645,15 @@ const MainPage = () =>{
                                                             Jan</span></div>
                                                 </div><span className="styles_miniature_percent__Y0sR7">59%</span>
                                                
-                                                    <div className="styles_miniature_image__XbgdR"><img alt="product"
-                                                            src={product.image}
-                                                            width="420" height="420" decoding="async" data-nimg="1"
-                                                            loading="lazy" style={{color:"black"}} />
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
                                                      <div className="products__item__miniature">
                        
 
@@ -735,10 +757,15 @@ const MainPage = () =>{
                                                             Jan</span></div>
                                                 </div><span className="styles_miniature_percent__Y0sR7">59%</span>
                                                
-                                                    <div className="styles_miniature_image__XbgdR"><img alt="product"
-                                                            src={product.image}
-                                                            width="420" height="420" decoding="async" data-nimg="1"
-                                                            loading="lazy" style={{color:"black"}} />
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
                                                      <div className="products__item__miniature">
                        
 
@@ -841,10 +868,15 @@ const MainPage = () =>{
                                                             Jan</span></div>
                                                 </div><span className="styles_miniature_percent__Y0sR7">59%</span>
                                                
-                                                    <div className="styles_miniature_image__XbgdR"><img alt="product"
-                                                            src={product.image}
-                                                            width="420" height="420" decoding="async" data-nimg="1"
-                                                            loading="lazy" style={{color:"black"}} />
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
                                                      <div className="products__item__miniature">
                        
 
@@ -969,10 +1001,15 @@ const MainPage = () =>{
                                                             Jan</span></div>
                                                 </div><span className="styles_miniature_percent__Y0sR7">59%</span>
                                                
-                                                    <div className="styles_miniature_image__XbgdR"><img alt="product"
-                                                            src={product.image}
-                                                            width="420" height="420" decoding="async" data-nimg="1"
-                                                            loading="lazy" style={{color:"black"}} />
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
                                                      <div className="products__item__miniature">
                        
 
@@ -1094,10 +1131,15 @@ const MainPage = () =>{
                                                             Jan</span></div>
                                                 </div><span className="styles_miniature_percent__Y0sR7">59%</span>
                                                
-                                                    <div className="styles_miniature_image__XbgdR"><img alt="product"
-                                                            src={product.image}
-                                                            width="420" height="420" decoding="async" data-nimg="1"
-                                                            loading="lazy" style={{color:"black"}} />
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
                                                      <div className="products__item__miniature">
                        
 
@@ -1220,10 +1262,15 @@ const MainPage = () =>{
                                                             Jan</span></div>
                                                 </div><span className="styles_miniature_percent__Y0sR7">59%</span>
                                                
-                                                    <div className="styles_miniature_image__XbgdR"><img alt="product"
-                                                            src={product.image}
-                                                            width="420" height="420" decoding="async" data-nimg="1"
-                                                            loading="lazy" style={{color:"black"}} />
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
                                                      <div className="products__item__miniature">
                        
 
@@ -1345,10 +1392,15 @@ const MainPage = () =>{
                                                             Jan</span></div>
                                                 </div><span className="styles_miniature_percent__Y0sR7">59%</span>
                                                
-                                                    <div className="styles_miniature_image__XbgdR"><img alt="product"
-                                                            src={product.image}
-                                                            width="420" height="420" decoding="async" data-nimg="1"
-                                                            loading="lazy" style={{color:"black"}} />
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
                                                      <div className="products__item__miniature">
                        
 
@@ -1470,10 +1522,15 @@ const MainPage = () =>{
                                                             Jan</span></div>
                                                 </div><span className="styles_miniature_percent__Y0sR7">59%</span>
                                                
-                                                    <div className="styles_miniature_image__XbgdR"><img alt="product"
-                                                            src={product.image}
-                                                            width="420" height="420" decoding="async" data-nimg="1"
-                                                            loading="lazy" style={{color:"black"}} />
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
                                                      <div className="products__item__miniature">
                        
 

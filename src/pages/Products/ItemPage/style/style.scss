@@ -1,0 +1,125 @@
+.item__conteiner{
+    display: flex;
+    width: 100%;
+}
+.item__img{
+   
+    & img{
+        display: block;
+        height: 100%;
+        width: 100%;
+        max-width: 550px;
+    }
+}
+.br_large_12.br_columns{
+    width: 100%;
+    max-width: 100%;
+}
+.styles_details_pricebox__4Uj4u{
+    margin-bottom: 30px;
+}
+.styles_price_value__54hUJ.styles_special__bf_RD{
+    font-size: 24px;
+    font-weight: 700;
+    color: #d8345f;
+}
+.styles_price_striked__DQSIW{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.styles_price_striked__DQSIW{
+    font-size: 18px;
+    font-weight: 700;
+    color: #bcbcbc;
+    text-decoration: line-through;
+}
+.styles_price_off__7IaJ1{
+    font-size: 13px;
+    margin: 0 10px;
+    padding: 2px 7px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #d8345f;
+}
+.styles_details_variants__K_zWk{
+    margin-bottom: 30px;
+
+}
+.styles_variations_title__mo6jW{
+    display: flex;
+    font-size: 15px;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.styles_variations_value__Ga1_2{
+    font-weight: 700;
+}
+.styles_details_cartqty__Tsvir{
+
+}
+.styles_bbutton__c_Hr1.styles_bbutton_primary__u_4Y4{
+    color: #fff;
+    border: 1px solid #2cc84d;
+    background-color: #2cc84d;
+    width: 100% !important;
+}
+.styles_addcart_button__nsWkU{
+    width: 100%;
+}
+.styles_addcart___k10a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 -5px;
+}
+.styles_price_striked__DQSIW{
+    font-size: 18px;
+    font-weight: 700;
+    color: #bcbcbc;
+    text-decoration: line-through;
+}
+.styles_price_bottom__4VCM5{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.styles_price_vat__B5mGN{
+    margin: 0 10px;
+    font-size: 14px;
+}
+.item__left{
+    width: 50%;
+}
+.styles_price_top__rjlJJ{
+    display: flex;
+    margin-bottom: 5px;
+    flex-direction: row;
+    align-items: center;
+}
+.item__right{
+    width: 50%;
+}
+.styles_details_head__UIQ9T{
+    position: relative;
+    padding: 0 60px 0 0;
+}
+.styles_details_title__FTmb3{
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+.styles_details_title__FTmb3{
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 40px;
+ 
+}
+
+@media (max-width:999px) {
+    .item__conteiner{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

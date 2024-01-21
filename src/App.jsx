@@ -11,6 +11,7 @@ import ProductsDairyEggs from './pages/Products/productsDairyEggs/productsDairyE
 import ProductsBakery from './pages/Products/productsBakery/productsBakery'
 import ProductsIceCream from './pages/Products/productsIceCream/productsIceCream'
 import ProductsPantry from './pages/Products/productsPantry/productsPantry'
+import ItemPage from './pages/Products/ItemPage/item_page'
 import PageBasket from './pages/Basket/basket';
 import MainPage from './pages/Main/mainPage'
 import Footer from './components/Footer/footer'
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/fruits" element={<PageProducts />} />
         <Route path="/" element={<MainPage></MainPage>}/>
+        <Route path="/:id" element={<ItemPage/>}/>
         <Route path="/bbq" element={<PageProductsBbq />} />
         <Route path="/vegetables" element={<PageProductsVegetables />} />
         <Route path="/fresh_juices" element={<PageProductsFreshJuices />} />
