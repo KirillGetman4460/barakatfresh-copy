@@ -193,7 +193,7 @@ const handleCountrySelectChange = (event) => {
     setSelectedCountries([])
     setSelected([])
     sortProductsByCountry()
-    setProducts(data.products.all)
+    setProducts(data.products_bbq.all)
     setSelectedTags([])
   }
 
