@@ -11,7 +11,7 @@ import BreadCrumbs from '../../../components/BreadCrumbs/breadCrumbs'
 import { NavLink,useLocation } from "react-router-dom";
 
 import Icon from '@mdi/react';
-import { mdiSort,mdiFilterOutline,mdiRadioboxBlank,mdiClose,mdiCheckboxMarked,mdiCheckboxBlankOutline,mdiChevronLeft,mdiChevronRight,mdiHomeOutline,mdiCartOutline    } from '@mdi/js';
+import { mdiSort,mdiFilterOutline,mdiRadioboxBlank,mdiClose,mdiCheckboxMarked,mdiPlus,mdiCheckboxBlankOutline,mdiMinus,mdiChevronLeft,mdiChevronRight,mdiHomeOutline,mdiCartOutline    } from '@mdi/js';
 
 import './style/style.scss'
 const ItemPage = () =>{
@@ -31,6 +31,7 @@ const {state} = useLocation()
 const [title,setTitle] = useState(state.product.name)
 
 const dispatch = useDispatch()
+  const[activeCouter,setActiveCouter] = useState(false)
 
   const [selectPrice,setSelectPrice] = useState('')
 
@@ -200,6 +201,7 @@ const filterBySubcats = () => {
   },[selectSubCats,mainTitle])
 
 
+
     useEffect(() => {
         const handleScroll = () => {
           
@@ -223,7 +225,7 @@ const filterBySubcats = () => {
             
         </div>
         <div className="fixed__modile">
-            <div className="megamenu modile">
+            {/* <div className="megamenu modile">
             <ul className="megamenu__list">
                  <NavLink to={'/bbq'}>
                  <li className="megamenu__item">
@@ -288,184 +290,20 @@ const filterBySubcats = () => {
                
                
             </ul>
-        </div>
-            <div className="products_taskbar">
-              <div className="taskbar">
-                <div className="taskbar_prime"></div>
-                <div className="taskbar_actions">
-                  <div className="sorting" onClick={() => setActiveSort(true)}>
-                  <div className="sorting_toggle">
-                    <div className="sorting_toggle_icon">                
-                      <Icon path={mdiSort} size={1} />
-                    </div>
-                    <div className="sorting_toggle_text">
-                      Sort
-                    </div>
-                  </div>
-                  </div>
-                  <div className="filters__modile" onClick={() => setActiveFilt(true)}>
-                    <div className="filters_toggle">
-                      <div className="filters_toggle_icon">
-                      <Icon path={mdiFilterOutline} size={1} />
-                      </div>
-                      <div className="filters_toggle_text">
-                        Filter
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className={`bottomsheet ${activeSort ? "active" :""}`}>
-                  <div className="bottomsheet_overlay" onClick={() => setActiveSort(false)}></div>
-                  <div className="bottomsheet_content">
-                    <div className="sortopts">
-                      <div className="sortopts_title">Sort by</div>
-                      <ul className="sortopts_list">
-                        <li className="sortopts_item" onClick={() => setActiveSort(false)}>
-                          <div className="formradio">
-                            <div className="formradio_icon"><Icon path={mdiRadioboxBlank} color={"#2cc84d"} size={1} /></div>
-                            <span className="formradio_title" onClick={() => setSelectPrice('')}>Best Sellers</span>
-                          </div>
-                        </li>
-                        <li className="sortopts_item" onClick={() => {
-                          setActiveSort(false)
-                          setSelectPrice('bestsaving')
-                        }}>
-                          <div className="formradio">
-                            <div className="formradio_icon"><Icon path={mdiRadioboxBlank} color={"#2cc84d"} size={1} /></div>
-                            <span className="formradio_title">Biggest Saving</span>
-                          </div>
-                        </li>
-                        <li className="sortopts_item" onClick={() => {
-                          setActiveSort(false)
-                          setSelectPrice('high')
-                        }}>
-                          <div className="formradio">
-                            <div className="formradio_icon"><Icon path={mdiRadioboxBlank} color={"#2cc84d"} size={1} /></div>
-                            <span className="formradio_title">Price: Low to High</span>
-                          </div>
-                        </li>
-                        <li className="sortopts_item" onClick={() => {
-                          setActiveSort(false)
-                          setSelectPrice('low')
-                        }}>
-                          <div className="formradio">
-                            <div className="formradio_icon"><Icon path={mdiRadioboxBlank} color={"#2cc84d"} size={1} /></div>
-                            <span className="formradio_title">Price: High to Low</span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-
-                  </div>
-                </div>
-
-                <div className={`fsmodal ${activeFilt ? "active" :""}`}>
-                  <div className="fsmodal_content">
-                    <div>
-                      <div className="filterpop_header">
-                        <div className="filterpop_close" onClick={() => setActiveFilt(false)}><Icon path={mdiClose} color={"rgb(96, 96, 96)"} size={1} /></div>
-                        <h4 className="filterpop_heading">Filter by</h4>
-                        <div className="filterpop_reset">Reset all</div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="filterblock">
-                        <div className="filterblock_head">
-                          <div className="filterblock_head" onClick={() => setActiveOrigin(true)}>
-                            <div className="filterblock_title">Origin</div>
-                            <div className="filterblock_chev"></div>
-                          </div>
-
+        </div> */}
+            <div className="layout_head">
+                <div className="rootheader">
+                    <NavLink to={'/'}>
+                    <div className="rootheader_back">
+                        <div className="rootheader_back__icon">
+                            <Icon path={mdiChevronLeft} size={1} color={'rgb(96, 96, 96)'} />
                         </div>
-                      </div>
-                      <div className="filterblock">
-                        <div className="filterblock_head">
-                          <div className="filterblock_head" onClick={() => setActiveTags(true)}>
-                            <div className="filterblock_title">Tags</div>
-                            <div className="filterblock_chev"></div>
-                          </div>
-
-                        </div>
-                      </div>
+                        
                     </div>
-                    <div className="filterpop_footer">
-                      <div className="bbutton_primary"><span>Show results (228)</span></div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className={`fsmodal origin ${activeOrigin ? "active" :""}`}>
-                <div className="fsmodal_content">
-                  
-                        <div>
-                      <div className="filterpop_header">
-                        <div className="filterpop_close" onClick={() => setActiveOrigin(false)}><Icon path={mdiChevronLeft} color={"rgb(96, 96, 96)"} size={1} /></div>
-                        <h4 className="filterpop_heading">Origin</h4>
-                        <div className="filterpop_reset">Reset</div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="filterblock_body">
-                        <ul className="filterblock_items">
-                        {origin.map((item,i) => (
-                        <li className="multi__select__list__item" onClick={() => {
-                            handleCountrySelectChange(item)
-                            handleSelectChange(i)
-                        }}>
-                            {selected && selected.some(item => item === i) ? <Icon path={mdiCheckboxMarked} color={'#2cc84d'} value={false} size={1} /> :   <Icon path={mdiCheckboxBlankOutline } size={1} color={'#2cc84d'} />}   
-                            <span className="multi__select__text">{item}</span>
-                        </li>
-                    ))}
-                        </ul>
-                      </div>
-
-                    </div>
-                 
+                    </NavLink>
                     
-                    <div className="filterpop_footer origin">
-                      <div className="bbutton_primary" onClick={() => setActiveOrigin(false)}><span>APPLY</span></div>
-                    </div>
-                  </div>
+                    <div className="rootheader_title">{state.product.name}</div>
                 </div>
-
-                <div className={`fsmodal tags ${activeTags ? "active" :""}`}>
-                <div className="fsmodal_content">
-                  
-                        <div>
-                      <div className="filterpop_header">
-                        <div className="filterpop_close" onClick={() => setActiveTags(false)}><Icon path={mdiChevronLeft} color={"rgb(96, 96, 96)"} size={1} /></div>
-                        <h4 className="filterpop_heading">Tags</h4>
-                        <div className="filterpop_reset">Reset</div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="filterblock_body">
-                        <ul className="filterblock_items">
-                        {tags.map((item,i) => (
-                        <li className="multi__select__list__item" onClick={() => {
-                            handleCountrySelectChange(item)
-                            handleSelectChange(i)
-                        }}>
-                            {selected && selected.some(item => item === i) ? <Icon path={mdiCheckboxMarked} color={'#2cc84d'} value={false} size={1} /> :   <Icon path={mdiCheckboxBlankOutline } size={1} color={'#2cc84d'} />}   
-                            <span className="multi__select__text">{item}</span>
-                        </li>
-                    ))}
-                        </ul>
-                      </div>
-
-                    </div>
-                 
-                    
-                    <div className="filterpop_footer origin">
-                      <div className="bbutton_primary" onClick={() => setActiveTags(false)}><span>APPLY</span></div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
             </div>
             </div>
          <div className="wrapper">
@@ -479,7 +317,7 @@ const filterBySubcats = () => {
                                 </div>
                             </div>
                             <div className="item__right">
-                                <div className="br_large_12 br_columns">
+                                <div className="br_large_12 br_columns item_page">
                                     <div className="styles_details_head__UIQ9T">
                                         <div className="styles_details_title__FTmb3">
                                             {state.product.name}
@@ -516,7 +354,38 @@ const filterBySubcats = () => {
                                         </div>
                                     </div>
                                     <div className="styles_details_cartqty__Tsvir">
-                                        <div className="styles_addcart___k10a">
+                                      {activeCouter && 
+                                      <div className="add_cart_counter">
+                                      <button className="add_cart_counter__btn"
+                                        onClick={() =>{   
+                                               
+
+                                          if(state.product.quantity !== 0){
+                                            state.product.quantity--
+                                            dispatch(minusQuantity(state.product))
+                                            dispatch(deleteItemBasket(state.product))
+                                            return
+
+                                        }
+                                        setActiveCouter(false)
+                                        
+                                      }}
+                                      >
+                                        <Icon path={mdiMinus} size={1} color={'#2cc84d'} />
+                                      </button>
+                                      <span className="add_cart_counter_title">
+                                        {state.product.quantity}
+                                      </span>
+                                      <button className="add_cart_counter__btn" onClick={() => {
+                                        dispatch(addBasket(state.product))
+                                        state.product.quantity++
+                                      }}>
+                                      <Icon path={mdiPlus} size={1} color={'#2cc84d'} />
+                                      </button>
+                                    </div>
+                                      }
+                                      
+                                        <div className="styles_addcart___k10a" onClick={() => setActiveCouter(true)}>
                                             <div className="styles_addcart_button__nsWkU">
 
                                                 <button onClick={() =>  dispatch(addBasket(state.product))} className="styles_bbutton__c_Hr1 styles_bbutton_primary__u_4Y4">
@@ -532,21 +401,21 @@ const filterBySubcats = () => {
          
         </div>
         <div className="layout_tabs">
-          <ul className="tabs">
+        <ul className="tabs">
               <li className="tabs_item">
+                <NavLink to={'/'}>
                 <div className="tabs_link">
                   <div className="tabs_icon"><Icon path={mdiHomeOutline} size={1} /></div>
                   <div className="tabs_title">Home</div>
                 </div>
+                </NavLink>
+                
               </li>
               <li className="tabs_item">
                 <NavLink to={'/basket'}>
                 <div className="tabs_link">
                   <div className="tabs_icon"><Icon path={mdiCartOutline } size={1} /></div>
                   <div className="tabs_title">Cart</div>
-                  <div className="tabs__basket__count">
-                    {basket.length}
-                  </div>
                 </div>
                 </NavLink>
                

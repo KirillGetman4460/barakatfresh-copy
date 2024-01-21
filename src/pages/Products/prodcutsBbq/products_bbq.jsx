@@ -194,7 +194,7 @@ const handleCountrySelectChange = (event) => {
     setSelected([])
     sortProductsByCountry()
     setProducts(data.products_bbq.all)
-    setSelectedTags([])
+   
   }
 
   const [isFixed, setIsFixed] = useState(false);
