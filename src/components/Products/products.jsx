@@ -52,161 +52,34 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
             </div>
             <div className="sidebar__mobile">
                 <ul className="sidebar__list">
-                    <li className={`sidebar__item ${active === 1 ? "active" : ""}`}
-                     onClick={() => {
-                        setActive(1)
-                        filterBySubcats('All')
-                    }}>
-                        <div className="sidebar__item__link">
+                {subCatsItem.map((item,i) => (
+                        <li className={`subcats__item ${active === i ? "active" : ""}`} onClick={() => {
+                            setActive(i)
+                            setSelectSubCats(item.title)
+                        }}>
+                             
+                             <div className="sidebar__item__link">
                         <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Fruits_091922_2.png"} alt="" />
+                            <img src={item.img} alt="" />
                         </div>
                         <span className="sidebar__item__text">
-                            All
+                           {item.title}
                         </span>
                         </div>
-                        
-                    </li>
-                    <li className={`sidebar__item ${active === 2 ? "active" : ""}`} onClick={() => {
-                        setActive(2)
-                        filterBySubcats('Regular Fruits')
-                    }}>
-                        <div className="sidebar__item__link">
-                        <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Organic.png"} alt="" />
-                        </div>
-                        <span className="sidebar__item__text">
-                        Regular Fruits
-                        </span>
-                        </div>
-                        
-                    </li>
-                    <li className={`sidebar__item ${active === 3 ? "active" : ""}`} onClick={() => {
-                        setActive(3)
-                        filterBySubcats('Fruit Platters')
-                    }}>
-                        <div className="sidebar__item__link">
-                        <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/platters_1_3.png"} alt="" />
-                        </div>
-                        <span className="sidebar__item__text">
-                        Fruit Platters
-                        </span>
-                        </div>
-                        
-                    </li>
-                    <li className={`sidebar__item ${active === 4 ? "active" : ""}`} onClick={() => {
-                        setActive(4)
-                        filterBySubcats('Mangoes')
-                    }}>
-                        <div className="sidebar__item__link">
-                        <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/Mango.png"} alt="" />
-                        </div>
-                        <span className="sidebar__item__text">
-                        Mangoes
-                        </span>
-                        </div>
-                        
-                    </li>
-                    <li className={`sidebar__item ${active === 5 ? "active" : ""}`} onClick={() => {
-                        setActive(5)
-                        filterBySubcats('Cut & Sanitized')
-                    }}>
-                        <div className="sidebar__item__link">
-                        <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Cut_Sanitised_091922_1_1.png"} alt="" />
-                        </div>
-                        <span className="sidebar__item__text">
-                        Cut & Sanitized
-                        </span>
-                        </div>
-                        
-                    </li>
-                    <li className={`sidebar__item ${active === 6 ? "active" : ""}`} onClick={() => {
-                        setActive(6)
-                        filterBySubcats('Puree')
-                    }}>
-                        <div className="sidebar__item__link">
-                        <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/puree_1.png"} alt="" />
-                        </div>
-                        <span className="sidebar__item__text">
-                        Puree
-                        </span>
-                        </div>
-                        
-                    </li>
-                    <li className={`sidebar__item ${active === 7 ? "active" : ""}`} onClick={() => {
-                        setActive(7)
-                        filterBySubcats('Berries')
-                    }}>
-                        <div className="sidebar__item__link">
-                        <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Berries_091922_1.png"} alt="" />
-                        </div>
-                        <span className="sidebar__item__text">
-                        Berries
-                        </span>
-                        </div>
-                        
-                    </li>
-                    <li className={`sidebar__item ${active === 8 ? "active" : ""}`} onClick={() => {
-                        setActive(8)
-                        filterBySubcats('Melons')
-                    }}>
-                        <div className="sidebar__item__link">
-                        <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Melons_091922_1.png"} alt="" />
-                        </div>
-                        <span className="sidebar__item__text">
-                        Melons
-                        </span>
-                        </div>
-                        
-                    </li>
-                    <li className={`sidebar__item ${active === 9 ? "active" : ""}`} onClick={() => {
-                        setActive(9)
-                        filterBySubcats('Citrus')
-                    }}>
-                        <div className="sidebar__item__link">
-                        <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Citrus_091922_1.png"} alt="" />
-                        </div>
-                        <span className="sidebar__item__text">
-                        Citrus
-                        </span>
-                        </div>
-                        
-                    </li>
-                    <li className={`sidebar__item ${active === 10 ? "active" : ""}`} onClick={() => {
-                        setActive(10)
-                        filterBySubcats('Organic')
-                    }}>
-                        <div className="sidebar__item__link">
-                        <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_OrganicFruits_092022_3.png"} alt="" />
-                        </div>
-                        <span className="sidebar__item__text">
-                        Organic
-                        </span>
-                        </div>
-                        
-                    </li>
-                    <li className={`sidebar__item ${active === 11 ? "active" : ""}`} onClick={() => {
-                        setActive(11)
-                        filterBySubcats('Bulk')
-                    }}>
-                        <div className="sidebar__item__link">
-                        <div className="sidebar__item__img">
-                            <img src={"https://media.barakatfresh.ae/media/catalog/category/1457586_Organics_091922_3_3.png"} alt="" />
-                        </div>
-                        <span className="sidebar__item__text">
-                        Bulk
-                        </span>
-                        </div>
-                        
-                    </li>
+                      
+                        </li>
+                    ))}
+                    
+                    
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                    
+            
                 </ul>
             </div>
             <ul className="products__list">
