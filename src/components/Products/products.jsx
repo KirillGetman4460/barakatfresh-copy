@@ -90,12 +90,8 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                     </div>
                     <div className="products__item__miniature">
                         <span>{product.origin}</span>
-                        <div className={`products__item__add__btn ${activeBtn.some(item => item === i) ? "active" : ""}`} onClick={() => {
-                            if(!product.quantity === 0){
+                        <div className={`products__item__add__btn ${activeBtn.some(item => item === i) ? "active" : ""}`} onClick={() => {                 
                                 setActiveBtn([...activeBtn, i]) 
-                                return
-                            }
-                            setActiveBtn([...activeBtn])
                         }}>
                             {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={(e) =>{
                                 if(product.quantity !== 0){
