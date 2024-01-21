@@ -151,14 +151,19 @@ const handleCountrySelectChange = (event) => {
     }
   });
 };
-  const handleTagsSelectChange = (event) => {
-    const checkSelect = selectedTags.find(item => item === event)
-    if(!checkSelect){
-      setSelectedTags(prev => [...prev, event])
-      return
+const handleTagsSelectChange = (event) => {
+  setSelectedTags(prev => {
+    const isAlreadySelected = prev.includes(event);
+
+    if (isAlreadySelected) {
+
+      return prev.filter(item => item !== event);
+    } else {
+
+      return [...prev, event];
     }
-    
-  };
+  });
+};
 
 
   const handleSelectChange = (event) => {
@@ -189,6 +194,7 @@ const handleCountrySelectChange = (event) => {
 
 
   const sortProductsByCountry = () => {
+  
     let sortedProducts = [...data.products.all];
 
 
@@ -203,7 +209,7 @@ const handleCountrySelectChange = (event) => {
 
   const sortProductsByTags = () => {
     let sortedProducts = [...data.products.all];
-
+  
     if (selectedTags.length !== 0) {
       sortedProducts = sortedProducts.filter(
         (product) =>
@@ -214,17 +220,22 @@ const handleCountrySelectChange = (event) => {
           )
       );
     }
-
+  
     sortedProducts.sort((a, b) => {
-      const labelsA = (a.additional_data && a.additional_data.labels) || [];
-      const labelsB = (b.additional_data && b.additional_data.labels) || [];
-
-      const labelA = labelsA.length > 0 ? labelsA[0] : "";
-      const labelB = labelsB.length > 0 ? labelsB[0] : "";
-
-      return labelA.localeCompare(labelB);
+      // Ensure that a.origin and b.origin are valid strings
+      const originA = a.origin && String(a.origin);
+      const originB = b.origin && String(b.origin);
+  
+      // Use localeCompare only if originA and originB are strings
+      if (originA && originB) {
+        return originA.localeCompare(originB);
+      }
+  
+      // If a.origin or b.origin is not a string, handle the comparison accordingly
+      // For example, you might want to compare them as numbers or use a different logic
+      return 0; // or any other logic based on your requirements
     });
-
+  
     setProducts(sortedProducts);
   };
 
@@ -232,8 +243,10 @@ const handleCountrySelectChange = (event) => {
     setSelectedCountries([]);
     setSelected([]);
     sortProductsByCountry();
-    setProducts(data.products.all);
+    sortProductsByTags()
     setTagsSelected([]);
+    setProducts(data.products.all);
+   
   };
 
   const [isFixed, setIsFixed] = useState(false);
