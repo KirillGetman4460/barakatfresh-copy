@@ -28,6 +28,11 @@ const Basket = () =>{
 
     const [activeAdress, setActiveAdress] = useState(1);
 
+    const [valueOne,setValueOne] = useState('')
+    const [valueTwo,setValueTwo] = useState('')
+
+    const [activeCatigoriesModal,setActiveCatigoriesModal] = useState(false)
+
     const [address,setAddress] = useState('')
 
   const handleChange = (newAddress) => {
@@ -288,11 +293,11 @@ const Basket = () =>{
                                    
                             </div>
                             <div class="AddAddress_subInp__307n1">
-                                <input maxlength="12" name="flat" autocomplete="off" placeholder="Flat No*" class="AddAddress_inputField__2KRq1" value="" />
+                                <input maxlength="12" name="flat" autocomplete="off" placeholder="Flat No*" class="AddAddress_inputField__2KRq1" value={valueOne} onChange={(e) => setValueOne(e.target.value)} />
                             </div>
                         </div>
                         <div class="AddAddress_formInput__1MrR5">
-                            <input maxlength="200" name="how" autocomplete="off" placeholder="How to Reach (Optional)" class="AddAddress_howToField__3kqTP" value="" />
+                            <input maxlength="200" name="how" autocomplete="off" placeholder="How to Reach (Optional)" class="AddAddress_howToField__3kqTP" value={valueTwo} onChange={(e) => setValueTwo(e.target.value)}  />
                         </div>
                         <div class="AddAddress_addressTags__3icXy">
                             <div>

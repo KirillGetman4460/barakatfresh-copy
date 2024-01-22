@@ -3,6 +3,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'ProximaNova';
+    src: local('ProximaNova'),
+      url('./fonts/ProximaNova-Bold.1f4f14db.woff2') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Tajawal';
+    src: local('Tajawal'),
+      url('./fonts/Tajawal-Bold.b347d133.woff2') format('truetype');
+    font-weight: bold;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -18,7 +32,8 @@ body {
     padding: 0;
     margin: 0;
     background: transparent;
-    font-family: 'Tajawal', sans-serif;
+    font-family: "ProximaNova","Tajawal";
+    /* font-family: 'Tajawal', sans-serif !important; */
 }
 
 h1,
@@ -30,6 +45,9 @@ p,
 span {
     padding: 0;
     margin: 0;
+    font-family: "ProximaNova";
+
+    /* font-family: 'Tajawal', sans-serif !important; */
 }
 
 ul,
