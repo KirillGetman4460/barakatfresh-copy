@@ -52,9 +52,17 @@
     border-radius: 30px;
     &.order{
       max-width: 600px;
-      height: 100%;
-      overflow: auto;
+   
     }
+  }
+  @media(max-width:640px){
+    .AddAddress_addressDrawer__7UnTN{
+      &.order{
+        height: 100%;
+        overflow: auto;
+      }
+    }
+    
   }
   .AddAddress_inputField__2KRq1 {
     border-bottom: 1px solid rgba(57, 63, 82, 0.1);

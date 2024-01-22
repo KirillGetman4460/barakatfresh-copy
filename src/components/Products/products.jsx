@@ -127,7 +127,7 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                     </div>
                   
                     <div className="products__item__title">{product.name}</div>
-                    <div className="products__item__price">
+                    <div className="products__item__price ">
                         <span>{product.valut} {product.price}</span>
                         {product.new_price && <span>AED {product.price_raw}</span>}          
                     </div>
