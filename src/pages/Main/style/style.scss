@@ -55,6 +55,9 @@
   .styles_layout_content__MXhSs{
     overflow: auto !important;
   }
+  .styles_home_categories___yL3o.mobile{
+    display: none;
+  }
   .catigories__modal{
     position: fixed;
     z-index: 10000;
@@ -150,6 +153,9 @@
     box-shadow: 1px 1px 3px 0 rgba(0,0,0,.3);
   }
   @media(max-width: 768px){
+    .styles_home_categories___yL3o.mobile{
+      display: block;
+    }
     .header__main{
       display: block;
       position: fixed;

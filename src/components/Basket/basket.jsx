@@ -1,6 +1,10 @@
 import { useState,useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import EmptyLogo from '../../img/Basket/empty_cart.61afa099.png'
+import axios from 'axios';
+
+import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+
 import {deleteItem,addBasket,deleteItemBasket,minusQuantity} from '../../store/basketSlice/basketSlice'
 
 import Icon from '@mdi/react';
@@ -24,6 +28,18 @@ const Basket = () =>{
 
     const [activeAdress,setActiveAdress] = useState(1)
 
+
+    const [query, setQuery] = useState('');
+  const [results, setResults] = useState([]);
+
+  const searchLocation = async () => {
+    try {
+      const response = await axios.get(`https://api.location.com/search?query=${query}`);
+      setResults(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
     return (
         <div className="basket">
             <div className="layout_head">
@@ -203,10 +219,46 @@ const Basket = () =>{
                             <span class="MuiButton-label">Change</span>
                             <span class="MuiTouchRipple-root"></span>
                         </button> */}
+
                         <div class="AddAddress_closeButton__1vtED" onClick={() => setActive(false)}>
                 <Icon path={mdiClose } size={1} color={'rgb(96, 96, 96)'} />
             </div>
                     </div>
+                        
+                    {/* <PlacesAutocomplete
+      value={address}
+      onChange={handleChange}
+      onSelect={handleSelect}
+    >
+      {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+        <div>
+          <input {...getInputProps({ placeholder: 'Type address' })} />
+          <div>
+            {loading && <div>Loading...</div>}
+            {suggestions.map((suggestion) => (
+              <div {...getSuggestionItemProps(suggestion)}>
+                {suggestion.description}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </PlacesAutocomplete> */}
+      {/* <div>
+      <input
+        type="text"
+        placeholder="Search location"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
+      <button onClick={searchLocation}>Search</button>
+      {results.map((result, index) => (
+        <div key={index}>
+          <h3>{result.name}</h3>
+          <p>{result.description}</p>
+        </div>
+      ))}
+    </div> */}
                     
                     <div class="AddAddress_formInput__1MrR5 title">
                             <input maxlength="200" name="how" autocomplete="off" placeholder="Adress" class="AddAddress_howToField__3kqTP" value="" />
