@@ -15,6 +15,9 @@
     justify-content: center;
     align-items: center;
     display: none;
+    &.order{
+     
+    }
     &.active {
       display: flex;
     }
@@ -22,6 +25,12 @@
   
   .AddAddress_closeButton__1vtED {
     cursor: pointer;
+    &.complete{
+      position: absolute;
+      z-index: 20;
+      top: 0;
+      right: 0;
+    }
   }
   .AddAddress__over {
     top: 0;
@@ -41,6 +50,11 @@
     right: 50%;
     box-shadow: 0 2.17631px 7.61708px rgba(155, 204, 244, 0.24);
     border-radius: 30px;
+    &.order{
+      max-width: 600px;
+      height: 100%;
+      overflow: auto;
+    }
   }
   .AddAddress_inputField__2KRq1 {
     border-bottom: 1px solid rgba(57, 63, 82, 0.1);

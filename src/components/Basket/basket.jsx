@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 
-import {deleteItem,addBasket,deleteItemBasket,minusQuantity} from '../../store/basketSlice/basketSlice'
+import {deleteItem,addBasket,deleteItemBasket,minusQuantity,claerBasket} from '../../store/basketSlice/basketSlice'
 
 import Icon from '@mdi/react';
 
@@ -32,6 +32,8 @@ const Basket = () =>{
     const [valueTwo,setValueTwo] = useState('')
 
     const [activeCatigoriesModal,setActiveCatigoriesModal] = useState(false)
+
+    const [activeComplete,setActiveComplete] = useState(false)
 
     const [address,setAddress] = useState('')
 
@@ -226,6 +228,74 @@ const Basket = () =>{
           </ul>
         </div>
 
+       
+        
+<div className={`AddAddress_openDrawerInfo__1RYmr order AddAddress_activeDrawer__3ZoVX ${activeComplete ? "active" : ""}`}>
+    {/* <div class="AddAddress_closeButton__1vtED complete" onClick={() => setActiveComplete(false)}>
+                <Icon path={mdiClose } size={1} color={'rgb(96, 96, 96)'} />
+            </div> */}
+<div className="AddAddress__over" onClick={() => setActiveComplete(false)}></div>
+<div className="AddAddress_addressDrawer__7UnTN order">
+<div class="checkout_list">
+                <div class="summary_delivery_select_location">
+                    <div class="summary_delivery_select_location_right">
+                        <div id="summary_delivery_top">
+                            <span>We'll deliver your order here</span>
+                            <div class="summary_delivery_select_location_right_top_button" onClick={() => {
+                                setActiveComplete(false)
+                                setActive(true)
+                            }}>
+                                <span id="change">Change</span>
+                            </div>
+                        </div>
+                        <div class="summary_delivery_address">
+                         
+                            <span id="user_location" style={{fontWweight: 600}}>{address}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkout_input" id="checkout_input_name_input">
+                    <span>Name*</span>
+                    <input type="text" name="name" autocapitalize="words" class="user_input" id="checkout_user_name_input" placeholder="Your name"/>
+                </div>
+                <div class="checkout_input" id="checkout_input_mobile_input">
+                    <span>Mobile number*</span>
+                    <input type="tel" name="phone" class="user_input" id="checkout_user_mobile_input" placeholder="+ "/>
+                </div>
+                
+                <div class="checkout_input">
+                    <span>Email (Optional)</span>
+                    <input type="email" name="email" class="user_input" id="checkout_user_input" placeholder="Your email (Optional)" autocorrect="off" autocapitalize="none"/>
+                </div>
+                <div class="checkout_input">
+                    <span>Special Instructions (Optional)</span>
+                    <input type="text" class="user_input" id="checkout_user_input" placeholder="Add Cooking/Delivery Instructions (Optional)"/>
+                </div>
+            </div>
+            <div class="mob_frame" onClick={() => {
+                dispatch(claerBasket())
+                setActiveComplete(false)
+            }}>
+                    <div class="summary_total_button">
+                        <div class="summary_total_button_left">
+                            <div class="summary_total_button_Price">
+                                <span>{totalPrice}</span>
+                                <span> AED</span>
+                            </div>
+                            <span id="vat_text">* All prices are VAT Inclusive</span>
+                        </div>
+                        <div class="summary_total_button_right">
+                            <span>Make Payment</span>
+                            <div class="summary_total_chevron_right">
+                                <img src="https://albaikfood-uae.com/static/assets/img/icons/chevron_right.svg"/>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+</div>
+
+
+</div>
 
 <div class={`AddAddress_openDrawerInfo__1RYmr AddAddress_activeDrawer__3ZoVX ${active ? "active" : ""}`}>
     <div className="AddAddress__over" onClick={() => setActive(false)}></div>
@@ -329,8 +399,11 @@ const Basket = () =>{
                                 </button>
                             </div>
                             </div>
-                            <button class="MuiButtonBase-root MuiButton-root MuiButton-contained AddAddress_confirm__1odIY MuiButton-containedPrimary Mui-disabled Mui-disabled" tabindex="-1" type="button" disabled="">
-                                <span class="MuiButton-label" onClick={() => setActive(false)}><span class="AddAddress_addAddressText__3eKwd">Continue</span></span>
+                            <button  class="MuiButtonBase-root MuiButton-root MuiButton-contained AddAddress_confirm__1odIY MuiButton-containedPrimary Mui-disabled Mui-disabled" tabindex="-1" type="button" disabled="">
+                                <span class="MuiButton-label" onClick={() => {
+                                    setActive(false)
+                                    setActiveComplete(true)
+                                }}><span class="AddAddress_addAddressText__3eKwd">Continue</span></span>
                             </button>
                             </div>
                             </div>
