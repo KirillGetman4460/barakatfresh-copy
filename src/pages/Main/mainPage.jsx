@@ -147,7 +147,7 @@ const MainPage = () =>{
         <div className="styles_layout__XOnb3">
             <div className="styles_layout_content__z1Aw8">
                 <div>
-                    <div className="br_wrapper br_mb10 br_mt20">
+                    <div className="br_wrapper main br_mb10 br_mt20">
                     <div className="styles_heroslider__VyI6P">
                             <Swiper
                                 spaceBetween={0}
@@ -441,6 +441,10 @@ const MainPage = () =>{
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
                                             src="https://media.barakatfresh.ae/media/codazon/slideshow/m/i/microsoftteams-image_27_.png" /></span>
                             </div>
+                            <div className="styles_banner___0eKA mobile"><span
+                                     className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
+                                            src="https://media.barakatfresh.ae/media/codazon/slideshow/m/i/microsoftteams-image_41__3.png" /></span>
+                            </div>
                         </div>
                         <div className="br_mb50">
                             <div>
@@ -575,6 +579,11 @@ const MainPage = () =>{
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
                                             src="https://media.barakatfresh.ae/media/catalog/tmp/category/Best_Food_-_Unlock_Flavorful_Savings_-_Online_Banner-01.jpg" /></span>
                             </div>
+
+                            <div className="styles_banner___0eKA mobile"><span
+                                     className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
+                                            src="https://media.barakatfresh.ae/media/wysiwyg/home/mid-section/Eweborganic1.jpg" /></span>
+                            </div>
                         </div>
                         <div className="br_mb50">
                             <div>
@@ -708,6 +717,12 @@ const MainPage = () =>{
                         </div>
                         <div className="br_mb50">
                             <div className="styles_banner___0eKA">
+                             <span
+                                     className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
+                                            src="https://media.barakatfresh.ae/media/wysiwyg/Premium_Meat_-_Banner_1180x324_2_100523.jpg" /></span>
+                            </div>
+
+                            <div className="styles_banner___0eKA mobile">
                              <span
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
                                             src="https://media.barakatfresh.ae/media/wysiwyg/Premium_Meat_-_Banner_1180x324_2_100523.jpg" /></span>
@@ -847,6 +862,11 @@ const MainPage = () =>{
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
                                             src="https://media.barakatfresh.ae/media/wysiwyg/Family_Size_-_Banner_v2-01.jpg" /></span>
                             </div>
+                            <div className="styles_banner___0eKA mobile">
+                             <span
+                                     className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
+                                            src="https://media.barakatfresh.ae/media/wysiwyg/Family_Size_-_Banner_v2-01.jpg" /></span>
+                            </div>
                         </div>
                         <div className="br_mb50">
                             <div>
@@ -961,6 +981,11 @@ const MainPage = () =>{
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
                                             src="https://media.barakatfresh.ae/media/app/ExpressDelivery-90-mins-web.jpg" /></span>
                             </div>
+                            <div className="styles_banner___0eKA mobile">
+                             <span
+                                     className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
+                                            src="https://media.barakatfresh.ae/media/app/ExpressDelivery-90-mins-web.jpg" /></span>
+                            </div>
                         </div>
                         <div className="br_mb50">
                             <div>
@@ -1072,6 +1097,12 @@ const MainPage = () =>{
                        
                         <div className="br_mb50">
                             <div className="styles_banner___0eKA"><span
+                                     className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
+                                            src="https://media.barakatfresh.ae/media/wysiwyg/home/mid-section/Eweborganic1.jpg" /></span>
+                            </div>
+
+                            <div className="styles_banner___0eKA mobile">
+                             <span
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
                                             src="https://media.barakatfresh.ae/media/wysiwyg/home/mid-section/Eweborganic1.jpg" /></span>
                             </div>
@@ -1210,6 +1241,12 @@ const MainPage = () =>{
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
                                             src="https://media.barakatfresh.ae/media/wysiwyg/home/mid-section/EWBulkBuy.png" /></span>
                             </div>
+
+                            <div className="styles_banner___0eKA mobile">
+                             <span
+                                     className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
+                                            src="https://media.barakatfresh.ae/media/wysiwyg/home/mid-section/EWBulkBuy.png" /></span>
+                            </div>
                         </div>
                         <div className="br_mb50">
                             <div>
@@ -1344,6 +1381,11 @@ const MainPage = () =>{
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
                                             src="https://media.barakatfresh.ae/media/wysiwyg/home/mid-section/WebBannerAED-25E1.gif" /></span>
                             </div>
+                            <div className="styles_banner___0eKA mobile"><span
+                                     className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
+                                            src="https://media.barakatfresh.ae/media/wysiwyg/home/mid-section/WebBannerAED-25E1.gif" /></span>
+                            </div>
+                            
                         </div>
                         <div className="br_mb50">
                             <div>
@@ -1474,6 +1516,11 @@ const MainPage = () =>{
                         </div>
                         <div className="br_mb50">
                             <div className="styles_banner___0eKA"><span
+                                     className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
+                                            src="https://media.barakatfresh.ae/media/wysiwyg/Vip_revised.jpg" /></span>
+                            </div>
+
+                            <div className="styles_banner___0eKA mobile"><span
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
                                             src="https://media.barakatfresh.ae/media/wysiwyg/Vip_revised.jpg" /></span>
                             </div>
@@ -1610,6 +1657,10 @@ const MainPage = () =>{
                             <div className="styles_banner___0eKA"><span
                                      className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
                                             src="https://media.barakatfresh.ae/media/wysiwyg/home/mid-section/EWfreshdip2.jpg" /></span>
+                            </div>
+                            <div className="styles_banner___0eKA mobile"><span
+                                     className="styles_banner_link__41bCY"><img className="styles_banner_image__Hl4R4"
+                                            src="https://media.barakatfresh.ae/media/wysiwyg/Vip_revised.jpg" /></span>
                             </div>
                         </div>
                         <div className="br_mb50">

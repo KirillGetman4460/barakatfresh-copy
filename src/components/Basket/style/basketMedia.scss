@@ -5,7 +5,7 @@
   }
   .AddAddress_openDrawerInfo__1RYmr {
     position: fixed;
-    z-index: 10;
+    z-index: 1200000;
     bottom: 0;
     top: 0;
     padding: 0;
@@ -287,4 +287,91 @@
     .content.basket {
     }
   }
-  
+
+  .AddAddress_comboPop__3F7_D{
+    overflow-y: scroll;
+    max-height: 24rem;
+    position: absolute;
+    z-index: 10;
+    top: 60px;
+    background: white;
+    width: 100%;
+  }
+  .AddAddress_searchSugg__1lCZE{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.7rem;
+    background: var(--clr-light-100);
+    list-style: none;
+    z-index: 1440;
+    padding: 10px;
+    color: var(--clr-dark-400);
+  }
+  .AddAddress_optionBox__2AWu-{
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  .AddAddress_optionItem__3nA0C{
+    display: flex;
+  }
+  .AddAddress_iicon__3y_h2{
+    padding-inline-end: 0.5rem;
+  }
+  .AddAddress_locTitle__cc78r{
+    margin: 0 0.5rem;
+  }
+
+  .AddAddress_formInput__1MrR5.title{
+    position: relative;
+  }
+
+  .AddAddress_closeIcon__3Ba6h{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: none;
+    cursor: pointer;
+    &.active{
+      display: block;
+    }
+  }
+
+  @media (max-width: 640px){
+    .styles_banner_link__41bCY{
+      padding: 0px;
+    }
+    .basket__conteiner{
+      height: 100%;
+    }
+    .basket__content{
+      height: 100%;
+    }
+    .AddAddress_formInput__1MrR5{
+      flex-direction: column;
+    }
+    .AddAddress_subInp__307n1{
+      width: 100%;
+      & .AddAddress_inputField__2KRq1{
+        width: 100%;
+      }
+    }
+    .cartitems{
+      height: 100%;
+      overflow: auto;
+    }
+    .AddAddress_addressTags__3icXy{
+      flex-direction: column;
+     
+      align-items: start;
+    }
+    .AddAddress_addForm__Kxv6z button.AddAddress_confirm__1odIY{
+      margin-top: 20px;
+      width: 100%;
+    }
+    .AddAddress_addressDrawer__7UnTN {
+      height: 100%;
+      overflow: auto;
+      border-radius: 0px;
+    }
+  }

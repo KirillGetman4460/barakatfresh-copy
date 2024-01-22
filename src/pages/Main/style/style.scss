@@ -58,6 +58,7 @@
   .styles_home_categories___yL3o.mobile{
     display: none;
   }
+
   .catigories__modal{
     position: fixed;
     z-index: 10000;
@@ -153,8 +154,18 @@
     box-shadow: 1px 1px 3px 0 rgba(0,0,0,.3);
   }
   @media(max-width: 768px){
+    .br_wrapper{
+      max-width: 100%;
+      &.main{
+       display: flex;
+       justify-content: center;
+      }
+    }
     .styles_home_categories___yL3o.mobile{
-      display: block;
+     
+      display: flex;
+      justify-content: center;
+      max-width: 100%;
     }
     .header__main{
       display: block;
@@ -186,12 +197,21 @@
       display: none;
       &.mobile{
         display: block;
+
       }
     }
+    .br_mb50.mobile{
+      display: flex;
+      justify-content: center;
+      width: 100% !important;
+    }
+  
     .styles_banner___0eKA{
       display: none;
       &.mobile{
         display: block;
+        max-width: 100%;
+        width: 100%;
       }
     }
    

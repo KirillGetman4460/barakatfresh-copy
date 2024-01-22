@@ -26,19 +26,17 @@ const Basket = () =>{
   
     const [active,setActive] = useState(false)
 
-    const [activeAdress,setActiveAdress] = useState(1)
+    const [activeAdress, setActiveAdress] = useState();
 
+    const [address,setAddress] = useState('')
 
-    const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
+  const handleChange = (newAddress) => {
+    setAddress(newAddress);
+  };
 
-  const searchLocation = async () => {
-    try {
-      const response = await axios.get(`https://api.location.com/search?query=${query}`);
-      setResults(response.data);
-    } catch (error) {
-      console.error(error);
-    }
+  const handleSelect = async (selectedAddress) => {
+    const results = await geocodeByAddress(selectedAddress);
+    setAddress(selectedAddress)
   };
     return (
         <div className="basket">
@@ -179,7 +177,7 @@ const Basket = () =>{
                             </span>
                         </div>
                     </div>
-                    <div className="cart_button">
+                    <div className="cart_button" onClick={() => setActive(true)}>
                         <span className='cart_button_title'>PROCEED</span>
                     </div>
                 </div>
@@ -225,44 +223,46 @@ const Basket = () =>{
             </div>
                     </div>
                         
-                    {/* <PlacesAutocomplete
+                    <PlacesAutocomplete
       value={address}
       onChange={handleChange}
       onSelect={handleSelect}
     >
       {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
         <div>
-          <input {...getInputProps({ placeholder: 'Type address' })} />
-          <div>
-            {loading && <div>Loading...</div>}
-            {suggestions.map((suggestion) => (
-              <div {...getSuggestionItemProps(suggestion)}>
-                {suggestion.description}
+            <div class="AddAddress_formInput__1MrR5 title">
+            <input maxlength="200" {...getInputProps({ placeholder: 'Type address' })} name="how" placeholder="Adress" class="AddAddress_howToField__3kqTP" />
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class={`AddAddress_closeIcon__3Ba6h ${address ? "active" :''}`} onClick={() => setAddress('')} height="2rem" width="2rem" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"></path></g></svg>
+            {suggestions.length ?
+                <div className='AddAddress_comboPop__3F7_D'>
+             
+                <ul className="AddAddress_searchSugg__1lCZE">
+                    
+                {suggestions.map((suggestion) => (
+                  <li className='AddAddress_optionBox__2AWu-' {...getSuggestionItemProps(suggestion)}>
+                    <div className="AddAddress_optionItem__3nA0C">
+                        <div className="AddAddress_iicon__3y_h2">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 12 16" height="18px" width="18px" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 0C2.69 0 0 2.5 0 5.5 0 10.02 6 16 6 16s6-5.98 6-10.5C12 2.5 9.31 0 6 0zm0 14.55C4.14 12.52 1 8.44 1 5.5 1 3.02 3.25 1 6 1c1.34 0 2.61.48 3.56 1.36.92.86 1.44 1.97 1.44 3.14 0 2.94-3.14 7.02-5 9.05zM8 5.5c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+                        </div>
+                        <div className='AddAddress_locTitle__cc78r'> {suggestion.description}</div>
+                    </div>
+                   
+                  </li>
+                ))}
+                </ul>
+               
               </div>
-            ))}
-          </div>
+              : null
+            }
+            
+            </div>
+                        
+         
         </div>
       )}
-    </PlacesAutocomplete> */}
-      {/* <div>
-      <input
-        type="text"
-        placeholder="Search location"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      <button onClick={searchLocation}>Search</button>
-      {results.map((result, index) => (
-        <div key={index}>
-          <h3>{result.name}</h3>
-          <p>{result.description}</p>
-        </div>
-      ))}
-    </div> */}
+    </PlacesAutocomplete>
                     
-                    <div class="AddAddress_formInput__1MrR5 title">
-                            <input maxlength="200" name="how" autocomplete="off" placeholder="Adress" class="AddAddress_howToField__3kqTP" value="" />
-                        </div>
+                    
 
 
                     <div class="AddAddress_desktopForm__1d-SB">
