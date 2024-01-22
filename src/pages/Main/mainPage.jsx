@@ -346,7 +346,10 @@ const MainPage = () =>{
                                                     <div className="styles_badges__FtItY"><span
                                                          className="styles_badges_item__I757N">Expiry - 31st
                                                             Jan</span></div>
-                                                </div><span className="styles_miniature_percent__Y0sR7">59%</span>
+                                                </div>
+                                                {product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
+                                           
+
                                                
                                                     <div className="styles_miniature_image__XbgdR">
                                                         <NavLink to={`/${product.id}`} state={{ product }}
@@ -417,9 +420,13 @@ const MainPage = () =>{
                                                      className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
                                                 <div className="styles_miniature_price__5I4vS">
                                                     <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
                                                         <div className="styles_pricing_regular__sizHW"><span
-                                                             className="styles_pricing_strike__m89Q_">{product.price}</span><span
-                                                             className="styles_pricing_special__qHGqh">AED {product.price_raw}</span></div>
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
                                                     </div>
                                                 </div>
                                                 <div className="styles_miniature_configs__T57kw"><template
@@ -488,7 +495,7 @@ const MainPage = () =>{
                                                     <div className="styles_badges__FtItY"><span
                                                          className="styles_badges_item__I757N">Expiry - 31st
                                                             Jan</span></div>
-                                                </div><span className="styles_miniature_percent__Y0sR7">59%</span>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
                                                
                                                     <div className="styles_miniature_image__XbgdR">
                                                     <NavLink to={`/${product.id}`} state={{ product }}
@@ -556,9 +563,13 @@ const MainPage = () =>{
                                                      className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
                                                 <div className="styles_miniature_price__5I4vS">
                                                     <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
                                                         <div className="styles_pricing_regular__sizHW"><span
-                                                             className="styles_pricing_strike__m89Q_">{product.price}</span><span
-                                                             className="styles_pricing_special__qHGqh">AED {product.price_raw}</span></div>
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
                                                     </div>
                                                 </div>
                                                 <div className="styles_miniature_configs__T57kw"><template
@@ -629,7 +640,7 @@ const MainPage = () =>{
                                                     <div className="styles_badges__FtItY"><span
                                                          className="styles_badges_item__I757N">Expiry - 31st
                                                             Jan</span></div>
-                                                </div><span className="styles_miniature_percent__Y0sR7">59%</span>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
                                                
                                                     <div className="styles_miniature_image__XbgdR">
                                                     <NavLink to={`/${product.id}`} state={{ product }}
@@ -697,9 +708,13 @@ const MainPage = () =>{
                                                      className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
                                                 <div className="styles_miniature_price__5I4vS">
                                                     <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
                                                         <div className="styles_pricing_regular__sizHW"><span
-                                                             className="styles_pricing_strike__m89Q_">{product.price}</span><span
-                                                             className="styles_pricing_special__qHGqh">AED {product.price_raw}</span></div>
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
                                                     </div>
                                                 </div>
                                                 <div className="styles_miniature_configs__T57kw"><template
@@ -770,7 +785,7 @@ const MainPage = () =>{
                                                     <div className="styles_badges__FtItY"><span
                                                          className="styles_badges_item__I757N">Expiry - 31st
                                                             Jan</span></div>
-                                                </div><span className="styles_miniature_percent__Y0sR7">59%</span>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
                                                
                                                     <div className="styles_miniature_image__XbgdR">
                                                     <NavLink to={`/${product.id}`} state={{ product }}
@@ -838,9 +853,13 @@ const MainPage = () =>{
                                                      className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
                                                 <div className="styles_miniature_price__5I4vS">
                                                     <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
                                                         <div className="styles_pricing_regular__sizHW"><span
-                                                             className="styles_pricing_strike__m89Q_">{product.price}</span><span
-                                                             className="styles_pricing_special__qHGqh">AED {product.price_raw}</span></div>
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
                                                     </div>
                                                 </div>
                                                 <div className="styles_miniature_configs__T57kw"><template
@@ -890,7 +909,7 @@ const MainPage = () =>{
                                                     <div className="styles_badges__FtItY"><span
                                                          className="styles_badges_item__I757N">Expiry - 31st
                                                             Jan</span></div>
-                                                </div><span className="styles_miniature_percent__Y0sR7">59%</span>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
                                                
                                                     <div className="styles_miniature_image__XbgdR">
                                                     <NavLink to={`/${product.id}`} state={{ product }}
@@ -958,9 +977,13 @@ const MainPage = () =>{
                                                      className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
                                                 <div className="styles_miniature_price__5I4vS">
                                                     <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
                                                         <div className="styles_pricing_regular__sizHW"><span
-                                                             className="styles_pricing_strike__m89Q_">{product.price}</span><span
-                                                             className="styles_pricing_special__qHGqh">AED {product.price_raw}</span></div>
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
                                                     </div>
                                                 </div>
                                                 <div className="styles_miniature_configs__T57kw"><template
@@ -1009,7 +1032,7 @@ const MainPage = () =>{
                                                     <div className="styles_badges__FtItY"><span
                                                          className="styles_badges_item__I757N">Expiry - 31st
                                                             Jan</span></div>
-                                                </div><span className="styles_miniature_percent__Y0sR7">59%</span>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
                                                
                                                     <div className="styles_miniature_image__XbgdR">
                                                     <NavLink to={`/${product.id}`} state={{ product }}
@@ -1077,9 +1100,13 @@ const MainPage = () =>{
                                                      className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
                                                 <div className="styles_miniature_price__5I4vS">
                                                     <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
                                                         <div className="styles_pricing_regular__sizHW"><span
-                                                             className="styles_pricing_strike__m89Q_">{product.price}</span><span
-                                                             className="styles_pricing_special__qHGqh">AED {product.price_raw}</span></div>
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
                                                     </div>
                                                 </div>
                                                 <div className="styles_miniature_configs__T57kw"><template
@@ -1151,7 +1178,7 @@ const MainPage = () =>{
                                                     <div className="styles_badges__FtItY"><span
                                                          className="styles_badges_item__I757N">Expiry - 31st
                                                             Jan</span></div>
-                                                </div><span className="styles_miniature_percent__Y0sR7">59%</span>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
                                                
                                                     <div className="styles_miniature_image__XbgdR">
                                                     <NavLink to={`/${product.id}`} state={{ product }}
@@ -1219,9 +1246,13 @@ const MainPage = () =>{
                                                      className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
                                                 <div className="styles_miniature_price__5I4vS">
                                                     <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
                                                         <div className="styles_pricing_regular__sizHW"><span
-                                                             className="styles_pricing_strike__m89Q_">{product.price}</span><span
-                                                             className="styles_pricing_special__qHGqh">AED {product.price_raw}</span></div>
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
                                                     </div>
                                                 </div>
                                                 <div className="styles_miniature_configs__T57kw"><template
@@ -1290,7 +1321,7 @@ const MainPage = () =>{
                                                     <div className="styles_badges__FtItY"><span
                                                          className="styles_badges_item__I757N">Expiry - 31st
                                                             Jan</span></div>
-                                                </div><span className="styles_miniature_percent__Y0sR7">59%</span>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
                                                
                                                     <div className="styles_miniature_image__XbgdR">
                                                     <NavLink to={`/${product.id}`} state={{ product }}
@@ -1358,9 +1389,13 @@ const MainPage = () =>{
                                                      className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
                                                 <div className="styles_miniature_price__5I4vS">
                                                     <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
                                                         <div className="styles_pricing_regular__sizHW"><span
-                                                             className="styles_pricing_strike__m89Q_">{product.price}</span><span
-                                                             className="styles_pricing_special__qHGqh">AED {product.price_raw}</span></div>
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
                                                     </div>
                                                 </div>
                                                 <div className="styles_miniature_configs__T57kw"><template
@@ -1429,7 +1464,7 @@ const MainPage = () =>{
                                                     <div className="styles_badges__FtItY"><span
                                                          className="styles_badges_item__I757N">Expiry - 31st
                                                             Jan</span></div>
-                                                </div><span className="styles_miniature_percent__Y0sR7">59%</span>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
                                                
                                                     <div className="styles_miniature_image__XbgdR">
                                                     <NavLink to={`/${product.id}`} state={{ product }}
@@ -1497,9 +1532,13 @@ const MainPage = () =>{
                                                      className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
                                                 <div className="styles_miniature_price__5I4vS">
                                                     <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
                                                         <div className="styles_pricing_regular__sizHW"><span
-                                                             className="styles_pricing_strike__m89Q_">{product.price}</span><span
-                                                             className="styles_pricing_special__qHGqh">AED {product.price_raw}</span></div>
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
                                                     </div>
                                                 </div>
                                                 <div className="styles_miniature_configs__T57kw"><template
@@ -1567,7 +1606,7 @@ const MainPage = () =>{
                                                     <div className="styles_badges__FtItY"><span
                                                          className="styles_badges_item__I757N">Expiry - 31st
                                                             Jan</span></div>
-                                                </div><span className="styles_miniature_percent__Y0sR7">59%</span>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
                                                
                                                     <div className="styles_miniature_image__XbgdR">
                                                     <NavLink to={`/${product.id}`} state={{ product }}
@@ -1636,9 +1675,13 @@ const MainPage = () =>{
                                                      className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
                                                 <div className="styles_miniature_price__5I4vS">
                                                     <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
                                                         <div className="styles_pricing_regular__sizHW"><span
-                                                             className="styles_pricing_strike__m89Q_">{product.price}</span><span
-                                                             className="styles_pricing_special__qHGqh">AED {product.price_raw}</span></div>
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
                                                     </div>
                                                 </div>
                                                 <div className="styles_miniature_configs__T57kw"><template
@@ -1705,7 +1748,7 @@ const MainPage = () =>{
                                                     <div className="styles_badges__FtItY"><span
                                                          className="styles_badges_item__I757N">Expiry - 31st
                                                             Jan</span></div>
-                                                </div><span className="styles_miniature_percent__Y0sR7">59%</span>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
                                                
                                                     <div className="styles_miniature_image__XbgdR">
                                                     <NavLink to={`/${product.id}`} state={{ product }}
@@ -1773,9 +1816,14 @@ const MainPage = () =>{
                                                      className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
                                                 <div className="styles_miniature_price__5I4vS">
                                                     <div className="styles_pricing__k23Ku">
+                                                        {product.special_price_raw ? 
                                                         <div className="styles_pricing_regular__sizHW"><span
-                                                             className="styles_pricing_strike__m89Q_">{product.price}</span><span
-                                                             className="styles_pricing_special__qHGqh">AED {product.price_raw}</span></div>
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
+                                                        
                                                     </div>
                                                 </div>
                                                 <div className="styles_miniature_configs__T57kw"><template
