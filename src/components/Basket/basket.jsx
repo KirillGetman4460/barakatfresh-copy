@@ -26,7 +26,7 @@ const Basket = () =>{
   
     const [active,setActive] = useState(false)
 
-    const [activeAdress, setActiveAdress] = useState();
+    const [activeAdress, setActiveAdress] = useState(1);
 
     const [address,setAddress] = useState('')
 
