@@ -11,7 +11,7 @@ import Icon from '@mdi/react';
 
 import { NavLink } from "react-router-dom";
 
-import {mdiSort,mdiFilterOutline,mdiRadioboxBlank,mdiClose,mdiCheckboxMarked,mdiCheckboxBlankOutline,mdiChevronLeft,mdiChevronRight,mdiHomeOutline,mdiCartOutline ,mdiPlus,mdiMinus,mdiDeleteOutline    } from '@mdi/js';
+import {mdiSort,mdiFilterOutline,mdiRadioboxBlank,mdiFormatListBulleted,mdiClose,mdiCheckboxMarked,mdiCheckboxBlankOutline,mdiChevronLeft,mdiChevronRight,mdiHomeOutline,mdiCartOutline ,mdiPlus,mdiMinus,mdiDeleteOutline    } from '@mdi/js';
 
 import './style/basket.scss'
 import './style/basketMedia.scss'
@@ -182,6 +182,9 @@ const Basket = () =>{
                     </div>
                 </div>
             </div>
+
+
+
             <div className="layout_tabs">
           <ul className="tabs">
               <li className="tabs_item">
@@ -193,11 +196,24 @@ const Basket = () =>{
                 </NavLink>
                 
               </li>
+              <li className="tabs_item" onClick={() => setActiveCatigoriesModal(true)}>
+                
+                <div className="tabs_link">
+                  <div className="tabs_icon"><Icon path={mdiFormatListBulleted } size={1} /></div>
+                  <div className="tabs_title">Categories</div>
+                  
+                </div>
+                
+               
+              </li>
               <li className="tabs_item">
                 <NavLink to={'/basket'}>
                 <div className="tabs_link">
                   <div className="tabs_icon"><Icon path={mdiCartOutline } size={1} /></div>
                   <div className="tabs_title">Cart</div>
+                  <div className="tabs__basket__count">
+                    {basket.length}
+                  </div>
                 </div>
                 </NavLink>
                
