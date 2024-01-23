@@ -327,7 +327,7 @@ const filterBySubcats = () => {
                                         <div>
                                             <div className="styles_price_top__rjlJJ">
                                                 <div className="styles_price_value__54hUJ styles_special__bf_RD">
-                                                    {state.product.price}
+                                                    {state.product.special_price_raw}
                                                 </div>
                                                 <div className="styles_price_vat__B5mGN">
                                                     (Inclusive all VAT)

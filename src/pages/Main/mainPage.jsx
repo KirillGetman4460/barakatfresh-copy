@@ -17,8 +17,8 @@ import 'swiper/css';
 const MainPage = () =>{
     const [isFixed, setIsFixed] = useState(false);
 
-    const [productsBbq,setProductBbq] = useState(data.products_bbq.all)
-    const [productsGrabGo,setProductsGrabGo] = useState(data.products_grab_go.all)
+    const [productsBbq,setProductBbq] = useState(data.products_bbq.fruit_veg_skewers)
+    const [productsGrabGo,setProductsGrabGo] = useState(data.products_grab_go.cut_fruits)
     const [productsIceCream,setProductsIceCream] = useState(data.products_ice_cream.all)
     const [prdocutsMeats,setProductMeats] = useState(data.products_meats.all)
     const [prdocutsPantry,setProductPantry] = useState(data.products_pantry.all)
@@ -29,7 +29,6 @@ const MainPage = () =>{
     const [productsEggs, setProductsEggs] = useState(data.products_dairy_eggs.eggs)
     const [productsReadyToCook, setProductsReadyToCook] = useState(data.products_grab_go.ready_meals)
     const [active,setActive] = useState(null)
-    console.log(productsBbq);
     const [activeBtn,setActiveBtn] = useState([])
 
     const dispatch = useDispatch()
