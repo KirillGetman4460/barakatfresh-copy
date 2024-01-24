@@ -137,7 +137,7 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                                                     </div>
                     <div className="products__item__configs">
                         <span>{product.product_option}</span>
-                        <span>10 Kg </span>
+                        
                     </div>
                 </li>
                 ))}               
