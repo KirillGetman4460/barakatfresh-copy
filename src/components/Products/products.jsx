@@ -21,7 +21,6 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
         filterByPrice()
     },[selectPrice])
 
-    console.log(products);
      
     return(
         <div className="products">
