@@ -95,10 +95,10 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                     </div>
                     <div className="products__item__miniature">
                         <span>{product.origin}</span>
-                        <div className={`products__item__add__btn item ${activeBtn.some(item => item === i) ? "active" : ""}`} onClick={() => {                 
-                                setActiveBtn([...activeBtn, i]) 
+                        <div className={`products__item__add__btn item ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {                 
+                                setActiveBtn([...activeBtn, product.id]) 
                         }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={(e) =>{
+                            {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={(e) =>{
                                 if(product.quantity !== 0){
                                     product.quantity--
                                     dispatch(minusQuantity(product))
@@ -108,8 +108,8 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                                 
                             }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
 
-                            {activeBtn.some(item => item === i) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === i) ?
+                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                            {activeBtn.some(item => item === product.id) ?
                                 <span className='icon__btn__add' onClick={() => {
                                     product.quantity++
                                     dispatch(addBasket(product))

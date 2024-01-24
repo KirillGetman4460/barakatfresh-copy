@@ -18,17 +18,17 @@ import 'swiper/css';
 const MainPage = () =>{
     const [isFixed, setIsFixed] = useState(false);
 
-    const [productsBbq,setProductBbq] = useState(data.products_bbq.fruit_veg_skewers)
-    const [productsGrabGo,setProductsGrabGo] = useState(data.products_grab_go.cut_fruits)
-    const [productsIceCream,setProductsIceCream] = useState(data.products_ice_cream.all)
-    const [prdocutsMeats,setProductMeats] = useState(data.products_meats.all)
-    const [prdocutsPantry,setProductPantry] = useState(data.products_pantry.all)
-    const [productsGiftingNeeds,setProductsGiftingNeeds] = useState(data.products_gifting_needs.all)
-    const [productsOrganics, setproductsOrganics] = useState(data.products_organics.all)
-    const [productsBulk, setProductsBulk] = useState(data.products.bulk)
-    const [productsJuices, setProductsJuices] = useState(data.products_fresh_juices.all)
-    const [productsEggs, setProductsEggs] = useState(data.products_dairy_eggs.eggs)
-    const [productsReadyToCook, setProductsReadyToCook] = useState(data.products_grab_go.ready_meals)
+    const [productsBbq,setProductBbq] = useState(data.products_bbq.fruit_veg_skewers.slice(0, 15))
+    const [productsGrabGo,setProductsGrabGo] = useState(data.products_grab_go.cut_fruits.slice(0, 15))
+    const [productsIceCream,setProductsIceCream] = useState(data.products_ice_cream.all.slice(0, 15))
+    const [prdocutsMeats,setProductMeats] = useState(data.products_meats.all.slice(0, 15))
+    const [prdocutsPantry,setProductPantry] = useState(data.products_pantry.all.slice(0, 15))
+    const [productsGiftingNeeds,setProductsGiftingNeeds] = useState(data.products_gifting_needs.all.slice(0, 15))
+    const [productsOrganics, setproductsOrganics] = useState(data.products_organics.all.slice(0, 15))
+    const [productsBulk, setProductsBulk] = useState(data.products.bulk.slice(0, 15))
+    const [productsJuices, setProductsJuices] = useState(data.products_fresh_juices.all.slice(0, 15))
+    const [productsEggs, setProductsEggs] = useState(data.products_dairy_eggs.eggs.slice(0, 15))
+    const [productsReadyToCook, setProductsReadyToCook] = useState(data.products_grab_go.ready_meals.slice(0, 15))
     const [active,setActive] = useState(null)
     const [activeBtn,setActiveBtn] = useState([])
 
