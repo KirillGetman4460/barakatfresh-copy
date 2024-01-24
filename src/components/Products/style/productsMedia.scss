@@ -221,7 +221,8 @@
         height: 44px;
         background: white;
         position: fixed;
-
+        top: 55px;
+        z-index: 10;
     }
     .filters__modile{
         font-size: 14px;

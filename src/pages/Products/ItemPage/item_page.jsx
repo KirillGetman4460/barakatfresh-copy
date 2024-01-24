@@ -326,17 +326,27 @@ const filterBySubcats = () => {
                                     <div className="styles_details_pricebox__4Uj4u">
                                         <div>
                                             <div className="styles_price_top__rjlJJ">
-                                                <div className="styles_price_value__54hUJ styles_special__bf_RD">
+                                                {state.product.special_price_raw ? 
+                                                    <div className="styles_price_value__54hUJ styles_special__bf_RD">
                                                     {state.product.special_price_raw}
+                                                </div> :
+                                                <div className="styles_special__bf_RD">
+                                                    {state.product.price}
                                                 </div>
+                                            }
+                                                
+                                                
                                                 <div className="styles_price_vat__B5mGN">
                                                     (Inclusive all VAT)
                                                 </div>
                                             </div>
                                            <div className="styles_price_bottom__4VCM5">
-                                                <div className={`styles_price_striked__DQSIW ${state.product.percent_off ? 'percent_off' : ''}`}>
-                                                {state.product.price}
-                                                </div>
+                                                {state.product.special_price_raw && 
+                                                  <div className={`styles_price_striked__DQSIW ${state.product.special_price_raw ? 'percent_off' : ''}`}>
+                                                  {state.product.price}
+                                              </div>
+                                                }
+                                              
                                                 {state.product.percent_off &&  <div className="styles_price_off__7IaJ1">
                                                 {state.product.percent_off} OFF
                                                 </div>}
