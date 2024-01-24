@@ -135,10 +135,13 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                                                         className="styles_pricing_regular__sizHW">{product.price}</span></div>
                                                     }
                                                     </div>
-                    <div className="products__item__configs">
-                        <span>{product.product_option}</span>
-                        
-                    </div>
+                                                    {product.product_option &&
+                                                    <div className="products__item__configs">
+                                                    <span>{product.product_option}</span>
+                                                    
+                                                </div> 
+                                                    }
+                    
                 </li>
                 ))}               
             </ul>
