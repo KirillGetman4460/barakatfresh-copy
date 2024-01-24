@@ -153,7 +153,28 @@
     background-color: #606060;
     box-shadow: 1px 1px 3px 0 rgba(0,0,0,.3);
   }
+  .styles_myitems_list__UK74U{
+    &.mobile{
+      display: none;
+      max-width: 100%;
+    width: 100%;
+    overflow: auto;
+      & .styles_myitems_item__XSuD6{
+        width: 170px;
+        & .styles_miniature__bauyi{
+          min-height: 250px;
+        }
+      }
+    }
+  }
   @media(max-width: 768px){
+    
+    .styles_myitems_list__UK74U{
+      display: none;
+      &.mobile{
+        display: block;
+      }
+    }
     .br_wrapper{
       max-width: 100%;
       &.main{

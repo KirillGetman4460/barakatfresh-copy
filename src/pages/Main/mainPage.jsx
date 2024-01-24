@@ -2,7 +2,7 @@ import {useRef} from 'react'
 import Header from "../../components/Header/header";
 import Megamenu from '../../components/Megamenu/megamenu'
 import { addBasket,minusQuantity,deleteItemBasket,selectTitle } from '../../store/basketSlice/basketSlice';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination,Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useSelector,useDispatch } from 'react-redux'
 import {useState,useEffect} from 'react'
@@ -13,6 +13,7 @@ import Icon from '@mdi/react';
 import { mdiChevronLeft,mdiHomeOutline,mdiCartOutline,mdiMinus,mdiPlus,mdiFormatListBulleted   } from '@mdi/js';
 import './style/style.scss'
 import 'swiper/css/navigation';
+import 'swiper/css/scrollbar';
 import 'swiper/css';
 const MainPage = () =>{
     const [isFixed, setIsFixed] = useState(false);
@@ -76,70 +77,6 @@ const MainPage = () =>{
             </div>
          <div className="fixed__modile">
          <div className="megamenu modile">
-            {/* <ul className="megamenu__list">
-                 <NavLink to={'/bbq'}>
-                 <li className="megamenu__item">
-                    <span>Bbq Range</span>
-                </li>
-                 </NavLink>
-                <NavLink to={'/fruits'}>
-                <li className="megamenu__item">
-                    <span>Fruits</span>
-                </li>
-                </NavLink>
-                <NavLink to={'/vegetables'}>
-                <li className="megamenu__item">
-                    <span>Vegetables</span>
-                </li>
-                </NavLink>
-                <NavLink to={'/fresh_juices'}>
-                <li className="megamenu__item">
-                    <span>Fresh Juices</span>
-                </li>
-                </NavLink>
-                <NavLink to={'/meats'}>
-                <li className="megamenu__item">
-                    <span>Meats</span>
-                </li>
-                </NavLink>
-                <NavLink to={'/grab_to_go'}>
-                <li className="megamenu__item">
-                    <span>Grab N Go</span>
-                </li>
-                </NavLink>
-                <NavLink to={'/gifting_needs'}>
-                <li className="megamenu__item">
-                    <span>Gifting & Party Needs</span>
-                </li>
-                </NavLink>
-                <NavLink to={'/organics'}>
-                <li className="megamenu__item">
-                    <span>Organics</span>
-                </li>
-                </NavLink>
-                <NavLink to={'/bakery'}>
-                <li className="megamenu__item">
-                    <span>Bakery</span>
-                </li>
-                </NavLink>
-                <NavLink to={'/dairy_eggs'}>
-                <li className="megamenu__item">
-                    <span>Dairy & Eggs</span>
-                </li>
-                </NavLink>
-                <NavLink to={'/ice_cream'}>
-                <li className="megamenu__item">
-                    <span>Ice Cream</span>
-                </li>
-                </NavLink>
-                <NavLink to={'/pantry'}>
-                <li className="megamenu__item">
-                    <span>Pantry</span>
-                </li>
-                </NavLink>
-               
-               
-            </ul> */}
         </div>
          </div>
 
@@ -440,6 +377,111 @@ const MainPage = () =>{
 
                                     
                                 </div>
+                                <div className="styles_myitems_list__UK74U mobile">
+     
+      {productsBbq.map((product,i) => (
+ 
+  <div className="styles_myitems_item__XSuD6">
+                                        <div className="styles_miniature__bauyi">
+                                            <div className="styles_miniature_thumb__pC4As">
+                                                <div className="styles_miniature_badges__0wu3u">
+                                                    <div className="styles_badges__FtItY"><span
+                                                         className="styles_badges_item__I757N">Expiry - 31st
+                                                            Jan</span></div>
+                                                </div>
+                                                {product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
+                                           
+
+                                               
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                        <NavLink to={`/${product.id}`} state={{ product }}
+
+                                                        >
+                                                        <img alt="product"
+                                                            src={product.image}
+                                                            width="420" height="420" decoding="async" data-nimg="1"
+                                                            loading="lazy" style={{color:"black"}} />
+                                                        </NavLink>
+                                                     
+                                                    
+                                                     <div className="products__item__miniature">
+                       
+
+                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                            setActiveBtn([...activeBtn, product.id])      
+                             
+                        }}>
+                            {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                                if(product.quantity !== 0){
+                                    product.quantity--
+                                    dispatch(minusQuantity(product))
+                                    dispatch(deleteItemBasket(product))
+                                    return
+                                }
+                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                            {activeBtn.some(item => item === product.id) ?
+                                <span className='icon__btn__add' onClick={() => {
+                                    product.quantity++
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                            }
+                            
+                        </div>
+                    </div>
+                                                    </div>
+                                                
+                                            </div>
+                                            <div className="styles_miniature_addcart__nrwcj">
+                                                <div className="styles_addtocart__vPSiL">
+                                                    <div className="styles_addtocart_container__R8iNc">
+                                                        <div className="styles_addtocart_box__4cn_x">
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                            <div className="styles_addtocart_textbox__nF655">
+                                                                <span></span>
+                                                            </div>
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="styles_miniature_origin__0XxsK"></div>
+                                            <div>
+                                                <div className="styles_miniature_name__NNCqq"><span
+                                                     className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
+                                                <div className="styles_miniature_price__5I4vS">
+                                                    <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
+                                                        <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_configs__T57kw"><template
+                                                        data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                            </div>
+                                        </div>
+                                    </div>
+ 
+      ))}
+    
+   
+                                </div>
+                                
                             </div>
                         </div>
                         <div className="br_mb50">
@@ -581,6 +623,100 @@ const MainPage = () =>{
     </Swiper>
                                     
                                     
+                                </div>
+                                <div className="styles_myitems_list__UK74U mobile">
+                                {productsGrabGo.map((product,i) => (
+  <div className="styles_myitems_item__XSuD6">
+                                        <div className="styles_miniature__bauyi">
+                                            <div className="styles_miniature_thumb__pC4As">
+                                                <div className="styles_miniature_badges__0wu3u">
+                                                    <div className="styles_badges__FtItY"><span
+                                                         className="styles_badges_item__I757N">Expiry - 31st
+                                                            Jan</span></div>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
+                                               
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
+                                                     <div className="products__item__miniature">
+                       
+
+                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                            setActiveBtn([...activeBtn, product.id])       
+                        }}>
+                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                product.quantity--
+                                dispatch(minusQuantity(product))
+                                dispatch(deleteItemBasket(product))
+                                return
+                            }
+                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                            {activeBtn.some(item => item === product.id) ?
+                                <span className='icon__btn__add' onClick={() => {
+                                    product.quantity++
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                            }
+                            
+                        </div>
+                    </div>
+                                                    </div>
+                                                
+                                            </div>
+                                            <div className="styles_miniature_addcart__nrwcj">
+                                                <div className="styles_addtocart__vPSiL">
+                                                    <div className="styles_addtocart_container__R8iNc">
+                                                        <div className="styles_addtocart_box__4cn_x">
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                            <div className="styles_addtocart_textbox__nF655">
+                                                                <span></span>
+                                                            </div>
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="styles_miniature_origin__0XxsK"></div>
+                                            <div>
+                                                <div className="styles_miniature_name__NNCqq"><span
+                                                     className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
+                                                <div className="styles_miniature_price__5I4vS">
+                                                    <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
+                                                        <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_configs__T57kw"><template
+                                                        data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                            </div>
+                                        </div>
+                                    </div>
+  
+      ))}
                                 </div>
                             </div>
                         </div>
@@ -727,6 +863,100 @@ const MainPage = () =>{
                                          
                                    
                                 </div>
+                                <div className="styles_myitems_list__UK74U mobile">
+                                {productsIceCream.map((product,i) => (
+  <div className="styles_myitems_item__XSuD6">
+                                        <div className="styles_miniature__bauyi">
+                                            <div className="styles_miniature_thumb__pC4As">
+                                                <div className="styles_miniature_badges__0wu3u">
+                                                    <div className="styles_badges__FtItY"><span
+                                                         className="styles_badges_item__I757N">Expiry - 31st
+                                                            Jan</span></div>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
+                                               
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
+                                                     <div className="products__item__miniature">
+                       
+
+                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                            setActiveBtn([...activeBtn, product.id])       
+                        }}>
+                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                product.quantity--
+                                dispatch(minusQuantity(product))
+                                dispatch(deleteItemBasket(product))
+                                return
+                            }
+                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                            {activeBtn.some(item => item === product.id) ?
+                                <span className='icon__btn__add' onClick={() => {
+                                    product.quantity++
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                            }
+                            
+                        </div>
+                    </div>
+                                                    </div>
+                                                
+                                            </div>
+                                            <div className="styles_miniature_addcart__nrwcj">
+                                                <div className="styles_addtocart__vPSiL">
+                                                    <div className="styles_addtocart_container__R8iNc">
+                                                        <div className="styles_addtocart_box__4cn_x">
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                            <div className="styles_addtocart_textbox__nF655">
+                                                                <span></span>
+                                                            </div>
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="styles_miniature_origin__0XxsK"></div>
+                                            <div>
+                                                <div className="styles_miniature_name__NNCqq"><span
+                                                     className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
+                                                <div className="styles_miniature_price__5I4vS">
+                                                    <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
+                                                        <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_configs__T57kw"><template
+                                                        data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                            </div>
+                                        </div>
+                                    </div>
+  
+      ))}
+                                </div>
                             </div>
                         </div>
                         <div className="br_mb50">
@@ -872,6 +1102,100 @@ const MainPage = () =>{
                                     
                                   
                                 </div>
+                                <div className="styles_myitems_list__UK74U mobile">
+                                {prdocutsMeats.map((product,i) => (
+  <div className="styles_myitems_item__XSuD6">
+                                        <div className="styles_miniature__bauyi">
+                                            <div className="styles_miniature_thumb__pC4As">
+                                                <div className="styles_miniature_badges__0wu3u">
+                                                    <div className="styles_badges__FtItY"><span
+                                                         className="styles_badges_item__I757N">Expiry - 31st
+                                                            Jan</span></div>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
+                                               
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
+                                                     <div className="products__item__miniature">
+                       
+
+                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                            setActiveBtn([...activeBtn, product.id])       
+                        }}>
+                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                product.quantity--
+                                dispatch(minusQuantity(product))
+                                dispatch(deleteItemBasket(product))
+                                return
+                            }
+                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                            {activeBtn.some(item => item === product.id) ?
+                                <span className='icon__btn__add' onClick={() => {
+                                    product.quantity++
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                            }
+                            
+                        </div>
+                    </div>
+                                                    </div>
+                                                
+                                            </div>
+                                            <div className="styles_miniature_addcart__nrwcj">
+                                                <div className="styles_addtocart__vPSiL">
+                                                    <div className="styles_addtocart_container__R8iNc">
+                                                        <div className="styles_addtocart_box__4cn_x">
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                            <div className="styles_addtocart_textbox__nF655">
+                                                                <span></span>
+                                                            </div>
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="styles_miniature_origin__0XxsK"></div>
+                                            <div>
+                                                <div className="styles_miniature_name__NNCqq"><span
+                                                     className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
+                                                <div className="styles_miniature_price__5I4vS">
+                                                    <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
+                                                        <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_configs__T57kw"><template
+                                                        data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                            </div>
+                                        </div>
+                                    </div>
+  
+      ))}
+                                </div>
                             </div>
                         </div>
                         
@@ -996,6 +1320,100 @@ const MainPage = () =>{
                                    
                                     
                                 </div>
+                                <div className="styles_myitems_list__UK74U mobile">
+                                {prdocutsPantry.map((product,i) => (
+  <div className="styles_myitems_item__XSuD6">
+                                        <div className="styles_miniature__bauyi">
+                                            <div className="styles_miniature_thumb__pC4As">
+                                                <div className="styles_miniature_badges__0wu3u">
+                                                    <div className="styles_badges__FtItY"><span
+                                                         className="styles_badges_item__I757N">Expiry - 31st
+                                                            Jan</span></div>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
+                                               
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
+                                                     <div className="products__item__miniature">
+                       
+
+                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                            setActiveBtn([...activeBtn, product.id])       
+                        }}>
+                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                product.quantity--
+                                dispatch(minusQuantity(product))
+                                dispatch(deleteItemBasket(product))
+                                return
+                            }
+                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                            {activeBtn.some(item => item === product.id) ?
+                                <span className='icon__btn__add' onClick={() => {
+                                    product.quantity++
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                            }
+                            
+                        </div>
+                    </div>
+                                                    </div>
+                                                
+                                            </div>
+                                            <div className="styles_miniature_addcart__nrwcj">
+                                                <div className="styles_addtocart__vPSiL">
+                                                    <div className="styles_addtocart_container__R8iNc">
+                                                        <div className="styles_addtocart_box__4cn_x">
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                            <div className="styles_addtocart_textbox__nF655">
+                                                                <span></span>
+                                                            </div>
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="styles_miniature_origin__0XxsK"></div>
+                                            <div>
+                                                <div className="styles_miniature_name__NNCqq"><span
+                                                     className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
+                                                <div className="styles_miniature_price__5I4vS">
+                                                    <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
+                                                        <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_configs__T57kw"><template
+                                                        data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                            </div>
+                                        </div>
+                                    </div>
+  
+      ))}
+                                </div>
                             </div>
                         </div>
                         <div className="br_mb50">
@@ -1117,6 +1535,100 @@ const MainPage = () =>{
       ))}
     </Swiper>
                                     
+                                </div>
+                                <div className="styles_myitems_list__UK74U mobile">
+                                {productsGiftingNeeds.map((product,i) => (
+  <div className="styles_myitems_item__XSuD6">
+                                        <div className="styles_miniature__bauyi">
+                                            <div className="styles_miniature_thumb__pC4As">
+                                                <div className="styles_miniature_badges__0wu3u">
+                                                    <div className="styles_badges__FtItY"><span
+                                                         className="styles_badges_item__I757N">Expiry - 31st
+                                                            Jan</span></div>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
+                                               
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
+                                                     <div className="products__item__miniature">
+                       
+
+                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                            setActiveBtn([...activeBtn, product.id])       
+                        }}>
+                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                product.quantity--
+                                dispatch(minusQuantity(product))
+                                dispatch(deleteItemBasket(product))
+                                return
+                            }
+                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                            {activeBtn.some(item => item === product.id) ?
+                                <span className='icon__btn__add' onClick={() => {
+                                    product.quantity++
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                            }
+                            
+                        </div>
+                    </div>
+                                                    </div>
+                                                
+                                            </div>
+                                            <div className="styles_miniature_addcart__nrwcj">
+                                                <div className="styles_addtocart__vPSiL">
+                                                    <div className="styles_addtocart_container__R8iNc">
+                                                        <div className="styles_addtocart_box__4cn_x">
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                            <div className="styles_addtocart_textbox__nF655">
+                                                                <span></span>
+                                                            </div>
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="styles_miniature_origin__0XxsK"></div>
+                                            <div>
+                                                <div className="styles_miniature_name__NNCqq"><span
+                                                     className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
+                                                <div className="styles_miniature_price__5I4vS">
+                                                    <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
+                                                        <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_configs__T57kw"><template
+                                                        data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                            </div>
+                                        </div>
+                                    </div>
+  
+      ))}
                                 </div>
                             </div>
                         </div>
@@ -1264,6 +1776,100 @@ const MainPage = () =>{
     </Swiper>
                                     
                                 </div>
+                                <div className="styles_myitems_list__UK74U mobile">
+                                {productsOrganics.map((product,i) => (
+  <div className="styles_myitems_item__XSuD6">
+                                        <div className="styles_miniature__bauyi">
+                                            <div className="styles_miniature_thumb__pC4As">
+                                                <div className="styles_miniature_badges__0wu3u">
+                                                    <div className="styles_badges__FtItY"><span
+                                                         className="styles_badges_item__I757N">Expiry - 31st
+                                                            Jan</span></div>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
+                                               
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
+                                                     <div className="products__item__miniature">
+                       
+
+                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                            setActiveBtn([...activeBtn, product.id])       
+                        }}>
+                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                product.quantity--
+                                dispatch(minusQuantity(product))
+                                dispatch(deleteItemBasket(product))
+                                return
+                            }
+                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                            {activeBtn.some(item => item === product.id) ?
+                                <span className='icon__btn__add' onClick={() => {
+                                    product.quantity++
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                            }
+                            
+                        </div>
+                    </div>
+                                                    </div>
+                                                
+                                            </div>
+                                            <div className="styles_miniature_addcart__nrwcj">
+                                                <div className="styles_addtocart__vPSiL">
+                                                    <div className="styles_addtocart_container__R8iNc">
+                                                        <div className="styles_addtocart_box__4cn_x">
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                            <div className="styles_addtocart_textbox__nF655">
+                                                                <span></span>
+                                                            </div>
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="styles_miniature_origin__0XxsK"></div>
+                                            <div>
+                                                <div className="styles_miniature_name__NNCqq"><span
+                                                     className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
+                                                <div className="styles_miniature_price__5I4vS">
+                                                    <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
+                                                        <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_configs__T57kw"><template
+                                                        data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                            </div>
+                                        </div>
+                                    </div>
+  
+      ))}
+                                </div>
                             </div>
                         </div>
                         <div className="br_mb50">
@@ -1408,6 +2014,100 @@ const MainPage = () =>{
     </Swiper>
                                    
                                 </div>
+                                <div className="styles_myitems_list__UK74U mobile">
+                                {productsBulk.map((product,i) => (
+  <div className="styles_myitems_item__XSuD6">
+                                        <div className="styles_miniature__bauyi">
+                                            <div className="styles_miniature_thumb__pC4As">
+                                                <div className="styles_miniature_badges__0wu3u">
+                                                    <div className="styles_badges__FtItY"><span
+                                                         className="styles_badges_item__I757N">Expiry - 31st
+                                                            Jan</span></div>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
+                                               
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
+                                                     <div className="products__item__miniature">
+                       
+
+                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                            setActiveBtn([...activeBtn, product.id])       
+                        }}>
+                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                product.quantity--
+                                dispatch(minusQuantity(product))
+                                dispatch(deleteItemBasket(product))
+                                return
+                            }
+                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                            {activeBtn.some(item => item === product.id) ?
+                                <span className='icon__btn__add' onClick={() => {
+                                    product.quantity++
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                            }
+                            
+                        </div>
+                    </div>
+                                                    </div>
+                                                
+                                            </div>
+                                            <div className="styles_miniature_addcart__nrwcj">
+                                                <div className="styles_addtocart__vPSiL">
+                                                    <div className="styles_addtocart_container__R8iNc">
+                                                        <div className="styles_addtocart_box__4cn_x">
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                            <div className="styles_addtocart_textbox__nF655">
+                                                                <span></span>
+                                                            </div>
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="styles_miniature_origin__0XxsK"></div>
+                                            <div>
+                                                <div className="styles_miniature_name__NNCqq"><span
+                                                     className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
+                                                <div className="styles_miniature_price__5I4vS">
+                                                    <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
+                                                        <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_configs__T57kw"><template
+                                                        data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                            </div>
+                                        </div>
+                                    </div>
+  
+      ))}
+                                </div>
                             </div>
                         </div>
                         <div className="br_mb50">
@@ -1549,6 +2249,100 @@ const MainPage = () =>{
       ))}
     </Swiper>
                                    
+                                </div>
+                                <div className="styles_myitems_list__UK74U mobile">
+                                {productsJuices.map((product,i) => (
+  <div className="styles_myitems_item__XSuD6">
+                                        <div className="styles_miniature__bauyi">
+                                            <div className="styles_miniature_thumb__pC4As">
+                                                <div className="styles_miniature_badges__0wu3u">
+                                                    <div className="styles_badges__FtItY"><span
+                                                         className="styles_badges_item__I757N">Expiry - 31st
+                                                            Jan</span></div>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
+                                               
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
+                                                     <div className="products__item__miniature">
+                       
+
+                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                            setActiveBtn([...activeBtn, product.id])       
+                        }}>
+                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                product.quantity--
+                                dispatch(minusQuantity(product))
+                                dispatch(deleteItemBasket(product))
+                                return
+                            }
+                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                            {activeBtn.some(item => item === product.id) ?
+                                <span className='icon__btn__add' onClick={() => {
+                                    product.quantity++
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                            }
+                            
+                        </div>
+                    </div>
+                                                    </div>
+                                                
+                                            </div>
+                                            <div className="styles_miniature_addcart__nrwcj">
+                                                <div className="styles_addtocart__vPSiL">
+                                                    <div className="styles_addtocart_container__R8iNc">
+                                                        <div className="styles_addtocart_box__4cn_x">
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                            <div className="styles_addtocart_textbox__nF655">
+                                                                <span></span>
+                                                            </div>
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="styles_miniature_origin__0XxsK"></div>
+                                            <div>
+                                                <div className="styles_miniature_name__NNCqq"><span
+                                                     className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
+                                                <div className="styles_miniature_price__5I4vS">
+                                                    <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
+                                                        <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_configs__T57kw"><template
+                                                        data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                            </div>
+                                        </div>
+                                    </div>
+  
+      ))}
                                 </div>
                             </div>
                         </div>
@@ -1693,6 +2487,100 @@ const MainPage = () =>{
     </Swiper>
                                     
                                 </div>
+                                <div className="styles_myitems_list__UK74U mobile">
+                                {productsEggs.map((product,i) => (
+  <div className="styles_myitems_item__XSuD6">
+                                        <div className="styles_miniature__bauyi">
+                                            <div className="styles_miniature_thumb__pC4As">
+                                                <div className="styles_miniature_badges__0wu3u">
+                                                    <div className="styles_badges__FtItY"><span
+                                                         className="styles_badges_item__I757N">Expiry - 31st
+                                                            Jan</span></div>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
+                                               
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
+                                                     <div className="products__item__miniature">
+                       
+
+                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                            setActiveBtn([...activeBtn, product.id])       
+                        }}>
+                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                product.quantity--
+                                dispatch(minusQuantity(product))
+                                dispatch(deleteItemBasket(product))
+                                return
+                            }
+                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                            {activeBtn.some(item => item === product.id) ?
+                                <span className='icon__btn__add' onClick={() => {
+                                    product.quantity++
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                            }
+                            
+                        </div>
+                    </div>
+                                                    </div>
+                                                
+                                            </div>
+                                            <div className="styles_miniature_addcart__nrwcj">
+                                                <div className="styles_addtocart__vPSiL">
+                                                    <div className="styles_addtocart_container__R8iNc">
+                                                        <div className="styles_addtocart_box__4cn_x">
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                            <div className="styles_addtocart_textbox__nF655">
+                                                                <span></span>
+                                                            </div>
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="styles_miniature_origin__0XxsK"></div>
+                                            <div>
+                                                <div className="styles_miniature_name__NNCqq"><span
+                                                     className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
+                                                <div className="styles_miniature_price__5I4vS">
+                                                    <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
+                                                        <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_configs__T57kw"><template
+                                                        data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                            </div>
+                                        </div>
+                                    </div>
+  
+      ))}
+                                </div>
                             </div>
                         </div>
                         <div className="br_mb50">
@@ -1835,6 +2723,100 @@ const MainPage = () =>{
     
     </Swiper>
                                     
+                                </div>
+                                <div className="styles_myitems_list__UK74U mobile">
+                                {productsReadyToCook.map((product,i) => (
+  <div className="styles_myitems_item__XSuD6">
+                                        <div className="styles_miniature__bauyi">
+                                            <div className="styles_miniature_thumb__pC4As">
+                                                <div className="styles_miniature_badges__0wu3u">
+                                                    <div className="styles_badges__FtItY"><span
+                                                         className="styles_badges_item__I757N">Expiry - 31st
+                                                            Jan</span></div>
+                                                </div>{product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
+                                               
+                                                    <div className="styles_miniature_image__XbgdR">
+                                                    <NavLink to={`/${product.id}`} state={{ product }}
+
+>
+<img alt="product"
+    src={product.image}
+    width="420" height="420" decoding="async" data-nimg="1"
+    loading="lazy" style={{color:"black"}} />
+</NavLink>
+                                                     <div className="products__item__miniature">
+                       
+
+                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                            setActiveBtn([...activeBtn, product.id])       
+                        }}>
+                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                product.quantity--
+                                dispatch(minusQuantity(product))
+                                dispatch(deleteItemBasket(product))
+                                return
+                            }
+                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                            {activeBtn.some(item => item === product.id) ?
+                                <span className='icon__btn__add' onClick={() => {
+                                    product.quantity++
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                    dispatch(addBasket(product))
+                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                            }
+                            
+                        </div>
+                    </div>
+                                                    </div>
+                                                
+                                            </div>
+                                            <div className="styles_miniature_addcart__nrwcj">
+                                                <div className="styles_addtocart__vPSiL">
+                                                    <div className="styles_addtocart_container__R8iNc">
+                                                        <div className="styles_addtocart_box__4cn_x">
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_increment__OgBkV styles_disabled__V450K">
+                                                                <i className="mdi mdi-plus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                            <div className="styles_addtocart_textbox__nF655">
+                                                                <span></span>
+                                                            </div>
+                                                            <div
+                                                             className="styles_addtocart_toggle__KC7th styles_decrement__yGYLo">
+                                                                <i className="mdi mdi-minus styles_addtocart_icon__TQaFF"
+                                                                    style={{lineHeight:0}}></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="styles_miniature_origin__0XxsK"></div>
+                                            <div>
+                                                <div className="styles_miniature_name__NNCqq"><span
+                                                     className="styles_miniature_name_text__9uWQ2">{product.name}</span></div>
+                                                <div className="styles_miniature_price__5I4vS">
+                                                    <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
+                                                        <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
+                                                    </div>
+                                                </div>
+                                                <div className="styles_miniature_configs__T57kw"><template
+                                                        data-dgst="DYNAMIC_SERVER_USAGE"></template></div>
+                                            </div>
+                                        </div>
+                                    </div>
+  
+      ))}
                                 </div>
                             </div>
                         </div>

@@ -334,12 +334,13 @@ const filterBySubcats = () => {
                                                 </div>
                                             </div>
                                            <div className="styles_price_bottom__4VCM5">
-                                                <div className="styles_price_striked__DQSIW">
+                                                <div className={`styles_price_striked__DQSIW ${state.product.percent_off ? 'percent_off' : ''}`}>
                                                 {state.product.price}
                                                 </div>
-                                                <div className="styles_price_off__7IaJ1">
-                                                55% OFF
-                                                </div>
+                                                {state.product.percent_off &&  <div className="styles_price_off__7IaJ1">
+                                                {state.product.percent_off} OFF
+                                                </div>}
+                                               
                                            </div>
 
                                         </div>

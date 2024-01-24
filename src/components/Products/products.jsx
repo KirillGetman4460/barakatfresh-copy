@@ -20,6 +20,8 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
     useEffect(() =>{
         filterByPrice()
     },[selectPrice])
+
+    console.log(products);
      
     return(
         <div className="products">
@@ -71,22 +73,15 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                       
                         </li>
                     ))}
-                    
-                    
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                    
+
+                                       
             
                 </ul>
             </div>
             <ul className="products__list">
                 {products.map((product,i) => (
                 <li className="products__item" key={i}>
+                    {product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
                     <div className="products__item__img">
                     <NavLink to={`/${product.id}`} state={{ product }}
 
@@ -100,7 +95,7 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                     </div>
                     <div className="products__item__miniature">
                         <span>{product.origin}</span>
-                        <div className={`products__item__add__btn ${activeBtn.some(item => item === i) ? "active" : ""}`} onClick={() => {                 
+                        <div className={`products__item__add__btn item ${activeBtn.some(item => item === i) ? "active" : ""}`} onClick={() => {                 
                                 setActiveBtn([...activeBtn, i]) 
                         }}>
                             {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={(e) =>{
@@ -127,10 +122,20 @@ const Products = ({title,products,filterBySubcats,filterByPrice,selectPrice,setS
                     </div>
                   
                     <div className="products__item__title">{product.name}</div>
-                    <div className="products__item__price ">
-                        <span>{product.valut} {product.price}</span>
-                        {product.new_price && <span>AED {product.price_raw}</span>}          
-                    </div>
+
+                    {/* <div className="products__item__price ">
+                        <span> {product.price}</span>
+                        {product.new_price && <span>AED {product.price}</span>}          
+                    </div> */}
+                    <div className="styles_pricing__k23Ku">
+                                                    {product.special_price_raw ? 
+                                                        <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                        className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                        :  <div className="styles_pricing_regular__sizHW"><span
+                                                        className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                                    }
+                                                    </div>
                     <div className="products__item__configs">
                         <span>{product.product_option}</span>
                         <span>10 Kg </span>
