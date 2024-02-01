@@ -1,0 +1,10 @@
+.products__list.search{
+    max-width: 1140px;
+}
+
+@media(max-width:768px){
+    .products__list.search{
+        padding-top: 60px;
+    }
+    
+}

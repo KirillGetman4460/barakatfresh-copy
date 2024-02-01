@@ -14,6 +14,7 @@ import ProductsPantry from './pages/Products/productsPantry/productsPantry'
 import ItemPage from './pages/Products/ItemPage/item_page'
 import PageBasket from './pages/Basket/basket';
 import MainPage from './pages/Main/mainPage'
+import SearchProducts from './pages/Products/searchProducts/searchProducts'
 import Footer from './components/Footer/footer'
 
 import {Route,Routes } from "react-router-dom";
@@ -22,8 +23,10 @@ function App() {
   return (
     <div className="App">
       <Routes>
+      <Route path="/" element={<MainPage></MainPage>}/>
         <Route path="/fruits" element={<PageProducts />} />
-        <Route path="/" element={<MainPage></MainPage>}/>
+       
+        <Route path='/search' element={<SearchProducts></SearchProducts>}/>
         <Route path="/:id" element={<ItemPage/>}/>
         <Route path="/bbq" element={<PageProductsBbq />} />
         <Route path="/vegetables" element={<PageProductsVegetables />} />

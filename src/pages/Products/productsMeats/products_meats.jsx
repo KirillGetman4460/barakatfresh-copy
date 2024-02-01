@@ -259,8 +259,8 @@ const handleTagsSelectChange = (event) => {
         };
       }, []);
       useEffect(() =>{
-        products.map(item => item.quantity = 1)
-      },[products])
+        setProducts(products.map(obj => ({ ...obj, quantity: 1 })))
+      },[])
     return(
         <>
         <div className={`${isFixed ? 'fixed' : ''}`}>

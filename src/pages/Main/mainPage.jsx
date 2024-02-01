@@ -34,7 +34,7 @@ const MainPage = () =>{
 
     const dispatch = useDispatch()
 
-    const swiperRef = useRef(null);
+    const swiperRef = useRef(null);     
 
     const {basket} = useSelector(state => state.basket)
     useEffect(() => {
@@ -51,16 +51,17 @@ const MainPage = () =>{
         };
       }, []);
       useEffect(() =>{
-        productsBbq.map(obj => obj.quantity = 1);
-        productsGrabGo.map(obj => obj.quantity = 1);
-        productsIceCream.map(obj => obj.quantity = 1)
-        prdocutsMeats.map(obj => obj.quantity = 1)
-        prdocutsPantry.map(obj => obj.quantity = 1)
-        productsGiftingNeeds.map(obj => obj.quantity = 1)
-        productsOrganics.map(obj => obj.quantity = 1)
-        productsJuices.map(obj => obj.quantity = 1)
-        productsEggs.map(obj => obj.quantity = 1)
-        productsReadyToCook.map(obj => obj.quantity = 1)
+        setProductBbq(productsBbq.map(obj => ({ ...obj, quantity: 1 })))      
+        setProductsGrabGo(productsGrabGo.map(obj => ({ ...obj, quantity: 1 })))
+        setProductsIceCream(productsIceCream.map(obj => ({ ...obj, quantity: 1 })))
+        setProductMeats(prdocutsMeats.map(obj => ({ ...obj, quantity: 1 })))
+        setProductPantry(prdocutsPantry.map(obj => ({ ...obj, quantity: 1 })))
+        setProductsGiftingNeeds(productsGiftingNeeds.map(obj => ({ ...obj, quantity: 1 })))
+        setproductsOrganics(productsOrganics.map(obj => ({ ...obj, quantity: 1 })))
+        setProductsJuices(productsJuices.map(obj => ({ ...obj, quantity: 1 })))
+        setProductsEggs(productsEggs.map(obj => ({ ...obj, quantity: 1 })))
+        setProductsReadyToCook(productsReadyToCook.map(obj => ({ ...obj, quantity: 1 })))
+        setProductsBulk(productsBulk.map(obj => ({ ...obj, quantity: 1 })))
       },[])
 
     const [activeCatigoriesModal,setActiveCatigoriesModal] = useState(false)
@@ -70,11 +71,7 @@ const MainPage = () =>{
                 <Header></Header>
                 <Megamenu></Megamenu>  
             </div>
-            <div className="header__main">
-                <span className="styles_logolink__LUb_Q">
-                    <img src="https://barakatfresh.ae/_next/static/media/barakat-logo-en-primary.2c1fe12c.png" alt="" />
-                </span>
-            </div>
+            
          <div className="fixed__modile">
          <div className="megamenu modile">
         </div>
@@ -404,34 +401,34 @@ const MainPage = () =>{
                                                         </NavLink>
                                                      
                                                     
-                                                     <div className="products__item__miniature">
+                                                        <div className="products__item__miniature">
                        
 
-                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])      
-                             
-                        }}>
-                            {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
-                                if(product.quantity !== 0){
-                                    product.quantity--
-                                    dispatch(minusQuantity(product))
-                                    dispatch(deleteItemBasket(product))
-                                    return
-                                }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -547,33 +544,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -644,33 +642,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -786,33 +785,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                                                     <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -883,33 +883,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -1025,33 +1026,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                                                     <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -1122,33 +1124,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -1243,33 +1246,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                                                     <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -1340,33 +1344,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -1460,33 +1465,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                                                     <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -1556,33 +1562,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -1700,33 +1707,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                                                     <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -1796,33 +1804,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -1937,33 +1946,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                                                     <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -2034,33 +2044,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -2174,33 +2185,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                                                     <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -2270,33 +2282,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -2410,33 +2423,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                                                     <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -2507,33 +2521,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -2646,33 +2661,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                                                     <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>
@@ -2744,33 +2760,34 @@ const MainPage = () =>{
     width="420" height="420" decoding="async" data-nimg="1"
     loading="lazy" style={{color:"black"}} />
 </NavLink>
-                                                     <div className="products__item__miniature">
+<div className="products__item__miniature">
                        
 
-                        <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
-                            setActiveBtn([...activeBtn, product.id])       
-                        }}>
-                            {activeBtn.some(item => item === i) && <span className='icon__btn__add' onClick={() =>{
-                               if(product.quantity !== 0){
-                                product.quantity--
-                                dispatch(minusQuantity(product))
-                                dispatch(deleteItemBasket(product))
-                                return
-                            }
-                            }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
-
-                            {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
-                            {activeBtn.some(item => item === product.id) ?
-                                <span className='icon__btn__add' onClick={() => {
-                                    product.quantity++
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
-                                    dispatch(addBasket(product))
-                                }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
-                            }
+                       <div className={`products__item__add__btn main ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {
+                           setActiveBtn([...activeBtn, product.id])      
                             
-                        </div>
-                    </div>
+                       }}>
+                           {activeBtn.some(item => item === product.id) && <span className='icon__btn__add' onClick={() =>{
+                               if(product.quantity !== 0){
+                                   product.quantity--
+                                   dispatch(minusQuantity(product))
+                                   dispatch(deleteItemBasket(product))
+                                   return
+                               }
+                           }}><Icon path={mdiMinus} size={1} color={'white'} /></span>}
+
+                           {activeBtn.some(item => item === product.id) && <div className='product__quantity'>{product.quantity}</div>}
+                           {activeBtn.some(item => item === product.id) ?
+                               <span className='icon__btn__add' onClick={() => {
+                                   product.quantity++
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span> : <span className='icon__btn__add' onClick={() => {
+                                   dispatch(addBasket(product))
+                               }}><Icon path={mdiPlus} size={1} color={'white'}  /></span>
+                           }
+                           
+                       </div>
+                   </div>
                                                     </div>
                                                 
                                             </div>

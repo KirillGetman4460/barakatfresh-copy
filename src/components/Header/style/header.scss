@@ -49,7 +49,14 @@
     position: relative;
     max-width: 650px;
     width: 100%;
-
+    & .checkout_input{
+        display: flex;
+        justify-content: center;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        height: 40px;
+        font-size: 12px;
+    }
 }
 .header__search__input{
     height: 100%;

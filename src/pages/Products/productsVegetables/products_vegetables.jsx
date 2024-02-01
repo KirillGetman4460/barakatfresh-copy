@@ -242,8 +242,8 @@ const [activeCatigoriesModal,setActiveCatigoriesModal] = useState(false)
     filterBySubcats()
   },[selectSubCats,mainTitle])
   useEffect(() =>{
-    products.map(item => item.quantity = 1)
-  },[products])
+    setProducts(products.map(obj => ({ ...obj, quantity: 1 })))
+  },[])
 
     useEffect(() => {
         const handleScroll = () => {

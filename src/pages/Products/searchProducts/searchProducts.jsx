@@ -1,278 +1,41 @@
-import Header from "../../../components/Header/header";
 import {useState,useEffect} from 'react'
-import { useSelector,useDispatch } from 'react-redux'
-import { addBasket,minusQuantity,deleteItemBasket,selectTitle } from '../../../store/basketSlice/basketSlice';
-import data from '../../../db/products.json'
+import Header from "../../../components/Header/header";
 
+import { addBasket,minusQuantity,deleteItemBasket,selectTitle } from '../../../store/basketSlice/basketSlice';
+
+import { useSelector,useDispatch } from 'react-redux'
 import Megamenu from '../../../components/Megamenu/megamenu'
-import Filter from '../../../components/Filter/filter'
-import Products from '../../../components/Products/products'
-import FilterMultiSelect from '../../../components/Filter/filterMultiSelect'
+
 import BreadCrumbs from '../../../components/BreadCrumbs/breadCrumbs'
 
 import { NavLink } from "react-router-dom";
 
+import './style/style.scss'
+
 import Icon from '@mdi/react';
-import {mdiFormatListBulleted, mdiSort,mdiFilterOutline,mdiRadioboxBlank,mdiClose,mdiCheckboxMarked,mdiCheckboxBlankOutline,mdiChevronLeft,mdiChevronRight,mdiHomeOutline,mdiCartOutline    } from '@mdi/js';
+import { mdiFormatListBulleted,mdiPlus,mdiMinus,mdiChevronLeft,mdiHomeOutline,mdiCartOutline    } from '@mdi/js';
+const SearchProductsPage = () =>{
 
+    const[title,setTitle] = useState('Search')
 
-const PageProductsGrabGo = () =>{
-    const [products,setProducts] = useState(data.products_grab_go.all)
+    const { basket,searchProducts } = useSelector((state) => state.basket);
 
+    const[products,setProducts] = useState(searchProducts)
     const dispatch = useDispatch()
-
-  const [origin,setOrigin] = useState(['UAE','South Africa','India','Colombia','Thailand','Egypt','Kenya','China','Lebanon','Vietnam','Chile','Iran','Italy','Turkey','Brazil','Peru','Sri Lanka','Serbia','USA','Ukraine'])
-  const [tags,setTags] = useState(['By Air','RIPEN AT HOME','Premium By Air','STEAL DEAL','Ready to eat','Ripen at Home','Ripen at home','Best for Gifting','By Air !','By Air ! Ripen at Home','By Air! Ripen at Home','For cooking','Ideal for Cooking','In High Demand','MUST BUY','Premium by Air','RIPEN AT HOME (RAW)','SWEET & TASTY'])
-  const [subCatsItem,setSubCatsItem] = useState([
-    {title:"ALL",img:"https://media.barakatfresh.ae/media/catalog/category/1457586_ReadyToEat_091922_1.png"},
-    {title:"Keto",img:"https://media.barakatfresh.ae/media/catalog/category/Chicken_Tikka.png"},
-    {title:"Salads",img:"https://media.barakatfresh.ae/media/catalog/category/1457586_VegetarianTreats_092222_1.png"},
-    {title:"Ready Meals",img:"https://media.barakatfresh.ae/media/catalog/category/1457586_ReadyMeals_092222_2.png"},
-    {title:"Sandwiches",img:"https://media.barakatfresh.ae/media/catalog/category/Sandwiches-removebg-preview.png"},
-    {title:"Cut Fruits",img:"https://media.barakatfresh.ae/media/catalog/category/FRUIT_CUBES.png"},
-
-    {title:"Cook In The Bag",img:"https://media.barakatfresh.ae/media/catalog/category/F649442_-_Chicken_Breast.png"},
-
-    {title:"Ready to Cook",img:"https://media.barakatfresh.ae/media/catalog/category/1457586_ReadyToCook_091922_1.png"},
-
-    {title:"Fresh Dips",img:"https://media.barakatfresh.ae/media/catalog/category/Dips.png"},
-
-    {title:"Breakfast Pots",img:"https://media.barakatfresh.ae/media/catalog/category/1457586_BreakfastPots_092222_1.png"},
-    {title:"Skewers",img:"https://media.barakatfresh.ae/media/catalog/category/Skewres_2__1.png"},
-    {title:"Croissants & Danish",img:"https://media.barakatfresh.ae/media/catalog/category/1457586_Croissants_Danish_092222_2.png"},
-    {title:"Cakes",img:"https://media.barakatfresh.ae/media/catalog/category/1457586_Cakes_092322_1.png"},
-    {title:"Soups, Sauces & Gravies",img:"https://media.barakatfresh.ae/media/catalog/category/1457586_SoupsSauces_Gravies_092222_1.png"}
-])
-
-
-  const [title,setTitle] = useState('Grab n Go')
-
-  const [selectPrice,setSelectPrice] = useState('')
-
-  const [selectedCountries, setSelectedCountries] = useState([]);
-
-  const [selectedTags, setSelectedTags] = useState([]);
-
-  const [selected, setSelected] = useState([]);
-  const [tagsSelected,setTagsSelected] = useState([])
-
-  const [activeSort,setActiveSort] = useState(false)
-
-  const [activeFilt,setActiveFilt] = useState(false)
-
-  const [activeOrigin,setActiveOrigin] = useState(false)
-
-  const [activeTags,setActiveTags] = useState(false)
-
-  const mainTitle = useSelector(state => state.basket.title)
-
-  const [selectSubCats,setSelectSubCats] = useState(mainTitle)
-
-  const {basket} = useSelector(state => state.basket)
-
-
-
-
-  const filterByPrice = () =>{
-    if(selectPrice === 'bestsaving'){
-        setProducts([...products].sort((a,b)=> a.price_raw - b.price_raw))
-        return
-    }
-    if(selectPrice === 'high'){
-        setProducts([...products].sort((a,b)=> b.price_raw - a.price_raw))
-        return
-    }
-    if(selectPrice === 'low'){
-      setProducts([...products].sort((a,b)=> a.price_raw - b.price_raw))
-      return
-    }
-  }
-
-const filterBySubcats = () => {
-  
-  if (selectSubCats === 'Grab n Go') {
-    setProducts(data.products_grab_go.all)
-    setTitle('Grab n Go')
-    return;
-  }
-
-  if (selectSubCats === 'Keto') {
-    setProducts(data.products_grab_go.keto)
-
-    setTitle('Keto')
-  }
-  if (selectSubCats === 'Salads') {
-    setProducts(data.products_grab_go.salads)
-   
-    setTitle('Salads')
-  }
-  if (selectSubCats === 'Ready Meals') {
-    setProducts(data.products_grab_go.ready_meals)
-    
-    setTitle('Ready Meals')
-  }
-  if (selectSubCats === 'Sandwiches') {
-    setProducts(data.products_grab_go.sandwiches)
-    
-    setTitle('Sandwiches')
-  }
-  if (selectSubCats === 'Cut Fruits') {
-    setProducts(data.products_grab_go.cut_fruits)
-    
-    setTitle('Cut Fruits')
-  }
-  if (selectSubCats === 'Cook In The Bag') {
-    setProducts(data.products_grab_go.cook_bag)
-    
-    setTitle('Cook In The Bag')
-  }
-  if (selectSubCats === 'Ready to Cook') {
-    setProducts(data.products_grab_go.ready_to_cook)
-    
-    setTitle('Ready to Cook')
-  }
-  if (selectSubCats === 'Fresh Dips') {
-    setProducts(data.products_grab_go.fresh_dips)
-    
-    setTitle('Fresh Dips')
-  }
-  if (selectSubCats === 'Breakfast Pots') {
-    setProducts(data.products_grab_go.breakfast_pots)
-    
-    setTitle('Breakfast Pots')
-  }
-  if (selectSubCats === 'Skewers') {
-    setProducts(data.products_grab_go.skewers)
-    
-    setTitle('Skewers')
-  }
-  if (selectSubCats === 'Croissants & Danish') {
-    setProducts(data.products_grab_go.croissants_danish)
-    
-    setTitle('Croissants & Danish')
-  }
-  if (selectSubCats === 'Cakes') {
-    setProducts(data.products_grab_go.cakes)
-    
-    setTitle('Cakes')
-  }
-  if (selectSubCats === 'Soups, Sauces & Gravies') {
-    setProducts(data.products_grab_go.soups_sauces_gravies)
-    
-    setTitle('Soups, Sauces & Gravies')
-  }
-}
-const handleCountrySelectChange = (event) => {
-  setSelectedCountries(prev => {
-    const isAlreadySelected = prev.includes(event);
-
-    if (isAlreadySelected) {
-
-      return prev.filter(item => item !== event);
-    } else {
-
-      return [...prev, event];
-    }
-  });
-};
-const [activeCatigoriesModal,setActiveCatigoriesModal] = useState(false)
-const handleTagsSelectChange = (event) => {
-  setSelectedTags(prev => {
-    const isAlreadySelected = prev.includes(event);
-
-    if (isAlreadySelected) {
-
-      return prev.filter(item => item !== event);
-    } else {
-
-      return [...prev, event];
-    }
-  });
-};
-
-
-  const handleSelectChange = (event) => {
-    setSelected((prev) => {  
-      const isSelected = prev.includes(event);
-  
-      if (isSelected) {
-       
-        return prev.filter((item) => item !== event);
-      } else {
-        return [...prev, event];
-      }
-    });
-  };
-
-  const handleTagsChange = (event) => {
-    setTagsSelected((prev) => {  
-      const isSelected = prev.includes(event);
-  
-      if (isSelected) {
-       
-        return prev.filter((item) => item !== event);
-      } else {
-        return [...prev, event];
-      }
-    });
-  };
-
-
-  const sortProductsByCountry = () => {
-    let sortedProducts = [...data.products_grab_go.all];
-
-    if (selectedCountries.length !== 0) {
-      sortedProducts = sortedProducts.filter(product => selectedCountries.includes(product.origin));
-    }
-
-    sortedProducts.sort((a, b) => a.origin.localeCompare(b.origin));
-
-    setProducts(sortedProducts);
-  };
-
-  const sortProductsByTags = () => {
-    let sortedProducts = [...data.products_grab_go.all];
-
-    if (selectedTags.length !== 0) {
-      sortedProducts = sortedProducts.filter(
-        (product) =>
-          product.additional_data &&
-          product.additional_data.labels &&
-          selectedTags.some((countryLabel) =>
-            product.additional_data.labels.includes(countryLabel)
-          )
-      );
-    }
-
-    sortedProducts.sort((a, b) => {
-      const labelsA = (a.additional_data && a.additional_data.labels) || [];
-      const labelsB = (b.additional_data && b.additional_data.labels) || [];
-
-      const labelA = labelsA.length > 0 ? labelsA[0] : "";
-      const labelB = labelsB.length > 0 ? labelsB[0] : "";
-
-      return labelA.localeCompare(labelB);
-    });
-
-    setProducts(sortedProducts);
-  };
-  const resetSelectedCountries = () =>{
-    setSelectedCountries([])
-    setSelected([])
-    sortProductsByCountry()
-    setProducts(data.products_grab_go.all)
-    setTagsSelected([])
-  }
 
   const [isFixed, setIsFixed] = useState(false);
 
-  useEffect(() =>{
-    setSelectSubCats(mainTitle)
-  },[mainTitle])
+  const [activeCatigoriesModal,setActiveCatigoriesModal] = useState(false)
+
+  const [activeBtn,setActiveBtn] = useState([])
 
   useEffect(() =>{
-    filterBySubcats()
-  },[selectSubCats,mainTitle])
+    setProducts(products.map(obj => ({ ...obj, quantity: 1 })))
+  },[])
+  useEffect(() =>{
+    
+    setProducts(searchProducts)
+  },[searchProducts])
 
     useEffect(() => {
         const handleScroll = () => {
@@ -287,12 +50,11 @@ const handleTagsSelectChange = (event) => {
           window.removeEventListener('scroll', handleScroll);
         };
       }, []);
-      useEffect(() =>{
-        setProducts(products.map(obj => ({ ...obj, quantity: 1 })))
-      },[])
+
+    
     return(
         <>
-        <div className={`${isFixed ? 'fixed' : ''}`}>
+        <div className={`search_mobile ${isFixed ? 'fixed' : ''}`}>
             <Header></Header>
 
             <Megamenu></Megamenu>
@@ -366,198 +128,114 @@ const handleTagsSelectChange = (event) => {
                
             </ul>
         </div>
-            <div className="products_taskbar">
-              <div className="taskbar">
-                <div className="taskbar_prime"></div>
-                <div className="taskbar_actions">
-                  <div className="sorting" onClick={() => setActiveSort(true)}>
-                  <div className="sorting_toggle">
-                    <div className="sorting_toggle_icon">                
-                      <Icon path={mdiSort} size={1} />
-                    </div>
-                    <div className="sorting_toggle_text">
-                      Sort
-                    </div>
-                  </div>
-                  </div>
-                  <div className="filters__modile" onClick={() => setActiveFilt(true)}>
-                    <div className="filters_toggle">
-                      <div className="filters_toggle_icon">
-                      <Icon path={mdiFilterOutline} size={1} />
-                      </div>
-                      <div className="filters_toggle_text">
-                        Filter
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className={`bottomsheet ${activeSort ? "active" :""}`}>
-                  <div className="bottomsheet_overlay" onClick={() => setActiveSort(false)}></div>
-                  <div className="bottomsheet_content">
-                    <div className="sortopts">
-                      <div className="sortopts_title">Sort by</div>
-                      <ul className="sortopts_list">
-                        <li className="sortopts_item" onClick={() => setActiveSort(false)}>
-                          <div className="formradio">
-                            <div className="formradio_icon"><Icon path={mdiRadioboxBlank} color={"#2cc84d"} size={1} /></div>
-                            <span className="formradio_title" onClick={() => setSelectPrice('')}>Best Sellers</span>
-                          </div>
-                        </li>
-                        <li className="sortopts_item" onClick={() => {
-                          setActiveSort(false)
-                          setSelectPrice('bestsaving')
-                        }}>
-                          <div className="formradio">
-                            <div className="formradio_icon"><Icon path={mdiRadioboxBlank} color={"#2cc84d"} size={1} /></div>
-                            <span className="formradio_title">Biggest Saving</span>
-                          </div>
-                        </li>
-                        <li className="sortopts_item" onClick={() => {
-                          setActiveSort(false)
-                          setSelectPrice('high')
-                        }}>
-                          <div className="formradio">
-                            <div className="formradio_icon"><Icon path={mdiRadioboxBlank} color={"#2cc84d"} size={1} /></div>
-                            <span className="formradio_title">Price: Low to High</span>
-                          </div>
-                        </li>
-                        <li className="sortopts_item" onClick={() => {
-                          setActiveSort(false)
-                          setSelectPrice('low')
-                        }}>
-                          <div className="formradio">
-                            <div className="formradio_icon"><Icon path={mdiRadioboxBlank} color={"#2cc84d"} size={1} /></div>
-                            <span className="formradio_title">Price: High to Low</span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-
-                  </div>
-                </div>
-
-                <div className={`fsmodal ${activeFilt ? "active" :""}`}>
-                  <div className="fsmodal_content">
-                    <div>
-                      <div className="filterpop_header">
-                        <div className="filterpop_close" onClick={() => setActiveFilt(false)}><Icon path={mdiClose} color={"rgb(96, 96, 96)"} size={1} /></div>
-                        <h4 className="filterpop_heading">Filter by</h4>
-                        <div className="filterpop_reset">Reset all</div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="filterblock">
-                        <div className="filterblock_head">
-                          <div className="filterblock_head" onClick={() => setActiveOrigin(true)}>
-                            <div className="filterblock_title">Origin</div>
-                            <div className="filterblock_chev"></div>
-                          </div>
-
-                        </div>
-                      </div>
-                      <div className="filterblock">
-                        <div className="filterblock_head">
-                          <div className="filterblock_head" onClick={() => setActiveTags(true)}>
-                            <div className="filterblock_title">Tags</div>
-                            <div className="filterblock_chev"></div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                    <div className="filterpop_footer">
-                      <div className="bbutton_primary"><span>Show results (228)</span></div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className={`fsmodal origin ${activeOrigin ? "active" :""}`}>
-                <div className="fsmodal_content">
-                  
-                        <div>
-                      <div className="filterpop_header">
-                        <div className="filterpop_close" onClick={() => setActiveOrigin(false)}><Icon path={mdiChevronLeft} color={"rgb(96, 96, 96)"} size={1} /></div>
-                        <h4 className="filterpop_heading">Origin</h4>
-                        <div className="filterpop_reset">Reset</div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="filterblock_body">
-                        <ul className="filterblock_items">
-                        {origin.map((item,i) => (
-                        <li className="multi__select__list__item" onClick={() => {
-                            handleCountrySelectChange(item)
-                            handleSelectChange(i)
-                        }}>
-                            {selected && selected.some(item => item === i) ? <Icon path={mdiCheckboxMarked} color={'#2cc84d'} value={false} size={1} /> :   <Icon path={mdiCheckboxBlankOutline } size={1} color={'#2cc84d'} />}   
-                            <span className="multi__select__text">{item}</span>
-                        </li>
-                    ))}
-                        </ul>
-                      </div>
-
-                    </div>
-                 
-                    
-                    <div className="filterpop_footer origin">
-                      <div className="bbutton_primary" onClick={() => setActiveOrigin(false)}><span>APPLY</span></div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className={`fsmodal tags ${activeTags ? "active" :""}`}>
-                <div className="fsmodal_content">
-                  
-                        <div>
-                      <div className="filterpop_header">
-                        <div className="filterpop_close" onClick={() => setActiveTags(false)}><Icon path={mdiChevronLeft} color={"rgb(96, 96, 96)"} size={1} /></div>
-                        <h4 className="filterpop_heading">Tags</h4>
-                        <div className="filterpop_reset">Reset</div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="filterblock_body">
-                        <ul className="filterblock_items">
-                        {tags.map((item,i) => (
-                        <li className="multi__select__list__item" onClick={() => {
-                            handleCountrySelectChange(item)
-                            handleSelectChange(i)
-                        }}>
-                            {selected && selected.some(item => item === i) ? <Icon path={mdiCheckboxMarked} color={'#2cc84d'} value={false} size={1} /> :   <Icon path={mdiCheckboxBlankOutline } size={1} color={'#2cc84d'} />}   
-                            <span className="multi__select__text">{item}</span>
-                        </li>
-                    ))}
-                        </ul>
-                      </div>
-
-                    </div>
-                 
-                    
-                    <div className="filterpop_footer origin">
-                      <div className="bbutton_primary" onClick={() => setActiveTags(false)}><span>APPLY</span></div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
+           
             </div>
          <div className="wrapper">
             
           <BreadCrumbs title={title}></BreadCrumbs>
         <div className="content">
-          <div className="filter__categories"> 
-            <Filter></Filter>
-            {/* <FilterChecbox></FilterChecbox>
-            <FilterChecbox></FilterChecbox> */}
-            <FilterMultiSelect title={'Origin'} origin={origin} sortProductsByCountry={sortProductsByCountry} handleCountrySelectChange={handleCountrySelectChange} resetSelectedCountries={resetSelectedCountries} selected={selected} handleSelectChange={handleSelectChange} ></FilterMultiSelect>
-            <FilterMultiSelect title={'Tags'} origin={tags} sortProductsByCountry={sortProductsByTags} handleCountrySelectChange={handleTagsSelectChange} resetSelectedCountries={resetSelectedCountries} handleSelectChange={handleTagsChange} selected={tagsSelected}></FilterMultiSelect>
-          </div>
+         {products.length ? 
+         <ul className="products__list search">
+         {products.map((product,i) => (
+         <li className="products__item" key={i}>
+             {product.percent_off &&  <span className="styles_miniature_percent__Y0sR7">{product.percent_off}</span>}
+             <div className="products__item__img">
+             <NavLink to={`/${product.id}`} state={{ product }}
 
-          <Products subCatsItem={subCatsItem} title={title} products={products} filterBySubcats={filterBySubcats} selectSubCats={selectSubCats} setSelectSubCats={setSelectSubCats}  filterByPrice={filterByPrice} selectPrice={selectPrice} setSelectPrice={setSelectPrice} ></Products>
+>
+<img src={product.image} alt="" />
+                
+</NavLink>
+             
+                
+                 
+             </div>
+             <div className="products__item__miniature">
+  <span>{product.origin}</span>
+  <div className={`products__item__add__btn item ${activeBtn.some(item => item === product.id) ? "active" : ""}`} onClick={() => {                 
+    setActiveBtn([...activeBtn, product.id]) 
+  }}>
+    {activeBtn.some(item => item === product.id) && 
+      <span className='icon__btn__add' onClick={(e) => {
+        if(product.quantity !== 0){
+          setProducts(prevProducts => (
+            prevProducts.map(obj => {
+              if (obj.id === product.id) {
+                return { ...obj, quantity: obj.quantity - 1 };
+              }
+              return obj;
+            })
+          ));
+          dispatch(minusQuantity(product))
+          dispatch(deleteItemBasket(product))
+          return;
+        }
+      }}>
+        <Icon path={mdiMinus} size={1} color={'white'} />
+      </span>
+    }
+    {activeBtn.some(item => item === product.id) && 
+      <div className='product__quantity'>{product.quantity}</div>
+    }
+    {activeBtn.some(item => item === product.id) ?
+      <span className='icon__btn__add' onClick={() => {
+        setProducts(prevProducts => (
+          prevProducts.map(obj => {
+            if (obj.id === product.id) {
+              return { ...obj, quantity: obj.quantity + 1 };
+            }
+            return obj;
+          })
+        ));
+        dispatch(addBasket(product))
+      }}>
+        <Icon path={mdiPlus} size={1} color={'white'}  />
+      </span> 
+      :
+      <span className='icon__btn__add' onClick={() => {
+        dispatch(addBasket(product))
+      }}>
+        <Icon path={mdiPlus} size={1} color={'white'}  />
+      </span>
+    }   
+  </div>
+</div>
+           
+             <div className="products__item__title">{product.name}</div>
+
+             <div className="styles_pricing__k23Ku">
+                                             {product.special_price_raw ? 
+                                                 <div className="styles_pricing_regular__sizHW"><span
+                                                 className="styles_pricing_strike__m89Q_">{product.price}</span><span
+                                                 className="styles_pricing_special__qHGqh">AED {product.special_price_raw}</span></div>
+                                                 :  <div className="styles_pricing_regular__sizHW"><span
+                                                 className="styles_pricing_regular__sizHW">{product.price}</span></div>
+                                             }
+                                             </div>
+                                             {product.product_option &&
+                                             <div className="products__item__configs">
+                                             <span>{product.product_option}</span>
+                                             
+                                         </div> 
+                                             }
+             
+         </li>
+         ))}               
+     </ul> : 
+      <div className='basket__empty'>
+      <div className="basket__empty__img">
+          <img src="https://barakatfresh.ae/_next/static/media/no_results.5b26ec51.png" alt="" />
+      </div>
+      <div className="basket__empty__title">
+      No data found
+      </div>
+      <div className="basket__empty__text">
+      We couldn't find any thing for this search. Please try another keyword.
+      </div>
+  </div>
+        }
+        
+          
         </div>
         <div className="layout_tabs">
           <ul className="tabs">
@@ -2049,4 +1727,4 @@ const handleTagsSelectChange = (event) => {
 
     )
 }
-export default PageProductsGrabGo
+export default SearchProductsPage
