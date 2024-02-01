@@ -20,7 +20,7 @@ const SearchProductsPage = () =>{
 
     const { basket,searchProducts } = useSelector((state) => state.basket);
 
-    const[products,setProducts] = useState(searchProducts)
+    const[products,setProducts] = useState([...searchProducts])
     const dispatch = useDispatch()
 
   const [isFixed, setIsFixed] = useState(false);
@@ -29,13 +29,17 @@ const SearchProductsPage = () =>{
 
   const [activeBtn,setActiveBtn] = useState([])
 
-  useEffect(() =>{
-    setProducts(products.map(obj => ({ ...obj, quantity: 1 })))
-  },[])
+
+
   useEffect(() =>{
     
     setProducts(searchProducts)
   },[searchProducts])
+
+  useEffect(() => {
+    setProducts(products.map(obj => ({...obj, quantity: 1})))
+}, [])
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -200,7 +204,6 @@ const SearchProductsPage = () =>{
     }   
   </div>
 </div>
-           
              <div className="products__item__title">{product.name}</div>
 
              <div className="styles_pricing__k23Ku">

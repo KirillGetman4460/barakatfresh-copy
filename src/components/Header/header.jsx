@@ -51,7 +51,6 @@ const Header = () => {
       navigate("/search");
 
     }
-   
   };
 
   
